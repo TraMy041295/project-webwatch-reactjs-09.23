@@ -1,0 +1,36 @@
+.card {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    align-items: center;
+    background-color: white;
+
+  }
+  
+  .card ,p {
+      font-size: medium;
+  }
+  .card > img {
+      width: 50%;
+      }
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  .card button:hover {
+    opacity: 0.7;
+  }
+  /* ------------- */
+  .see_quick .see_quick_button {
+    color: black;
+    text-decoration: none;
+  }

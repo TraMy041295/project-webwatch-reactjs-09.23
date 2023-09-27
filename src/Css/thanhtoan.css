@@ -1,0 +1,169 @@
+.info-pay {
+    margin: 30px 150px;
+}
+/* --------------form */
+.info-pay-form .form-title {
+    color: #2a9dcc;
+    text-align: start;
+    font-size: 2em;
+}
+.info-pay-form .form-title:hover {
+    color: #1B4B73;
+    cursor: pointer;
+}
+.info-pay-form .form-info {
+    justify-content: space-around;
+}
+.info-pay-form .form-info .info {
+    font-weight: bold;
+    padding: 0px;
+    text-align: start;
+}
+.info-pay-form .form-info .login {
+    color: #2a9dcc;
+    padding: 0px;
+    text-align: end;
+}
+.info-pay-form textarea {
+    width: 100%;
+}
+/* .info-pay-form form input {
+    padding: 0px;
+} */
+.info-pay-form form select { 
+    margin-bottom: 10px;
+}
+/* ---------------------vận chuyển */
+.transport .transport-title {
+    font-weight: bold;
+    text-align: start;
+    margin-bottom: 24px;
+}
+.transport .info-transport {
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+    border-radius: 5px;
+    height: 48px;
+    margin: 8px 0px;
+    text-align: start;
+    padding-top: 10px;
+    color: #0c5460;
+}
+.transport .pay-action {
+    margin-top: 45px;
+}
+.transport .pay-action .pay-action-title {
+    font-weight: bold;
+    text-align: start;
+}
+.transport .pay-action .pay-action-cod {
+    border: 1px solid #e1e1e1;
+    padding: 15px;
+}
+.transport .pay-action .pay-action-cod > input {
+   margin-right: 10px;
+}
+.transport .pay-action .pay-action-cod > p {
+    margin-bottom: 0px;
+    text-align: start;
+    margin-top: 20px;
+    background-color: #e1e1e1;
+}
+/* ------------thanh toán đơn hàng */
+.pay-money .pay-money-title {
+    font-weight: bold;
+    font-size: large;
+    text-align: start;
+    border: 1px solid #e1e1e1;
+    margin : 0px;
+    height: 60px;
+    padding-left: 28px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.pay-money .discount-code-form{
+    justify-content: space-around;
+}
+.pay-money .discount-code {
+    padding: 14px 0px;
+    border: 1px solid #e1e1e1;
+}
+.pay-money .discount-code-form > .form-control {
+    width: 50%;
+}
+/* ------------- add phí vận chuyển */
+.add-transport {
+    padding: 14px 0px;
+    border: 1px solid #e1e1e1;
+    margin: 0px;
+}
+.add-transport p {
+    padding: 0px;
+  
+}
+/* --------tổng thanh toán */
+.sum-pay {
+    padding: 14px 0px;
+    border: 1px solid #e1e1e1;
+    margin: 0px;
+}
+.sum-pay p {
+    padding: 0px;
+  
+}
+/* ----------------- */
+.btn-comback-cart ,.btn-pay-ok {
+	-moz-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffc477), color-stop(1, #fb9e25) );
+	background:-moz-linear-gradient( center top, #ffc477 5%, #fb9e25 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc477', endColorstr='#fb9e25');
+	background-color:#ffc477;
+	-webkit-border-top-left-radius:15px;
+	-moz-border-radius-topleft:15px;
+	border-top-left-radius:15px;
+	-webkit-border-top-right-radius:0px;
+	-moz-border-radius-topright:0px;
+	border-top-right-radius:0px;
+	-webkit-border-bottom-right-radius:15px;
+	-moz-border-radius-bottomright:15px;
+	border-bottom-right-radius:15px;
+	-webkit-border-bottom-left-radius:0px;
+	-moz-border-radius-bottomleft:0px;
+	border-bottom-left-radius:0px;
+	text-indent:0;
+	border:1px solid #eeb44f;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:40px;
+	line-height:40px;
+	width:100px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #cc9f52;
+}
+.btn-comback-cart:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fb9e25), color-stop(1, #ffc477) );
+	background:-moz-linear-gradient( center top, #fb9e25 5%, #ffc477 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fb9e25', endColorstr='#ffc477');
+	background-color:#fb9e25;
+    color:red;
+}.btn-comback-cart:active {
+	position:relative;
+	top:1px;
+}
+.btn-pay-ok:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fb9e25), color-stop(1, #ffc477) );
+	background:-moz-linear-gradient( center top, #fb9e25 5%, #ffc477 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fb9e25', endColorstr='#ffc477');
+	background-color:#fb9e25;
+    color:red;
+}.btn-pay-ok:active {
+	position:relative;
+	top:1px;
+}

@@ -1,0 +1,90 @@
+.tintuc-title {
+    text-align: start;
+    margin-left: 200px;
+    width: 200px;
+    padding: 15px 0px;
+    border-bottom: 1.5px solid #818181;
+}
+.tintuc {
+    margin: 10px 200px;
+    text-align: start;
+}
+.tintuc-content {
+    text-align: start;
+    color: #898989;
+}
+.tintuc img {
+    width: 100%;
+    margin-bottom: 15px;
+}
+.time {
+    margin: 0px 10px;
+}
+.comment {
+    margin-left: 50px;
+}
+.share-icon {
+    margin: 0px 5px;
+}
+.share-icon:hover i {
+    color: blue;
+    cursor: pointer;
+}
+.tintuc a {
+    color: #898989;
+    text-decoration: none;
+}
+.tintuc-content-icon {
+    border-top: 1px solid #818181;
+    border-bottom: 1px solid #818181;
+}
+.tintuc-content-icon .tintuc-content {
+    margin: 10px 0px;
+}
+/* ---------------tintuc-total */
+.tintuc-total {
+    margin: 50px 200px;
+}
+.tintuc-left {
+    padding: 0px 15px;
+}
+.danhmuc-item a {
+    color: #898989;
+    text-transform: uppercase;  
+    border-bottom: 1px solid #e1e1e1;
+}
+.tintuc-noibat {
+    margin-top: 100px;
+}
+.tintuc-noibat  a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.tintuc-noibat div {
+    border-bottom: 1px solid #e1e1e1;
+    padding: 20px 0px;
+}
+/* -------------tintuc- right */
+.tintuc-right {
+    padding: 0px 15px;
+}
+.tintuc-right-item {
+    padding-bottom: 40px;
+}
+.tintuc-right-image img {
+    width: 100%;
+}
+.tintuc-right-content a {
+    text-decoration: none;
+    color: black;
+}
+.tintuc-right-content p{
+    text-align: start;
+}
+/* --------------email */
+.tintuc-title p {
+    width: 100px;
+    padding: 0px;
+    margin: 0px;
+}

@@ -1,0 +1,130 @@
+.email {
+    background-color: #1B4B73;
+    height: 120px;
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 50px;
+}
+
+.email-title {
+    color: white;
+}
+.email-form {
+    text-align: center;
+    margin-left: 500px;
+}
+
+.email > .input-group  {
+    width: 500px;
+}
+
+.email .input-group .form-control {
+    height: 46px;
+}
+.email .input-group > .email-form-input{
+    margin: 0px;
+}
+.email > .input-group >.email-form-button {
+    padding: 0px;
+    margin: 0px;
+    color: white;
+    font-weight: bold;
+    border-radius: 0;
+    border-right: 2px solid white;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+}
+/* -----------footer */
+.footer {
+    margin: 50px 150px;
+}
+.footer1 p , span {
+    text-align: start;
+    margin-bottom: 10px;
+}
+.footer2 img {
+    width: 100%;
+}
+.footer2 a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.footer2  p {
+    padding: 0px 5px;
+    text-align: start;
+}
+.footer3 a {
+    text-decoration: none;
+    color: #818181;
+}
+.footer3 p {
+    border: 1px solid #818181;
+    margin: 5px 5px;
+    padding: 0px;
+}
+.footer3 .row {
+    margin: 0px;
+}
+.theodoi h4 {
+    margin-top: 20px;
+}
+.theodoi-icon p {
+    border: 1px solid #e1e1e1;
+    width: 30px;
+    height: 30px;
+}
+.theodoi-icon p:hover {
+    border: 1px solid black;
+}
+.theodoi-icon .fa-twitter ,.fa-facebook-f ,.fa-google-plus-g,.fa-instagram ,.fa-square-youtube {
+    color: #818181;
+}
+.theodoi-icon p:hover .fa-twitter  {
+    color: #1B4B73;
+}
+.theodoi-icon p:hover .fa-facebook-f {
+    color: #1B4B73;
+}
+.theodoi-icon p:hover .fa-google-plus-g {
+    color: #1B4B73;
+}
+.theodoi-icon p:hover .fa-instagram {
+    color: #1B4B73;
+}
+.theodoi-icon p:hover .fa-square-youtube {
+    color: #1B4B73;
+}
+.footer4 a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.footer4 p {
+    text-align: start;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e1e1e1;
+}
+.footer4 h4 {
+    margin-bottom: 20px;
+}
+/* -----------------button- top */
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color:#1B4B73;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+  }
+  
+  #myBtn:hover {
+    background-color: #555;
+  }

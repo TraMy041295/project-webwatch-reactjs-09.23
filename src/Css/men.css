@@ -1,0 +1,97 @@
+
+/* ------------------------- */
+.men-title {
+    width: 300px;
+    margin: 30px 150px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e1e1e1;
+}
+.men-title p {
+    width: 150px;
+    padding: 0px;
+    margin: 0px;
+}
+.men-content{
+    margin: 0px 150px;
+}
+/* --------------------right */
+.watch-men {
+    padding: 0px 20px;
+    margin: 0px;
+}
+.all-item  {
+    border: 1px solid #e1e1e1;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    margin-bottom: 30px;
+}
+
+.all-item .left-all-item , .right-all-item {
+    margin-bottom: 0px;
+}
+button .show {
+    border-color: white;
+}
+.men-item img {
+    width: 100%;
+}
+.men-item a {
+    text-decoration: none;
+    color: #818181;
+}
+
+.men-item {
+    position: relative;
+    border: none;
+}
+.men-item:hover .men-button {
+    display: block;
+}
+.men-button {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: white;
+    top : 100px;
+    left: 110px;
+    display: none;
+}
+.men-button:hover {
+    border: 2px solid #1B4B73;
+}
+.men-img-mini .men-img-mini1 , .men-img-mini2 , .men-img-mini3 {
+    border: 1px solid #e1e1e1;
+}
+.men-img-mini {
+    justify-content: center;
+    display: none;
+     
+}
+
+/* ------------------select */
+.right-all-item select {
+    margin: 0px;
+    height: auto;
+}
+/* ------------ Nút thêm vào giỏ hàng */
+.btn-men {
+    background-color: #1B4B73;
+    color: white;
+    width: 70%;
+    margin-left: 40px;
+    display: none;
+}
+.men-item:hover .btn-men {
+    display: block;
+}
+/* ---------------------hover */
+.men-item:hover .men-img-mini {
+    display: flex;
+}
+.men-item:hover {
+    border: 1px solid #e1e1e1;
+    overflow: hidden;
+}
+/* -------------------- */

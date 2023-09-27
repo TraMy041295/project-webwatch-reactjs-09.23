@@ -1,0 +1,41 @@
+.seequickonapp-title {
+    width: 600px;
+    margin: 30px 150px;
+    border-bottom: 1px solid #e1e1e1;
+}
+.seequickonapp-title > p {
+    padding: 0px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #1B4B73;
+}
+.seequickonapp-content {
+    margin: 0px 150px;
+}
+.seequickonapp-content-left > img {
+    width: 100%;
+}
+.seequickonapp-content-right > p {
+    text-align: start;
+}
+.seequickonapp-content-right .seequickonapp-name {
+    text-transform: uppercase;
+    font-size: 1.5em;
+}
+.seequickonapp-content-right .seequickonapp-color {
+    text-transform: uppercase;
+    font-size: 1.5em;
+}
+.seequickonapp-content-right .seequickonapp-price {
+    font-size: 1.5em;
+}
+.seequickonapp-content-right .seequickonapp-button > button{
+    border: none;
+    background-color: #1B4B73;
+    color: white;
+    width: 300px;
+    height: 50px
+}
+.seequickonapp-content-right .seequickonapp-button {
+    margin-top: 100px;
+}

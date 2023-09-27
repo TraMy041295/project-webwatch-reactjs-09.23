@@ -1,0 +1,82 @@
+.danhmuc-title {
+    position: relative;
+}
+.title-item {
+    width: 100px;
+    background-color: white;
+}
+
+.danhmuc-title::before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid #e1e1e1;
+    position: absolute;
+    top : 10px;
+    left: 0;
+    z-index: -1;
+}
+.danhmuc-title::after{
+    content: "";
+    width: 80%;
+    height: 1px;
+    border-top: 1px solid #e1e1e1;
+    position: absolute;
+    top : 15px;
+    left: 0;
+    z-index: -1;
+}
+/* ---------range-price-lọc gía */
+.range-price {
+    margin-top: 50px;
+}
+.range-price input {
+    width: 100%;
+}
+.display-price button {
+    border: 1px solid #e1e1e1;
+    background-color: #1B4B73;
+    /* margin: 0px 20px; */
+}
+.button-locgia {
+ margin-top: 20px;
+}
+.button-locgia button {
+    border: 1px solid #e1e1e1;
+    background-color: #1B4B73;
+    color: white;
+    width: 100px;
+}
+/* ----------------Lọc - Sản phẩm */
+.filter-product {
+    margin-top: 50px;
+}
+.filter-product .form-check {
+    margin-bottom: 20px;
+}
+.checkbox-product {
+    margin-top: 20px;
+}
+/* ----------------Theo - thương hiệu */
+.checkbox-brand .form-check {
+    margin-bottom: 20px;
+}
+/* --------------sản phẩm nổi bật */
+.hot-product-item img {
+    width: 100%;
+}
+.hot-product-item a {
+    text-decoration: none;
+    color: black;
+}
+.hot-product-item:hover {
+    border: 1px solid #e1e1e1;
+}
+.hot-product-item p {
+    margin-bottom: 0px;
+}
+.hot-product-item {
+    height: 110px;
+    justify-content: center;
+    align-items: center;
+}

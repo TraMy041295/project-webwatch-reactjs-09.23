@@ -1,0 +1,93 @@
+.cart-table {
+    margin: 30px 150px;
+}
+.cart-title {
+    text-align: center;
+}
+/* ------------- */
+.quantity-item > .quantity-item-input {
+    width: 30%;
+    padding: 0px;
+    text-align: center;
+    border: 1px solid #1B4B73;
+}
+.quantity-item {
+    width: 200px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.quantity-item .quantity-button {
+    background-color: white;
+    padding: 0px;
+    margin: 0px 10px;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #1B4B73;
+    border-radius: 5px;
+}
+.quantity-item .quantity-button:hover {
+    background-color: #1B4B73;
+}
+/* --------------- */
+.choice-buy-pay {
+    text-align: end;
+}
+.choice-buy-pay .btn-continue-buy ,.btn-pay {
+    margin-left: 50px;
+}
+.btn-continue-buy ,.btn-pay {
+	-moz-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffc477), color-stop(1, #fb9e25) );
+	background:-moz-linear-gradient( center top, #ffc477 5%, #fb9e25 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc477', endColorstr='#fb9e25');
+	background-color:#ffc477;
+	-webkit-border-top-left-radius:15px;
+	-moz-border-radius-topleft:15px;
+	border-top-left-radius:15px;
+	-webkit-border-top-right-radius:0px;
+	-moz-border-radius-topright:0px;
+	border-top-right-radius:0px;
+	-webkit-border-bottom-right-radius:15px;
+	-moz-border-radius-bottomright:15px;
+	border-bottom-right-radius:15px;
+	-webkit-border-bottom-left-radius:0px;
+	-moz-border-radius-bottomleft:0px;
+	border-bottom-left-radius:0px;
+	text-indent:0;
+	border:1px solid #eeb44f;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:18px;
+	font-weight:bold;
+	font-style:normal;
+	height:40px;
+	line-height:40px;
+	width:200px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #cc9f52;
+}
+.btn-continue-buy:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fb9e25), color-stop(1, #ffc477) );
+	background:-moz-linear-gradient( center top, #fb9e25 5%, #ffc477 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fb9e25', endColorstr='#ffc477');
+	background-color:#fb9e25;
+    color:red;
+}.btn-continue-buy:active {
+	position:relative;
+	top:1px;
+}
+.btn-pay:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fb9e25), color-stop(1, #ffc477) );
+	background:-moz-linear-gradient( center top, #fb9e25 5%, #ffc477 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fb9e25', endColorstr='#ffc477');
+	background-color:#fb9e25;
+    color:red;
+}.btn-pay:active {
+	position:relative;
+	top:1px;
+}

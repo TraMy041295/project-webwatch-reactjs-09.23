@@ -129,6 +129,10 @@
     left: 0;
     z-index: 1;
     transition: all 0.5s ease;
+    background-color: #e1e1e1;
+    opacity: 0.3;
+    box-shadow: inset -1px 4px 14px 7px rgba(224,221,224,1);
+    visibility: hidden;
 }
 .typeofwatch-image .typeofwatch-image-item::before {
     position: absolute;
@@ -138,19 +142,25 @@
     top: 0;
     left: 0;
     z-index: 1;
+    background-color: #e1e1e1;
+    opacity: 0.3;
     transition: all 0.5s ease;
+    box-shadow: inset -1px 4px 14px 7px rgba(224,221,224,1);
+    visibility: hidden;
 }
 .typeofwatch-image .typeofwatch-image-item:hover::after {
     height: 0%;
     top : 230px;
     left: 0px;
-    box-shadow: -1px 3px 71px 23px rgba(252,252,252,1);
+    visibility: visible;
+    box-shadow: none;
 }
 .typeofwatch-image .typeofwatch-image-item:hover::before {
     width: 0%;
     left: 230px;
     top : 0px;
-    box-shadow: -1px 3px 71px 23px rgba(252,252,252,1);
+    visibility: visible;
+    box-shadow: none;
 
 }
 /* ----------------typeofbrand-image */

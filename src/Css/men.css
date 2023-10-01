@@ -6,8 +6,17 @@
     padding-bottom: 15px;
     border-bottom: 1px solid #e1e1e1;
 }
-.men-title p {
-    width: 150px;
+
+.men-title .men-all-item {
+    color: #1B4B73;
+    font-weight: bolder;
+    width: 190px;
+    padding: 0px;
+    margin: 0px;
+    font-size: 1.2em;
+}
+.men-title  .men-homepage {
+    width: 90px;
     padding: 0px;
     margin: 0px;
 }

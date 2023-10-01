@@ -5,7 +5,7 @@ import { useState , useMemo } from 'react'
 
 
 
-function TableProducts(props) {
+function TableProductsPage(props) {
     const { watchList ,deleteApp } = props
     const navigate = useNavigate()
     const [ searchParams , setsearchParams ] = useSearchParams()
@@ -23,13 +23,13 @@ function TableProducts(props) {
     function editProduct(item){
         navigate(`/admin/editbook/${item.id}`)
     }
-    function search_watch(e){
+    function searchWatch(e){
         e.preventDefault()
         setsearchParams({name:name,price:price})
     }
     return (<>
     <div className="table-products">
-        <form onSubmit={search_watch}>
+        <form onSubmit={searchWatch}>
         <div className="search-table-product row">
   <div className="col-md-5">
     <input type="text" value={name} onChange={e=>{setName(e.target.value)}} placeholder="Name" className="form-control" />
@@ -57,7 +57,7 @@ function TableProducts(props) {
                 {filterWatch.map(item =>
                     <tr>
                     <th scope="row">{item.id}</th>
-                    <th scope="row">{item.gioitinh == 1 ? "nam " : " nữ"}</th>
+                    <th scope="row">{item.gender == 1 ? "nam " : " nữ"}</th>
                     <td>{item.name}</td>
                     <td><img src={item.image} style={{width:100}} /></td>
                     <td>{item.price}</td>
@@ -73,4 +73,4 @@ function TableProducts(props) {
     </>)
 }
 
-export default TableProducts
+export default TableProductsPage

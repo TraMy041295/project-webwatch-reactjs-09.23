@@ -5,6 +5,18 @@
     padding-bottom: 10px;
     border-bottom: 1.5px solid #f1f1f1;
 }
+.daily-item .agent-item {
+    color: #1B4B73;
+    font-weight: bolder;
+    padding: 0px;
+    margin: 0px;
+    font-size: 1.2em;
+}
+.daily-item .agent-homepage{
+    width: 90px;
+    padding: 0px;
+    margin: 0px;
+}
 
 .daily-information {
     margin: 0px 100px;

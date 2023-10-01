@@ -8,8 +8,6 @@ import {
 function SeeQuick(props) {
     
     const { id, watchList } = props
-  
-
     const [isExpand, setExpand] = useState("false")
     const [index , setIndex ] = useState(0)
     function expand() {
@@ -23,7 +21,6 @@ function SeeQuick(props) {
             setExpand("false")
         }
     }
-    console.log(index)
     function hander() {
         setExpand("false")
         setIndex(0)
@@ -36,7 +33,7 @@ function SeeQuick(props) {
                 <img src={watchList[index].image} alt="Denim Jeans" />
                 <h3><b>{watchList[index].name}</b></h3>
                 <p>Giá {watchList[index].price}</p>
-                <p>Giới tính : {(watchList[index].gioitinh == 1) ? "Nam" : "Nữ"}</p>
+                <p>Giới tính : {(watchList[index].gender == 1) ? "Nam" : "Nữ"}</p>
                 <div className="container" style={{ backgroundColor: "#f1f1f1" }}>
                     <button type="button" onClick={hander} className="cancelbtn">Cancel</button>
                 </div>

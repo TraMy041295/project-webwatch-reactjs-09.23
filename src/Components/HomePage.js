@@ -1,4 +1,4 @@
-import '../Css/trangchu.css'
+import '../Css/homepage.css'
 import SliderComponent from './SliderComponent'
 import ShowImage from './ShowImage'
 import Tooltip from '@mui/material/Tooltip';
@@ -6,12 +6,12 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-function TrangChu(props) {
-  const { watchList } = props
+function HomePage(props) {
+  const { watchList ,getItemCart } = props
   const navigate = useNavigate()
 
 // ----------item gỉam giá
-  var topdiscountitem = watchList.filter(item=> (parseInt(item.price)) == 5000000)
+  var topDiscountItem = watchList.filter(item=> (parseInt(item.price)) == 5000000)
 // ----------------------xem nhanh
 function seeQuickOnApp(id){
   navigate(`/app/seequickonapp/${id}`)
@@ -80,7 +80,7 @@ function seeQuickOnApp(id){
     <div className="Featured-products">
       <div>
         <h2>sản phẩm nổi bật</h2>
-        <SliderComponent watchList={watchList}/>
+        <SliderComponent watchList={watchList} getItemCart={getItemCart}/>
       </div>
     </div>
     {/* -------------hình ảnh loai đồng hồ */}
@@ -137,7 +137,7 @@ function seeQuickOnApp(id){
       </div>
       <div className='col-md-9 top-discount-item item-watch row'>
         <div className='row'>
-          {topdiscountitem.map(item =>
+          {topDiscountItem.map(item =>
           <div className='col-md-3 item-information'>
           <a href='#'><img src={item.image} /></a>
           <p><a href='#'>{item.name}</a></p>
@@ -148,42 +148,7 @@ function seeQuickOnApp(id){
             <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
           </svg></button>
           </Tooltip>
-        </div>
-            )}
-          
-          {/* <div className='col-md-3 item-information'>
-            <a href='#'><img src='//bizweb.dktcdn.net/thumb/medium/100/244/305/products/19.jpg?v=1502425754840' /></a>
-            <p><a href='#'>Đồng hồ Montbrilliant MS2</a></p>
-            <p>5.000.000 đ</p>
-            <Tooltip title="Xem nhanh" placement="top" arrow>
-            <button className='item-information-button'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
-              <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
-              <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
-            </svg></button>
-            </Tooltip>
-          </div>
-          <div className='col-md-3 item-information'>
-            <a href='#'><img src='//bizweb.dktcdn.net/thumb/medium/100/244/305/products/27.jpg?v=1502425658197' /></a>
-            <p><a href='#'>Đồng hồ CITIZEN MEN'S ECO-DRIVE CANVAS</a></p>
-            <p>7.500.000 đ</p>
-            <Tooltip title="Xem nhanh" placement="top" arrow>
-            <button className='item-information-button'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
-              <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
-              <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
-            </svg></button>
-            </Tooltip>
-          </div>
-          <div className='col-md-3 item-information'>
-            <a href='#'><img src='//bizweb.dktcdn.net/thumb/medium/100/244/305/products/3.jpg?v=1502425551920' /></a>
-            <p><a href='#'>Đồng hồ CITIZEN MEN'S ECO-DRIVE PERPETUA</a></p>
-            <p>4.000.000 đ</p>
-            <Tooltip title="Xem nhanh" placement="top" arrow>
-            <button className='item-information-button'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16">
-              <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
-              <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
-            </svg></button>
-            </Tooltip>
-          </div> */}
+        </div>)}
         </div>
       </div>
     </div>
@@ -228,4 +193,4 @@ function seeQuickOnApp(id){
   </>)
 }
 
-export default TrangChu
+export default HomePage

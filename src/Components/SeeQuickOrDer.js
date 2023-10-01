@@ -9,14 +9,11 @@ import {
 
 
 function SeeQuickOrDer(props){
-
-    const { id, paycustom } = props
-  
-
+    const { id, payCusTom } = props
     const [isExpand, setExpand] = useState("false")
     const [index , setIndex ] = useState(0)
     function expand() {
-        const indexof = paycustom.findIndex(item=>item.id ===id)
+        const indexof = payCusTom.findIndex(item=>item.id ===id)
         setIndex(indexof)
         
         if (isExpand == "false") {
@@ -31,10 +28,6 @@ function SeeQuickOrDer(props){
         setExpand("false")
         setIndex(0)
     }
-    console.log(paycustom[0].listbuycustom)
-
-
-
     return(<>
     <div className="see_quick">
 
@@ -57,17 +50,17 @@ function SeeQuickOrDer(props){
                 </tr>
             </thead>
             <tbody className="table-group-divider">
-                {paycustom[index].listbuycustom.map(item =>
+                {payCusTom[index].listbuycustom.map(item =>
                     <tr>
                     <th scope="row">{item.id}</th>
-                    <th scope="row">{item.gioitinh == 1 ? "nam " : " nữ"}</th>
+                    <th scope="row">{item.gender == 1 ? "nam " : " nữ"}</th>
                     <td>{item.name}</td>
                     <td><img src={item.image} style={{width:100}} /></td>
-                    <td>{item.soluong}</td>
+                    <td>{item.quantity}</td>
                     <td>{item.price}</td>
-                    <td>{item.price * item.soluong}</td>
-                    <td>{paycustom[index].transportcustom} </td>
-                  <td>{paycustom[index].transportcustom + (item.price * item.soluong)} </td>
+                    <td>{item.price * item.quantity}</td>
+                    <td>{payCusTom[index].transportcustom} </td>
+                  <td>{payCusTom[index].transportcustom + (item.price * item.quantity)} </td>
                   </tr>
                 
                     )}

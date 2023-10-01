@@ -9,22 +9,31 @@ import {
 const REGEX = {
   email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 }
+
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
 function Login(props) {
-  const { get_login_result } = props
+  const { setopenLogin , setForm , form ,setUser} = props
   const navigate = useNavigate()
   const [isExpand, setExpand] = useState("false")
   const [account, setAccount] = useState([
     { name: "mynguyen121295@gmail.com", password: 123456 },
     { name: "mynguyen121296@gmail.com", password: 123456 }
   ])
-  const [form, setForm] = useState({
-    username: "",
-    password: "",
-  })
+
   const [error, setError] = useState({
     username: "",
     password: "",
   })
+  // const [form, setForm] = useState({
+  //   username: "",
+  //   password: "",
+  // })
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -50,12 +59,13 @@ function Login(props) {
     if (haveError) return
 
     for (let item of account) {
-
       if (form.username == item.name && form.password == item.password) {
         haveError = false
-        get_login_result(haveError)
+        setopenLogin(haveError)
+        setUser(form)
         alert("Đăng nhập thành công")
         navigate("/admin/tableproducts")
+        setCookie("user",JSON.stringify(form))
         return
       }
     }
@@ -84,8 +94,6 @@ function Login(props) {
     <button onClick={expand} className="admin_button" >Login</button>
     <div className='modal' style={isExpand == "false" ? { display: "none" } : { display: "block" }}>
       <form onSubmit={handleSubmit} className="modal-content animate" >
-
-
         <div className="container">
           <label for="uname"><b>Username</b></label>
           <input type="text" value={form.username} placeholder="Enter Username" name="username" onChange={handleChange} />
@@ -94,15 +102,12 @@ function Login(props) {
           <label for="psw"><b>Password</b></label>
           <input type="password" value={form.password} placeholder="Enter Password" name="password" onChange={handleChange} />
           {(error.password !== "") ? <p style={{ color: "red" }} >{error.password}</p> : null}
-
-
-          <button className="admin_button" >Login</button>
+          <button type="submit" className="admin_button" >Login</button>
         </div>
         <div className="container" style={{ backgroundColor: "#f1f1f1" }}>
           <button type="button"  onClick={hander} className="cancelbtn admin_button">Cancel</button>
         </div>
       </form>
-
     </div>
   </div>
 }

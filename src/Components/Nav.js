@@ -7,9 +7,8 @@ import { useState ,useEffect, useMemo } from 'react'
 import Search from './Search';
 
 function Nav( props) {
-    const {get_login_result , watchList ,listcart,tongsoluong} = props
-    const [searchnav , setSearchNav] = useState("")
-
+    const { watchList ,sumQuantity} = props
+    const [searchNav , setSearchNav] = useState("")
     const [ searchParams , setsearchParams ] = useSearchParams()
     function openNav() {
         document.getElementById("mySidenav").style.width = "1000px"
@@ -19,17 +18,15 @@ function Nav( props) {
     }
 
     // ----------------search
-    function search_nav(e){
+    function searchItemNav(e){
         e.preventDefault()
-        setsearchParams({value:searchnav})
+        setsearchParams({value:searchNav})
     }
     const filterSearchNav = useMemo(()=>
-    (searchnav !== "") ? watchList.filter(item=>item.name.toLowerCase().includes(searchParams.get("value"))) : []
+    (searchNav !== "") ? watchList.filter(item=>item.name.toLowerCase().includes(searchParams.get("value"))) : []
        ,[searchParams])
 
-    // useEffect(()=>{
-    //     setSearchNav("")
-    // },[])
+
   
     return (<>
        
@@ -96,8 +93,8 @@ function Nav( props) {
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                     </svg>
                 </span>
-                <form className='input-group-search  col-md-8' onSubmit={search_nav}>
-                <input type="text" value={searchnav} onChange={e=>{setSearchNav(e.target.value)}} className="form-control " placeholder="Tìm kiếm..." />
+                <form className='input-group-search  col-md-8' onSubmit={searchItemNav}>
+                <input type="text" value={searchNav} onChange={e=>{setSearchNav(e.target.value)}} className="form-control " placeholder="Tìm kiếm..." />
 
                 </form>
                 </div>
@@ -114,13 +111,12 @@ function Nav( props) {
                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                     </svg>
                     </span>
-                    <p className="col-md-4"><NavLink className='nav-link' to="/app/giohang">Giỏ hàng(<span style={{color:"red"}}>{tongsoluong}</span>)</NavLink></p>
-                    <p className='col-md-6'><Login get_login_result={get_login_result}/></p>
+                    <p className="col-md-4"><NavLink className='nav-link' to="/app/giohang">Giỏ hàng(<span style={{color:"red"}}>{sumQuantity}</span>)</NavLink></p>
                 </div>
            </div>
         </div>
         <div className='nav-main'>
-        {(searchParams == "") ? <Outlet/> : <Search filterSearchNav={filterSearchNav} searchnav={searchnav}/>}
+        {(searchParams == "") ? <Outlet/> : <Search filterSearchNav={filterSearchNav} searchNav={searchNav}/>}
         </div>
         <Footer/>
     </>)

@@ -13,18 +13,18 @@ import {
 } from "react-router-dom";
 import { useState , useEffect } from 'react';
 import Nav from './Components/Nav';
-import TrangChu from './Components/TrangChu';
-import DaiLy from './Components/DaiLy';
-import TinTuc from './Components/TinTuc';
-import LienHe from './Components/LienHe';
-import Men from './Components/Men';
-import WoMen from './Components/WoMen';
-import AdMin from './Components/AdMin'
-import TableProducts from './Components/TableProducts';
-import AddProduct from './Components/AddProduct';
-import GioHang from './Components/GioHang';
-import ThanhToan from './Components/ThanhToan';
-import OderManage from './Components/OderManage';
+import HomePage from './Components/HomePage';
+import AgentSystemPage from './Components/AgentSystemPage';
+import NewsPage from './Components/NewsPage';
+import ContactPage from './Components/ContactPage';
+import MenPage from './Components/MenPage';
+import WoMenPage from './Components/WoMenPage';
+import AdMinPage from './Components/AdMinPage'
+import TableProductsPage from './Components/TableProductsPage';
+import AddProductPage from './Components/AddProductPage';
+import Cart from './Components/Cart';
+import PaymentPay from './Components/PagementPay';
+import OderManagePage from './Components/OderManagePage';
 import SeeQuickOnApp from './Components/SeeQuickOnApp';
 
 
@@ -32,11 +32,10 @@ const api = "https://6496d60c83d4c69925a326f0.mockapi.io/"
 
 function App(props) {
   var [ watchList , setwatchList ] = useState([])
-  var [ openLogin , setopenLogin] = useState("true")
-  var [ listcart , setlistCart] = useState([])
-  const [paycustom , setPayCusTom] = useState([])
-  const [tongtien, setTongtien] = useState(0)
-  const [tongsoluong, setTongSoLuong] = useState(0)
+  var [ listCart , setListCart] = useState([])
+  const [ payCusTom , setPayCusTom] = useState([])
+  const [ sumMoney, setSumMoney] = useState(0)
+  const [ sumQuantity, setSumQuantity] = useState(0)
 
 
   useEffect(() => {
@@ -68,7 +67,6 @@ function App(props) {
   // ------------------------------------
 
   function deleteApp(id){
-    console.log(id)
     axios.delete(`${api}/Listwatch/${id}`)
    .then(res=>{
      const listWatchNew = watchList.filter(item=>item.id!==id)
@@ -77,7 +75,6 @@ function App(props) {
   }
 
   function addProduct(value){
-    console.log(value)
     if(value.id !== undefined)
     { const index = watchList.findIndex(item=>item.id===value.id)
       value = watchList[index]
@@ -90,7 +87,6 @@ function App(props) {
       })
 
     }else{
-      console.log(value)
     axios.post(`${api}/Listwatch`,{...value})
     .then(res=>{
       const listStudentNew = [...watchList]
@@ -99,49 +95,46 @@ function App(props) {
   })
     }
     }
-  // -----------------------login------
-  function get_login_result(result){
-    setopenLogin(result)
-  }
+
   // ----------------------LIST CART--------
-  function get_item_cart(item){
-    const listcartcoppy = [...listcart]
-    listcartcoppy.push(item)
-    setlistCart(listcartcoppy)
+  function getItemCart(item){
+    const listCartCoppy = [...listCart]
+    listCartCoppy.push(item)
+    setListCart(listCartCoppy)
   }
-  function get_id_cart(id){
-   const index = listcart.findIndex(item => item.id == id)
-   const listcartcoppy = [...listcart]
-   listcartcoppy.splice(index,1)
-   setlistCart(listcartcoppy)
+  function getIdCart(id){
+   const index = listCart.findIndex(item => item.id == id)
+   const listCartCoppy = [...listCart]
+   listCartCoppy.splice(index,1)
+   setListCart(listCartCoppy)
   }
 // -------------------------Tổng số lượng & Tổng tiền
-  function get_sum_quantity_money(tt,sl){
-    console.log(tt,sl)
-  }
+  // function get_sum_quantity_money(tt,sl){
+  //   console.log(tt,sl)
+  // }
   return (
     
     <Router>
         <Routes>
-            <Route path='/app' element={<Nav listcart={listcart} watchList={watchList} get_login_result={get_login_result} tongsoluong={tongsoluong}/>}>
-                <Route index element={<TrangChu watchList={watchList}/>} />
-                <Route path='/app/trangchu' element={<TrangChu watchList={watchList}/>} />
-                <Route path='/app/men' element={<Men watchList={watchList} get_item_cart={get_item_cart}/>} />
-                <Route path='/app/women' element={<WoMen watchList={watchList} get_item_cart={get_item_cart}/>} />
-                <Route path='/app/daily' element={<DaiLy />} />
-                <Route path='/app/seequickonapp/:id' element={<SeeQuickOnApp watchList={watchList} get_item_cart={get_item_cart}/>} />
-                <Route path='/app/tintuc' element={<TinTuc />} />
-                <Route path='/app/lienhe' element={<LienHe />} />
-                <Route path='/app/giohang' element={<GioHang listcart={listcart} get_id_cart={get_id_cart} setlistCart={setlistCart} setTongtien={setTongtien} setTongSoLuong={setTongSoLuong} tongtien={tongtien} />} />
-                <Route path='/app/thanhtoan' element={<ThanhToan paycustom={paycustom} setPayCusTom={setPayCusTom} listcart={listcart} setlistCart={setlistCart} tongsoluong={tongsoluong} tongtien={tongtien}/>} />
+            <Route path='/app' element={<Nav watchList={watchList}  sumQuantity={sumQuantity}/>}>
+                <Route index element={<HomePage watchList={watchList}/>} />
+                <Route path='/app/trangchu' element={<HomePage watchList={watchList} getItemCart={getItemCart}/>} />
+                <Route path='/app/men' element={<MenPage watchList={watchList} getItemCart={getItemCart}/>} />
+                <Route path='/app/women' element={<WoMenPage watchList={watchList} getItemCart={getItemCart}/>} />
+                <Route path='/app/daily' element={<AgentSystemPage />} />
+                <Route path='/app/seequickonapp/:id' element={<SeeQuickOnApp watchList={watchList} getItemCart={getItemCart}/>} />
+                <Route path='/app/tintuc' element={<NewsPage />} />
+                <Route path='/app/lienhe' element={<ContactPage />} />
+                <Route path='/app/giohang' element={<Cart listCart={listCart} getIdCart={getIdCart} setListCart={setListCart} setSumMoney={setSumMoney} setSumQuantity={setSumQuantity} sumMoney={sumMoney} />} />
+                <Route path='/app/thanhtoan' element={<PaymentPay payCusTom={payCusTom} setPayCusTom={setPayCusTom} listCart={listCart} setListCart={setListCart} sumQuantity={sumQuantity} sumMoney={sumMoney}/>} />
 
             </Route>
-            <Route path="/admin" element={<AdMin get_login_result={get_login_result} openLogin={openLogin} />}>
-              <Route index element={<TableProducts  watchList={watchList} />}/>
-              <Route path="/admin/tableproducts" element={ <TableProducts watchList={watchList} deleteApp={deleteApp}/>}/>
-              <Route path='/admin/addproduct' element={<AddProduct addProduct={addProduct}/>}/>
-              <Route path='/admin/ordermanage' element={<OderManage paycustom={paycustom} setPayCusTom={setPayCusTom}/>}/>
-              <Route path='/admin/editbook/:id' element={<AddProduct addProduct={addProduct} watchList={watchList}/>}/>
+            <Route path="/admin" element={<AdMinPage  />}>
+              <Route index element={<TableProductsPage  watchList={watchList} />}/>
+              <Route path="/admin/tableproducts" element={ <TableProductsPage watchList={watchList} deleteApp={deleteApp}/>}/>
+              <Route path='/admin/addproduct' element={<AddProductPage addProduct={addProduct}/>}/>
+              <Route path='/admin/ordermanage' element={<OderManagePage payCusTom={payCusTom} setPayCusTom={setPayCusTom}/>}/>
+              <Route path='/admin/editbook/:id' element={<AddProductPage addProduct={addProduct} watchList={watchList}/>}/>
             </Route>
         </Routes>
     </Router>

@@ -1,4 +1,4 @@
-import "../Css/thanhtoan.css"
+import "../Css/paymentpage.css"
 import {Link , NavLink, Outlet} from "react-router-dom"
 import { useState , useEffect } from 'react';
 import axios from 'axios';
@@ -6,15 +6,13 @@ import axios from 'axios';
 
 const api = "https://6496d60c83d4c69925a326f0.mockapi.io/"
 
-function ThanhToan(props) {
-    const {listcart , tongsoluong ,tongtien, setlistCart, setPayCusTom , paycustom} = props
+function PaymentPay(props) {
+    const {listCart , sumQuantity ,sumMoney, setListCart, setPayCusTom , payCusTom} = props
     var [cod , setCod] = useState(0)
-    const [orderinfo , setOrDerInFo] = useState({
-        emailcustom: "",namecustom: "",sdtcustom: "",notecustom: "",shipcodecustom: "",transportcustom: "",
-  listbuycustom: "",diachicustom: "",trangthaicustom:""})
-    const [formorder , setFormOrDer] = useState({
-        emailcustom: "",namecustom: "",sdtcustom: "",notecustom: "",diachicustom: ""
-    })
+    const [orderInfo , setOrDerInFo] = useState({
+        emailcustom: "",namecustom: "",phonecustom: "",notecustom: "",shipcodecustom: "",transportcustom: "",
+  listbuycustom: "",addresscustom: "",statuscustom:""})
+    const [formorder , setFormOrDer] = useState({emailcustom: "",namecustom: "",phonecustom: "",notecustom: "",addresscustom: ""})
 
 
     function myFunction() {
@@ -27,7 +25,7 @@ function ThanhToan(props) {
         }
     }
 // ---------------Chi phí vận chuyển
-    function changearea(e){
+    function changeArea(e){
         if ( e.target.value == "TPHCM"){
             setCod(40000)
         }else if (e.target.value == "Hà Nội"){
@@ -40,20 +38,17 @@ function ThanhToan(props) {
     }
 // --------------------Thanh toán final
 
-
-   
-
-      function finalpay(){
-        axios.post(`${api}/Liststudent`,{...orderinfo})
+      function finalPay(){
+        axios.post(`${api}/Liststudent`,{...orderInfo})
         .then(res=>{
-          const paycustomnew = [...paycustom]
-          paycustomnew.push(res.data)
-          setPayCusTom(paycustomnew)
+          const payCustomNew = [...payCusTom]
+          payCustomNew.push(res.data)
+          setPayCusTom(payCustomNew)
           alert("đã đặt hàng thành công")
           setFormOrDer({
-            emailcustom: "",namecustom: "",sdtcustom: "",notecustom: "",diachicustom: ""
+            emailcustom: "",namecustom: "",phonecustom: "",notecustom: "",addresscustom: ""
         })
-        setlistCart([])
+        setListCart([])
         setCod(0)
       })
     }
@@ -62,17 +57,16 @@ function ThanhToan(props) {
         setOrDerInFo({
             emailcustom:formorder.emailcustom,
             namecustom:formorder.namecustom,
-            sdtcustom:formorder.sdtcustom,
+            phonecustom:formorder.phonecustom,
             notecustom:formorder.notecustom,
-            listbuycustom:listcart,
-            diachicustom:formorder.diachicustom,
+            listbuycustom:listCart,
+            addresscustom:formorder.addresscustom,
             shipcodecustom:"1",
             transportcustom:cod,
-            trangthaicustom:"chưa duyệt"
+            statuscustom:"chưa duyệt"
 
         })
     },[formorder])
-console.log(paycustom)
       function handleChange(e) {
         setFormOrDer({
             ...formorder,
@@ -92,9 +86,9 @@ console.log(paycustom)
                     <form >
                         <input type="text" value={formorder.emailcustom} onChange={handleChange}  name="emailcustom" placeholder="Email.." />
                         <input type="text" value={formorder.namecustom} onChange={handleChange} name="namecustom" placeholder="Họ Và Tên.." />
-                        <input type="text" value={formorder.sdtcustom} onChange={handleChange} name="sdtcustom" placeholder="Số điện thoại.." />
-                        <input type="text" value={formorder.diachicustom} onChange={handleChange}  name="diachicustom" placeholder="Địa chỉ" />
-                        <select id="country" name="country" onChange={changearea}>
+                        <input type="text" value={formorder.phonecustom} onChange={handleChange} name="phonecustom" placeholder="Số điện thoại.." />
+                        <input type="text" value={formorder.addresscustom} onChange={handleChange}  name="addresscustom" placeholder="Địa chỉ" />
+                        <select id="country" name="country" onChange={changeArea}>
                         <option value="---">---</option>
                             <option value="TPHCM">TPHCM</option>
                             <option value="Hà Nội">Hà Nội</option>
@@ -119,15 +113,15 @@ console.log(paycustom)
                 </div>
             </div>
             <div className="col-md-4 pay-money">
-                <p className="pay-money-title">Đơn hàng {tongsoluong} sản phẩm</p>
+                <p className="pay-money-title">Đơn hàng {sumQuantity} sản phẩm</p>
                 <table className="table">
                     <tbody className="table-group-divider">
-                    {listcart.map(item =>
+                    {listCart.map(item =>
                         <tr key={item.id}>
                             <td>{item.name}</td>
                             <td><img src={item.image} style={{ width: 50 }} /></td>
-                            <td>{item.soluong}</td>
-                            <td>{item.price * item.soluong}</td>
+                            <td>{item.quantity}</td>
+                            <td>{item.price * item.quantity}</td>
                         </tr>
                     )}
                 </tbody>
@@ -140,15 +134,15 @@ console.log(paycustom)
                 </div>
                 <div className="add-transport row">
                     <p className="col-md-6">Tạm Tính</p>
-                    <p className="col-md-6">{tongtien}</p>
+                    <p className="col-md-6">{sumMoney}</p>
                     <p className="col-md-6">Phí vận chuyển</p>
                     <p className="col-md-6">{cod}</p>
                 </div>
                 <div className="sum-pay row">
                     <p className="col-md-6">Tổng cộng</p>
-                    <p className="col-md-6">{tongtien + cod}</p>
+                    <p className="col-md-6">{sumMoney + cod}</p>
                     <p className="col-md-6"><button className="btn-comback-cart"  ><NavLink className='nav-link' to="/app/giohang">Giỏ Hàng</NavLink></button></p>
-                    <p className="col-md-6"><button className="btn-pay-ok" onClick={finalpay}>Thanh Toán</button></p>
+                    <p className="col-md-6"><button className="btn-pay-ok" onClick={finalPay}>Thanh Toán</button></p>
                 </div>
 
             </div>
@@ -156,4 +150,4 @@ console.log(paycustom)
 
     </>)
 }
-export default ThanhToan
+export default PaymentPay

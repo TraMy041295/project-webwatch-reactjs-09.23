@@ -5,6 +5,18 @@
     padding: 15px 0px;
     border-bottom: 1.5px solid #818181;
 }
+.tintuc-title .news-item {
+    color: #1B4B73;
+    font-weight: bolder;
+    padding: 0px;
+    margin: 0px;
+    font-size: 1.2em;
+}
+.tintuc-title .news-homepage {
+    width: 90px;
+    padding: 0px;
+    margin: 0px;
+}
 .tintuc {
     margin: 10px 200px;
     text-align: start;

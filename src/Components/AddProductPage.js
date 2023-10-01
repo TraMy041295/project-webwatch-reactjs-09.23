@@ -2,12 +2,12 @@ import '../Css/addproduct.css'
 import { useState , useEffect } from 'react';
 import { useNavigate , useParams } from 'react-router-dom';
 
-function AddProduct(props) {
+function AddProductPage(props) {
     const {addProduct , watchList} = props
     const navigate = useNavigate()
     const id = parseInt(useParams().id)
     var [ form , setForm ] = useState({
-        gioitinh:0 ,image:"",name:"",price:"",soluong:1,gioithieu:""
+        gender:0 ,image:"",name:"",price:"",quantity:1,introduce:""
     })
     if(id){
         const index = watchList.findIndex(item=>item.id==id)
@@ -39,7 +39,7 @@ function AddProduct(props) {
             </div> */}
             <div className="mb-3">
                 <label for="exampleInputPassword1" className="form-label">Giới tính</label>
-                <input type="text"  value={form.gioitinh} name="gioitinh" onChange={handleChange} placeholder='Giới tính' className="form-control border-new"  />
+                <input type="text"  value={form.gender} name="gender" onChange={handleChange} placeholder='Giới tính' className="form-control border-new"  />
             </div>
             <div className="mb-3 ">
                 <label for="exampleInputPassword1" className="form-label">Name</label>
@@ -55,11 +55,11 @@ function AddProduct(props) {
             </div>
             <div className="mb-3 ">
                 <label for="exampleInputPassword1" className="form-label">Số Lượng</label>
-                <input type="text" value={form.soluong} name="price" onChange={handleChange} placeholder='Số Lượng' className="form-control border-new" />
+                <input type="text" value={form.quantity} name="quantity" onChange={handleChange} placeholder='Số Lượng' className="form-control border-new" />
             </div>
             <div className="mb-3 ">
                 <label for="exampleInputPassword1" className="form-label">Giới thiệu Sản Phẩm</label>
-                <textarea type="text" value={form.gioithieu} name="gioithieu" onChange={handleChange} placeholder='Giới thiệu sản phẩm' className="form-control border-new" />
+                <textarea type="text" value={form.introduce} name="introduce" onChange={handleChange} placeholder='Giới thiệu sản phẩm' className="form-control border-new" />
             </div>
             <button type="submit" className="btn btn-primary">{isNaN(id) ? "Thêm Mới" : "Sửa Nội Dung"}</button>
         </form>
@@ -67,4 +67,4 @@ function AddProduct(props) {
     </>)
 }
 
-export default AddProduct
+export default AddProductPage

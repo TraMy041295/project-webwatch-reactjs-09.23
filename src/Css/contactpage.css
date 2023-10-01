@@ -1,15 +1,27 @@
-.lienhe-title {
+.contact-title {
     text-align: start;
     margin-left: 200px;
     width: 200px;
     padding: 15px 0px;
     border-bottom: 1.5px solid #818181;
 }
-.lienhe-map {
+.contact-title .contact-item {
+    color: #1B4B73;
+    font-weight: bolder;
+    padding: 0px;
+    margin: 0px;
+    font-size: 1.2em;
+}
+.contact-title .contact-homepage{
+    width: 90px;
+    padding: 0px;
+    margin: 0px;
+}
+.contact-map {
     margin: 30px 200px 0px 200px;
     height: 450px;
 }
-.lienhe-info {
+.contact-info {
     margin: 50px 200px;
 }
 
@@ -30,7 +42,7 @@
     border-bottom: 1px solid #e1e1e1;
     padding-bottom: 30px;
 }
-.lienhe-title p {
+.contact-title p {
     width: 100px;
     padding: 0px;
     margin: 0px;

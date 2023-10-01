@@ -7,34 +7,31 @@ import "../Css/ordermanage.css"
 const api = "https://6496d60c83d4c69925a326f0.mockapi.io/"
 
 
-function OderManage(props){
-    const { paycustom ,setPayCusTom} = props
+function OderManagePage(props){
+    const { payCusTom ,setPayCusTom} = props
 
-    
 
 // ------------------Xoá đơn hàng
     function deleteOrder(id){
         axios.delete(`${api}/Liststudent/${id}`)
         .then(res=>{
-          const paycustomnew = paycustom.filter(item=>item.id!==id)
-          setPayCusTom(paycustomnew)
+          const payCustomNew = payCusTom.filter(item=>item.id!==id)
+          setPayCusTom(payCustomNew)
         })
     }
 
     // ------------------duyệt đơn hàng
 
-    function isagree(e){
+    function isAgree(e){
         if (e.target.innerHTML == "Đã Duyệt đơn" ){
             e.target.innerHTML = "Chưa Duyệt đơn"
         }else {
             e.target.innerHTML = "Đã Duyệt đơn"
         }
-       
     }
 
     return(<>
       <div className="table-order">
-        
         <table className="table">
             <thead>
                 <tr>
@@ -49,23 +46,22 @@ function OderManage(props){
                 </tr>
             </thead>
             <tbody className="table-group-divider">
-                {paycustom.map(item =>
+                {payCusTom.map(item =>
                     <tr>
                     <th scope="row">{item.id}</th>
                     <th scope="row">{item.namecustom}</th>
-                    <td>{item.sdtcustom}</td>
-                    <td>{item.diachicustom}</td>
+                    <td>{item.phonecustom}</td>
+                    <td>{item.addresscustom}</td>
                     <td>{item.notecustom}</td>
                     <td><button type="button" className="btn btn-danger" onClick={()=>deleteOrder(item.id)}  >Xoá</button></td>
-              <td><button type="button" className="btn btn-success" ><SeeQuickOrDer id={item.id} paycustom={paycustom} /></button></td>
-              <td><button type="button" class="btn btn-info" onClick={(e)=>isagree(e)}>Chưa Duyệt đơn</button></td>
+              <td><button type="button" className="btn btn-success" ><SeeQuickOrDer id={item.id} payCusTom={payCusTom} /></button></td>
+              <td><button type="button" class="btn btn-info" onClick={(e)=>isAgree(e)}>Chưa Duyệt đơn</button></td>
                   </tr>
                     )}
             </tbody>
         </table>
-
 </div>
     
     </>)
 }
-export default OderManage
+export default OderManagePage

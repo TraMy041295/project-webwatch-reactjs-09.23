@@ -29,7 +29,7 @@ function SamplePrevArrow(props) {
 
 
 function SliderComponent(props) {
-  const { watchList } = props
+  const { watchList ,getItemCart } = props
   const navigate = useNavigate()
   var settings = {
     // dots: true,
@@ -68,17 +68,22 @@ function SliderComponent(props) {
     ]
   };
 
-  var listspecialproduct = watchList.filter(item => (parseInt(item.price)) > 8000000)
+  var listSpecialProduct = watchList.filter(item => (parseInt(item.price)) > 8000000)
   // ----------------------xem nhanh
   function seeQuickOnApp(id){
     navigate(`/app/seequickonapp/${id}`)
 
 }
+// ---------------- thêm vào giỏ hàng
+function addCart(item) {
+  navigate("/app/giohang")
+  getItemCart(item)
+}
 
   return (<>
 
     <Slider {...settings}>
-      {listspecialproduct.map(item =>
+      {listSpecialProduct.map(item =>
         <div className="slider-item row">
           <div className="slider-item-img-change">
             <p className="img-replace1"><img src={item.image} /></p>
@@ -92,7 +97,7 @@ function SliderComponent(props) {
             </div>
             <p>{item.name}</p>
             <p>{item.price}</p>
-            <button className="slider-add-cart">Thêm vào giỏ hàng</button>
+            <button className="slider-add-cart" onClick={() => addCart(item)}>Thêm vào giỏ hàng</button>
 
 
           </div>

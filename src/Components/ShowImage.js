@@ -3,17 +3,14 @@
 
 function ShowImage(){
     function zoom(e){
-      console.log("hello")
-        // console.log(e.target.src)
         var modal = document.getElementById('myModal');
-        // var img = document.getElementById("myImg");
-        var modalimg = document.getElementById('img01');
+        var modalImg = document.getElementById('img01');
         var captionText = document.getElementById('caption');
         modal.style.display = "block";
-        modalimg.src = e.target.src;
+        modalImg.src = e.target.src;
         captionText.innerHTML = e.target.alt;
     }
-    function offzoom(){
+    function offZoom(){
         var modal = document.getElementById('myModal');
         modal.style.display = "none"
 
@@ -67,7 +64,7 @@ function ShowImage(){
 
     </div>
     <div id="myModal" className="modal-item">
-        <span className="close" onClick={offzoom} >x</span>
+        <span className="close" onClick={offZoom} >x</span>
         <img className="modal-content" id="img01" />
         <div id="caption" ></div>
     </div>

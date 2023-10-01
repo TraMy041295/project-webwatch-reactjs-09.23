@@ -8,12 +8,12 @@ import { Link } from "react-router-dom"
 
 
 function Search(props) {
-    const { filterSearchNav, searchnav } = props
+    const { filterSearchNav, searchNav } = props
 
 
     return (<>
         <div className="search_nav row">
-            <p className="col-md-9 ">KẾT QUẢ TÌM KIẾM VỚI TỪ KHOÁ "{searchnav}"/</p>
+            <p className="col-md-9 ">KẾT QUẢ TÌM KIẾM VỚI TỪ KHOÁ "{searchNav}"/</p>
             <p className="col-md-3 "><Link class="nav-link active" to="/app/trangchu">Trang chủ</Link></p>
         </div>
         {/* ---------------------------------------------- */}

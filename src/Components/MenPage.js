@@ -7,36 +7,63 @@ import { useNavigate } from 'react-router-dom';
 import SeeQuickOnApp from "./SeeQuickOnApp";
 
 
-function Men(props) {
-    const { watchList, get_item_cart } = props
+function MenPage(props) {
+    const { watchList, getItemCart } = props
     const navigate = useNavigate()
-    var [listMen, setlistMen] = useState([])
-    var [filter, setFilter] = useState("true")
+    const [listMen, setListMen] = useState([])
+    const [filter, setFilter] = useState("true")
+    const [checked, setChecked] = useState([]);
+
 
     useEffect(() => {
-        const filterlistMen = watchList.filter(item => item.gioitinh == 1)
-        setlistMen(filterlistMen)
-    }, [watchList])
+        const filterListMen = watchList.filter(item => item.gender == 1)
+        setListMen(filterListMen)
+    }, [watchList , checked])
     // -----------------------------Lọc giá
 
     const [data1, setDataLeft] = useState(10000000)
     const [data2, setDataRight] = useState(0)
     var num1 = parseInt(data2)
     var num2 = parseInt(data1)
-    var menprice = []
+    var menPrice = []
     function filterMenPrice() {
-        menprice = listMen.filter((item) => (num1 <= item.price && item.price <= num2))
-        setlistMen(menprice)
+        menPrice = listMen.filter((item) => (num1 <= item.price && item.price <= num2))
+        setListMen(menPrice)
         setFilter("false")
-
     }
+    // ------------------
+    const checkBox = (event) => {
+        var updatedList = [...checked];
+        if (event.target.checked) {
+            updatedList = [...checked, event.target.value];
+        } else {
+            updatedList.splice(checked.indexOf(event.target.value), 1);
+        }
+        setChecked(updatedList);
+    };
+    useEffect(()=>{
+        if (checked.length == 0) {
+            var filterCheckBox = [...listMen].filter((item) => item.name.includes(""))
+            setListMen(filterCheckBox)
+        }else {
+            var filterCheckBox = [...listMen].filter((item) => ( item.name.includes(checked.join(""))))
+        }
+        console.log(filterCheckBox)
+        if (filterCheckBox.length == 0 ){
+            console.log("rỗng")
+        }
+            // const filterCheckBox = [...listMen].filter((item) => item.name.includes((checked.join("")) === null ? "" : checked.join("")))
+            // setListMen(filterCheckBox)
+    },[checked])
+    
+
     //   ------------------------Thêm vào giỏ hàng
-    function add_cart(item) {
+    function addCart(item) {
         navigate("/app/giohang")
-        get_item_cart(item)
+        getItemCart(item)
     }
     //   ----------------------- SắP XẾP
-    var listMencoppy = [...listMen]
+    var listMenCoppy = [...listMen]
     var sort1_2 = [...listMen].sort(function (a, b) {
         var n1 = parseInt(a.price)
         var n2 = parseInt(b.price)
@@ -49,25 +76,25 @@ function Men(props) {
     })
 
 
-    function changevalue(e) {
+    function changeValue(e) {
         if (e.target.value == "Giá Giảm dần") {
-            setlistMen(sort2_1)
+            setListMen(sort2_1)
         } else if (e.target.value == "Giá tăng dần") {
-            setlistMen(sort1_2)
+            setListMen(sort1_2)
         } else if (e.target.value == "Mặc Định") {
-            setlistMen(listMencoppy)
+            setListMen(listMenCoppy)
         }
     }
     // ---------------------------
-    function seeQuickOnApp(id){
+    function seeQuickOnApp(id) {
         navigate(`/app/seequickonapp/${id}`)
 
     }
     return (<>
 
         <div className="men-title row">
-            <p className="col-md-6 ">TẤT CẢ SẢN PHẨM /</p>
-            <p className="col-md-6 "><Link class="nav-link active" to="/app/trangchu">Trang chủ</Link></p>
+            <p className="col-md-6 men-all-item ">TẤT CẢ SẢN PHẨM /</p>
+            <p className="col-md-4 men-homepage "><Link class="nav-link active" to="/app/trangchu">Trang chủ</Link></p>
         </div>
         <div className="men-content row">
             <div className="tintuc-left col-md-3 grid">
@@ -120,27 +147,27 @@ function Men(props) {
                     </div>
                     <div className="checkbox-product row">
                         <div className="form-check col-md-6">
-                            <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            <input className="form-check-input" type="checkbox" value="ECO-DRIVE" onClick={checkBox} />
                             <label className="form-check-label" for="flexCheckDefault">
-                                Apple Watch
+                                ECO-DRIVE
                             </label>
                         </div>
                         <div className="form-check col-md-6">
-                            <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            <input className="form-check-input" type="checkbox" value="Đồng hồ" onClick={checkBox} />
                             <label className="form-check-label" for="flexCheckDefault">
                                 Đồng hồ
                             </label>
                         </div>
                         <div className="form-check col-md-6">
-                            <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            <input className="form-check-input" type="checkbox" value="Motorola" onClick={checkBox} />
                             <label className="form-check-label" for="flexCheckDefault">
-                                Đồng hồ nam
+                                Motorola
                             </label>
                         </div>
                         <div className="form-check col-md-6">
-                            <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            <input className="form-check-input" type="checkbox" value="CITIZEN" onClick={checkBox} />
                             <label className="form-check-label" for="flexCheckDefault">
-                                UNISEX
+                                CITIZEN
                             </label>
                         </div>
                     </div>
@@ -241,7 +268,7 @@ function Men(props) {
                     <p className="left-all-item col-md-3">Tất cả sản phẩm</p>
 
                     <div class="dropdown right-all-item col-md-4">
-                        <select name="watchmen" id="watchmen" onChange={changevalue}>
+                        <select name="watchmen" id="watchmen" onChange={changeValue}>
                             <option value="Mặc Định">Sắp xếp Mặc Định</option>
                             <option value="Giá tăng dần">Sắp xếp: Giá tăng dần</option>
                             <option value="Giá Giảm dần">Sắp xếp: Giá Giảm dần</option>
@@ -260,14 +287,13 @@ function Men(props) {
                         </div>
                         <p><a href='#'>{item.name}</a></p>
                         <p>{item.price}</p>
-                        <button className="btn-men" onClick={() => add_cart(item)} >Thêm Vào Giỏ Hàng</button>
+                        <button className="btn-men" onClick={() => addCart(item)} >Thêm Vào Giỏ Hàng</button>
                         <Tooltip title="Xem nhanh" placement="top" arrow>
-                            <button className="men-button" type="button" onClick={()=>seeQuickOnApp(item.id)} >
+                            <button className="men-button" type="button" onClick={() => seeQuickOnApp(item.id)} >
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16" >
                                     <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
                                     <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
                                 </svg>
-                                {/* <SeeQuickOnApp id={item.id} watchList={watchList} /> */}
                             </button>
                         </Tooltip>
 
@@ -277,4 +303,4 @@ function Men(props) {
         </div>
     </>)
 }
-export default Men
+export default MenPage

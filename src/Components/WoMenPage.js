@@ -6,14 +6,14 @@ import {Link} from "react-router-dom"
 import { useNavigate  } from 'react-router-dom';
 
 
-function WoMen(props) {
-  const { watchList,get_item_cart } = props
+function WoMenPage(props) {
+  const { watchList,getItemCart } = props
   const navigate = useNavigate()
-  var [ listWoMen , setlistWoMen] = useState([])
+  var [ listWoMen , setListWoMen] = useState([])
 
   useEffect(()=>{
-    const filterlistWoMen = watchList.filter (item => item.gioitinh == 0)
-    setlistWoMen(filterlistWoMen)
+    const filterListWoMen = watchList.filter (item => item.gender == 0)
+    setListWoMen(filterListWoMen)
   },[watchList])
   // -----------------------------
 
@@ -21,15 +21,15 @@ function WoMen(props) {
   const [data2, setDataRight] = useState(0)
   var num1 = parseInt(data2)
   var num2 = parseInt(data1)
-  var womenprice = []
+  var womenPrice = []
   function filterWoMenPrice(){
-    womenprice = listWoMen.filter((item)=>(num1 <= item.price  && item.price <= num2))
-    setlistWoMen(womenprice)
+    womenPrice = listWoMen.filter((item)=>(num1 <= item.price  && item.price <= num2))
+    setListWoMen(womenPrice)
   }
 //   -----------------Thêm vào giỏ hàng
-function add_cart(item){
+function addCart(item){
     navigate("/app/giohang")
-    get_item_cart(item)
+    getItemCart(item)
   }
   //   ----------------------- SắP XẾP
 var sort1_2 = [...listWoMen].sort(function(a,b){
@@ -44,12 +44,12 @@ var sort2_1 = [...listWoMen].sort(function(a,b){
 })
 
 
-  function changevalue(e){
+  function changeValue(e){
      if ( e.target.value == "Giá Giảm dần"){
-        setlistWoMen(sort2_1)
+        setListWoMen(sort2_1)
      } else if (e.target.value == "Giá tăng dần"){
-        setlistWoMen(sort1_2)
-     }else {setlistWoMen(listWoMen)}
+        setListWoMen(sort1_2)
+     }else {setListWoMen(listWoMen)}
   }
 //-------------------------
 function seeQuickOnApp(id){
@@ -60,8 +60,8 @@ function seeQuickOnApp(id){
   return (<>
 
     <div className="men-title row">
-                <p className="col-md-6 ">TẤT CẢ SẢN PHẨM /</p>
-                <p className="col-md-6 "><Link class="nav-link active" to="/app/trangchu">Trang chủ</Link></p>
+                <p className="col-md-6 men-all-item">TẤT CẢ SẢN PHẨM /</p>
+                <p className="col-md-6 men-homepage "><Link class="nav-link active" to="/app/trangchu">Trang chủ</Link></p>
         </div>
     <div className="men-content row">
     <div className="tintuc-left col-md-3 grid">
@@ -104,7 +104,7 @@ function seeQuickOnApp(id){
                     <button>{data1}</button>
                 </div>
                 <div className="button-locgia">
-                    <button onClick={filterWoMenPrice}>{(womenprice == null) ? "Lọc Giá" : "Bỏ Giá "}</button>
+                    <button onClick={filterWoMenPrice}>{(womenPrice == null) ? "Lọc Giá" : "Bỏ Giá "}</button>
                 </div>
             </div>
             {/* ---------------- */}
@@ -235,7 +235,7 @@ function seeQuickOnApp(id){
           <p className="left-all-item col-md-3">Tất cả sản phẩm</p>
 
           <div class="dropdown right-all-item col-md-4">
-          <select name="watchmen" id="watchmen" onChange={changevalue}>
+          <select name="watchmen" id="watchmen" onChange={changeValue}>
     <option value="Mặc Định">Sắp xếp Mặc Định</option>
     <option value="Giá tăng dần">Sắp xếp: Giá tăng dần</option>
     <option value="Giá Giảm dần">Sắp xếp: Giá Giảm dần</option>
@@ -254,7 +254,7 @@ function seeQuickOnApp(id){
             </div>
             <p><a href='#'>{item.name}</a></p>
             <p>{item.price}</p>
-            <button className="btn-men" onClick={()=>add_cart(item)}>Thêm Vào Giỏ Hàng</button>
+            <button className="btn-men" onClick={()=>addCart(item)}>Thêm Vào Giỏ Hàng</button>
             <Tooltip title="Xem nhanh" placement="top" arrow>
               <button className="men-button" type="button" onClick={()=>seeQuickOnApp(item.id)}>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search-heart" viewBox="0 0 16 16" >
@@ -269,4 +269,4 @@ function seeQuickOnApp(id){
     </div>
   </>)
 }
-export default WoMen
+export default WoMenPage

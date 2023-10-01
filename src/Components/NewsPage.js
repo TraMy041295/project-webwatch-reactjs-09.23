@@ -1,8 +1,8 @@
-import "../Css/tintuc.css"
+import "../Css/news.css"
 import {Link} from "react-router-dom"
 
 
-function TinTuc() {
+function NewsPage() {
 
 
 
@@ -10,8 +10,8 @@ function TinTuc() {
 
     return (<>
         <div className="tintuc-title row">
-                <p className="col-md-6 ">TIN TỨC /</p>
-                <p className="col-md-6 "><Link class="nav-link active" to="/app/trangchu">Trang chủ</Link></p>
+                <p className="col-md-6 news-item ">TIN TỨC /</p>
+                <p className="col-md-6 news-homepage"><Link class="nav-link active" to="/app/trangchu">Trang chủ</Link></p>
         </div>
         <div className="row tintuc">
             <div className="col-md-4">
@@ -215,4 +215,4 @@ function TinTuc() {
     </>)
 }
 
-export default TinTuc
+export default NewsPage

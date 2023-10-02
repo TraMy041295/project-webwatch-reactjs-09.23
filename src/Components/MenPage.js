@@ -1,24 +1,34 @@
 import "../Css/men.css"
 import Tooltip from '@mui/material/Tooltip';
 import "../Css/sidebar.css"
-import { useState, useEffect } from 'react'
+import { useState, useEffect , useMemo } from 'react'
 import { Link } from "react-router-dom"
 import { useNavigate } from 'react-router-dom';
-import SeeQuickOnApp from "./SeeQuickOnApp";
 
 
 function MenPage(props) {
     const { watchList, getItemCart } = props
     const navigate = useNavigate()
     const [listMen, setListMen] = useState([])
-    const [filter, setFilter] = useState("true")
-    const [checked, setChecked] = useState([]);
+    const [checked, setChecked] = useState([])
+    const [filter , setFilter] = useState([])
 
 
     useEffect(() => {
+        console.log("hello")
         const filterListMen = watchList.filter(item => item.gender == 1)
+        setFilter(filterListMen)
         setListMen(filterListMen)
-    }, [watchList , checked])
+    }, [watchList])
+
+    useEffect(()=>{
+        if( checked.length !== 0 ) {    
+            const filterCheckBox = listMen.filter((item)=>item.name.includes(checked.join("")))
+            setFilter(filterCheckBox)
+        }else {
+            setFilter(listMen)
+        }
+    },[checked])
     // -----------------------------Lọc giá
 
     const [data1, setDataLeft] = useState(10000000)
@@ -27,9 +37,8 @@ function MenPage(props) {
     var num2 = parseInt(data1)
     var menPrice = []
     function filterMenPrice() {
-        menPrice = listMen.filter((item) => (num1 <= item.price && item.price <= num2))
-        setListMen(menPrice)
-        setFilter("false")
+        menPrice = filter.filter((item) => (num1 <= item.price && item.price <= num2))
+        setFilter(menPrice)
     }
     // ------------------
     const checkBox = (event) => {
@@ -41,21 +50,10 @@ function MenPage(props) {
         }
         setChecked(updatedList);
     };
-    useEffect(()=>{
-        if (checked.length == 0) {
-            var filterCheckBox = [...listMen].filter((item) => item.name.includes(""))
-            setListMen(filterCheckBox)
-        }else {
-            var filterCheckBox = [...listMen].filter((item) => ( item.name.includes(checked.join(""))))
-        }
-        console.log(filterCheckBox)
-        if (filterCheckBox.length == 0 ){
-            console.log("rỗng")
-        }
-            // const filterCheckBox = [...listMen].filter((item) => item.name.includes((checked.join("")) === null ? "" : checked.join("")))
-            // setListMen(filterCheckBox)
-    },[checked])
-    
+    // (checked === null ? "" : checked.join(""))
+    // const filterCheckBox =  useMemo(()=>(listMen.filter((item) => (item.name.includes('hồ')))
+    // ),[checked])
+
 
     //   ------------------------Thêm vào giỏ hàng
     function addCart(item) {
@@ -63,13 +61,13 @@ function MenPage(props) {
         getItemCart(item)
     }
     //   ----------------------- SắP XẾP
-    var listMenCoppy = [...listMen]
-    var sort1_2 = [...listMen].sort(function (a, b) {
+    var filterCoppy = [...listMen]
+    var sort1_2 = [...filter].sort(function (a, b) {
         var n1 = parseInt(a.price)
         var n2 = parseInt(b.price)
         return n1 - n2
     })
-    var sort2_1 = [...listMen].sort(function (a, b) {
+    var sort2_1 = [...filter].sort(function (a, b) {
         var n1 = parseInt(a.price)
         var n2 = parseInt(b.price)
         return -n1 + n2
@@ -78,11 +76,11 @@ function MenPage(props) {
 
     function changeValue(e) {
         if (e.target.value == "Giá Giảm dần") {
-            setListMen(sort2_1)
+            setFilter(sort2_1)
         } else if (e.target.value == "Giá tăng dần") {
-            setListMen(sort1_2)
+            setFilter(sort1_2)
         } else if (e.target.value == "Mặc Định") {
-            setListMen(listMenCoppy)
+            setFilter(filterCoppy)
         }
     }
     // ---------------------------
@@ -90,6 +88,7 @@ function MenPage(props) {
         navigate(`/app/seequickonapp/${id}`)
 
     }
+    console.log("render")
     return (<>
 
         <div className="men-title row">
@@ -137,7 +136,7 @@ function MenPage(props) {
                         <button>{data1}</button>
                     </div>
                     <div className="button-locgia">
-                        <button onClick={filterMenPrice}>{(filter == "true") ? "Lọc Giá" : "Bỏ Giá "}</button>
+                        <button onClick={filterMenPrice}>Lọc Giá</button>
                     </div>
                 </div>
                 {/* ---------------- */}
@@ -179,45 +178,45 @@ function MenPage(props) {
                     </div>
                     <div className="checkbox-brand row">
                         <div className="form-check col-md-6">
-                            <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            <input className="form-check-input" type="checkbox" value="Apple"  onClick={checkBox}/>
                             <label className="form-check-label" for="flexCheckDefault">
                                 Apple
                             </label>
                         </div>
                         <div className="form-check col-md-6">
-                            <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            <input className="form-check-input" type="checkbox" value="CITIZEN" onClick={checkBox} />
                             <label className="form-check-label" for="flexCheckDefault">
                                 CITIZEN
                             </label>
                         </div>
                         <div className="form-check col-md-6">
-                            <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            <input className="form-check-input" type="checkbox" value="DIESEL"  onClick={checkBox}/>
                             <label className="form-check-label" for="flexCheckDefault">
                                 DIESEL
                             </label>
                         </div>
                         <div className="form-check col-md-6">
-                            <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            <input className="form-check-input" type="checkbox" value="Montbrilliant" onClick={checkBox} />
                             <label className="form-check-label" for="flexCheckDefault">
                                 Montbrilliant
                             </label>
                         </div>
                         <div className="form-check col-md-6">
-                            <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            <input className="form-check-input" type="checkbox" value="Omega" onClick={checkBox}/>
                             <label className="form-check-label" for="flexCheckDefault">
                                 Omega
                             </label>
                         </div>
                         <div className="form-check col-md-6">
-                            <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            <input className="form-check-input" type="checkbox" value="Tag Heuer"  onClick={checkBox}/>
                             <label className="form-check-label" for="flexCheckDefault">
                                 Tag Heuer
                             </label>
                         </div>
                         <div className="form-check col-md-6">
-                            <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            <input className="form-check-input" type="checkbox" value="TISSOT" onClick={checkBox}/>
                             <label className="form-check-label" for="flexCheckDefault">
-                                TITSOT
+                                TISSOT
                             </label>
                         </div>
                     </div>
@@ -277,7 +276,7 @@ function MenPage(props) {
                     </div>
                 </div>
 
-                {listMen.map(item =>
+                {filter.map(item =>
                     <div className='col-md-4 men-item'>
                         <a href='#'><img src={item.image} /></a>
                         <div className="row men-img-mini">

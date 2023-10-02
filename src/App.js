@@ -11,6 +11,8 @@ import {
   Routes, 
   Outlet,
 } from "react-router-dom";
+import type { RouteObject } from "react-router-dom";
+import { useRoutes, useParams } from "react-router-dom";
 import { useState , useEffect } from 'react';
 import Nav from './Components/Nav';
 import HomePage from './Components/HomePage';
@@ -108,10 +110,7 @@ function App(props) {
    listCartCoppy.splice(index,1)
    setListCart(listCartCoppy)
   }
-// -------------------------Tổng số lượng & Tổng tiền
-  // function get_sum_quantity_money(tt,sl){
-  //   console.log(tt,sl)
-  // }
+
   return (
     
     <Router>

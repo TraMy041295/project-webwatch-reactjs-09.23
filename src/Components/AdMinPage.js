@@ -76,9 +76,9 @@ function AdMinPage(props) {
     <div className='admin' style={(user) ? { display: "block" } : { display: "none" }}>
       <div id="mySidenav" className="sidenav_admin">
         <button href="javascript:void(0)" className="closebtn" onClick={closeNav}>&times;</button>
-        <Link to="/tableproducts">Danh sách sản phẩm</Link>
-        <Link to="/addproduct">Thêm mới sản phẩm</Link>
-        <Link to="/ordermanage">Quản Lý Đơn Hàng</Link>
+        <Link to="tableproducts">Danh sách sản phẩm</Link>
+        <Link to="addproduct">Thêm mới sản phẩm</Link>
+        <Link to="ordermanage">Quản Lý Đơn Hàng</Link>
         <button onClick={logOut} >Đăng xuất</button>
       </div>
       <div id="main">

@@ -71,12 +71,12 @@ function SliderComponent(props) {
   var listSpecialProduct = watchList.filter(item => (parseInt(item.price)) > 8000000)
   // ----------------------xem nhanh
   function seeQuickOnApp(id){
-    navigate(`/app/seequickonapp/${id}`)
+    navigate(`/seequickonapp/${id}`)
 
 }
 // ---------------- thêm vào giỏ hàng
 function addCart(item) {
-  navigate("/app/giohang")
+  navigate("/giohang")
   getItemCart(item)
 }
 

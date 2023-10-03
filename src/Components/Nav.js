@@ -35,12 +35,12 @@ function Nav( props) {
                 <div id="mySidenav" className="sidenav row">
                     <div className='sidenav-left col-md-4'>
                     <button className="closebtn" onClick={closeNav}>x</button>
-                    <NavLink className='nav-link' to="/app/trangchu">TRANG CHỦ</NavLink>
-                    <NavLink className='nav-link' to="/app/men" >ĐỒNG HỒ NAM</NavLink>
-                    <NavLink className='nav-link' to="/app/women">ĐỒNG HỒ NỮ</NavLink>
-                    <NavLink className='nav-link' to="/app/tintuc">TIN TỨC</NavLink>
-                    <NavLink className='nav-link' to="/app/daily">ĐẠI LÝ</NavLink>
-                    <NavLink className='nav-link' to="/app/lienhe">LIÊN HỆ</NavLink>
+                    <NavLink className='nav-link' to="/trangchu">TRANG CHỦ</NavLink>
+                    <NavLink className='nav-link' to="/men" >ĐỒNG HỒ NAM</NavLink>
+                    <NavLink className='nav-link' to="/women">ĐỒNG HỒ NỮ</NavLink>
+                    <NavLink className='nav-link' to="/tintuc">TIN TỨC</NavLink>
+                    <NavLink className='nav-link' to="/daily">ĐẠI LÝ</NavLink>
+                    <NavLink className='nav-link' to="/lienhe">LIÊN HỆ</NavLink>
                     </div>
                     <div className='sidenav-right col-md-8'>
                         <div className='sidenav-right-men row'>
@@ -48,10 +48,10 @@ function Nav( props) {
                             <p className='col-md-8'>
                                 <p>ĐỒNG HỒ NAM</p>
                                 <p className='row'>
-                                <NavLink className='nav-link col-md-6' to="/app/men" >ĐỒNG HỒ TSOT</NavLink>
-                                <NavLink className='nav-link col-md-6' to="/app/men" >ĐỒNG HỒ CITIZEN</NavLink>
-                                <NavLink className='nav-link col-md-6' to="/app/men" >ĐỒNG HỒ OMEGA</NavLink>
-                                <NavLink className='nav-link col-md-6' to="/app/men" >Đang Khuyến Mãi</NavLink>
+                                <NavLink className='nav-link col-md-6' to="/men" >ĐỒNG HỒ TSOT</NavLink>
+                                <NavLink className='nav-link col-md-6' to="/men" >ĐỒNG HỒ CITIZEN</NavLink>
+                                <NavLink className='nav-link col-md-6' to="/men" >ĐỒNG HỒ OMEGA</NavLink>
+                                <NavLink className='nav-link col-md-6' to="/men" >Đang Khuyến Mãi</NavLink>
                                 </p>
                             </p>
                         </div>
@@ -60,10 +60,10 @@ function Nav( props) {
                             <p className='col-md-8'>
                                 <p>ĐỒNG HỒ NỮ</p>
                                 <p className='row'>
-                                <NavLink className='nav-link col-md-6' to="/app/women" >ĐỒNG HỒ TSOT</NavLink>
-                                <NavLink className='nav-link col-md-6' to="/app/women" >ĐỒNG HỒ CITIZEN</NavLink>
-                                <NavLink className='nav-link col-md-6' to="/app/women" >ĐỒNG HỒ OMEGA</NavLink>
-                                <NavLink className='nav-link col-md-6' to="/app/women" >Đang Khuyến Mãi</NavLink>
+                                <NavLink className='nav-link col-md-6' to="/women" >ĐỒNG HỒ TSOT</NavLink>
+                                <NavLink className='nav-link col-md-6' to="/women" >ĐỒNG HỒ CITIZEN</NavLink>
+                                <NavLink className='nav-link col-md-6' to="/women" >ĐỒNG HỒ OMEGA</NavLink>
+                                <NavLink className='nav-link col-md-6' to="/women" >Đang Khuyến Mãi</NavLink>
                                 </p>
                             </p>
                         </div>
@@ -72,10 +72,10 @@ function Nav( props) {
                             <p className='col-md-8'>
                                 <p>SẢN PHẨM KHUYẾN MÃI</p>
                                 <p className='row'>
-                                <NavLink className='nav-link col-md-6' to="/app/men" >ĐỒNG HỒ TSOT</NavLink>
-                                <NavLink className='nav-link col-md-6' to="/app/men" >ĐỒNG HỒ CITIZEN</NavLink>
-                                <NavLink className='nav-link col-md-6' to="/app/men" >ĐỒNG HỒ OMEGA</NavLink>
-                                <NavLink className='nav-link col-md-6' to="/app/men" >Đang Khuyến Mãi</NavLink>
+                                <NavLink className='nav-link col-md-6' to="/men" >ĐỒNG HỒ TSOT</NavLink>
+                                <NavLink className='nav-link col-md-6' to="/men" >ĐỒNG HỒ CITIZEN</NavLink>
+                                <NavLink className='nav-link col-md-6' to="/men" >ĐỒNG HỒ OMEGA</NavLink>
+                                <NavLink className='nav-link col-md-6' to="/men" >Đang Khuyến Mãi</NavLink>
                                 </p>
                             </p>
                         </div>
@@ -111,7 +111,7 @@ function Nav( props) {
                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                     </svg>
                     </span>
-                    <p className="col-md-4"><NavLink className='nav-link' to="/app/giohang">Giỏ hàng(<span style={{color:"red"}}>{sumQuantity}</span>)</NavLink></p>
+                    <p className="col-md-4"><NavLink className='nav-link' to="/giohang">Giỏ hàng(<span style={{color:"red"}}>{sumQuantity}</span>)</NavLink></p>
                 </div>
            </div>
         </div>

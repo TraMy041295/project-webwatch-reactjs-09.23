@@ -9,13 +9,38 @@ import { useNavigate  } from 'react-router-dom';
 function WoMenPage(props) {
   const { watchList,getItemCart } = props
   const navigate = useNavigate()
-  var [ listWoMen , setListWoMen] = useState([])
+  const [ listWoMen , setListWoMen] = useState([])
+  const [checked, setChecked] = useState([])
+    const [filter , setFilter] = useState([])
 
   useEffect(()=>{
     const filterListWoMen = watchList.filter (item => item.gender == 0)
+    setFilter(filterListWoMen)
     setListWoMen(filterListWoMen)
   },[watchList])
-  // -----------------------------
+
+  useEffect(()=>{
+    if( checked.length !== 0 ) {    
+        const filterCheckBox = listWoMen.filter((item)=>item.name.includes(checked.join("")))
+        setFilter(filterCheckBox)
+    }else {
+        const filterCheckBox1 = listWoMen.filter((item)=>item.name.includes(""))
+        setFilter(filterCheckBox1)
+
+    }
+},[checked,listWoMen ])
+
+const checkBox = (event) => {
+    var updatedList = [...checked];
+    if (event.target.checked) {
+        updatedList = [...checked, event.target.value];
+    } else {
+        updatedList.splice(checked.indexOf(event.target.value), 1);
+    }
+    setChecked(updatedList);
+};
+
+  // -----------------------------Lọc giá
 
   const [data1, setDataLeft] = useState(10000000)
   const [data2, setDataRight] = useState(0)
@@ -23,15 +48,16 @@ function WoMenPage(props) {
   var num2 = parseInt(data1)
   var womenPrice = []
   function filterWoMenPrice(){
-    womenPrice = listWoMen.filter((item)=>(num1 <= item.price  && item.price <= num2))
-    setListWoMen(womenPrice)
+    womenPrice = filter.filter((item)=>(num1 <= item.price  && item.price <= num2))
+    setFilter(womenPrice)
   }
 //   -----------------Thêm vào giỏ hàng
 function addCart(item){
-    navigate("/app/giohang")
+    navigate("/giohang")
     getItemCart(item)
   }
   //   ----------------------- SắP XẾP
+  var filterCoppy = [...listWoMen]
 var sort1_2 = [...listWoMen].sort(function(a,b){
     var n1 = parseInt(a.price)
     var n2 = parseInt(b.price)
@@ -46,14 +72,16 @@ var sort2_1 = [...listWoMen].sort(function(a,b){
 
   function changeValue(e){
      if ( e.target.value == "Giá Giảm dần"){
-        setListWoMen(sort2_1)
+        setFilter(sort2_1)
      } else if (e.target.value == "Giá tăng dần"){
-        setListWoMen(sort1_2)
-     }else {setListWoMen(listWoMen)}
+        setFilter(sort1_2)
+     }else if (e.target.value == "Mặc Định") {
+        setFilter(filterCoppy)
+    }
   }
 //-------------------------
 function seeQuickOnApp(id){
-    navigate(`/app/seequickonapp/${id}`)
+    navigate(`/seequickonapp/${id}`)
 
 }
 
@@ -61,7 +89,7 @@ function seeQuickOnApp(id){
 
     <div className="men-title row">
                 <p className="col-md-6 men-all-item">TẤT CẢ SẢN PHẨM /</p>
-                <p className="col-md-6 men-homepage "><Link class="nav-link active" to="/app/trangchu">Trang chủ</Link></p>
+                <p className="col-md-6 men-homepage "><Link class="nav-link active" to="/trangchu">Trang chủ</Link></p>
         </div>
     <div className="men-content row">
     <div className="tintuc-left col-md-3 grid">
@@ -71,22 +99,22 @@ function seeQuickOnApp(id){
                 </div>
                 <ul class="nav flex-column">
                     <li class="nav-item danhmuc-item">
-                        <Link class="nav-link active" to="/app/trangchu">Trang chủ</Link>
+                        <Link class="nav-link active" to="/trangchu">Trang chủ</Link>
                     </li>
                     <li class="nav-item danhmuc-item">
-                        <Link class="nav-link" to="/app/men">Đồng hồ nam</Link>
+                        <Link class="nav-link" to="/men">Đồng hồ nam</Link>
                     </li>
                     <li class="nav-item danhmuc-item">
-                        <Link class="nav-link" to="/app/women">Đồng hồ nữ</Link>
+                        <Link class="nav-link" to="/women">Đồng hồ nữ</Link>
                     </li>
                     <li class="nav-item danhmuc-item">
-                        <Link class="nav-link" to="/app/tintuc">Tin tức</Link>
+                        <Link class="nav-link" to="/tintuc">Tin tức</Link>
                     </li>
                     <li class="nav-item danhmuc-item">
-                        <Link class="nav-link" to="/app/daily">Đại Lý</Link>
+                        <Link class="nav-link" to="/daily">Đại Lý</Link>
                     </li>
                     <li class="nav-item danhmuc-item">
-                        <Link class="nav-link" to="/app/lienhe">Liên Hệ</Link>
+                        <Link class="nav-link" to="/lienhe">Liên Hệ</Link>
                     </li>
                 </ul>
             </div>
@@ -114,25 +142,25 @@ function seeQuickOnApp(id){
                 </div>
                 <div className="checkbox-product row">
                     <div className="form-check col-md-6">
-                        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" onClick={checkBox}/>
                         <label className="form-check-label" for="flexCheckDefault">
                            Apple Watch
                         </label>
                     </div>
                     <div className="form-check col-md-6">
-                        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <input className="form-check-input" type="checkbox" value=" Đồng hồ" id="flexCheckDefault" onClick={checkBox} />
                         <label className="form-check-label" for="flexCheckDefault">
                            Đồng hồ
                         </label>
                     </div>
                     <div className="form-check col-md-6">
-                        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <input className="form-check-input" type="checkbox" value="ECO-DRIVE" id="flexCheckDefault" onClick={checkBox}/>
                         <label className="form-check-label" for="flexCheckDefault">
-                           Đồng hồ nam
+                           ECO-DRIVE
                         </label>
                     </div>
                     <div className="form-check col-md-6">
-                        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <input className="form-check-input" type="checkbox" value="UNISEX" id="flexCheckDefault" onClick={checkBox}/>
                         <label className="form-check-label" for="flexCheckDefault">
                            UNISEX
                         </label>
@@ -146,43 +174,43 @@ function seeQuickOnApp(id){
                 </div>
                 <div className="checkbox-brand row">
                     <div className="form-check col-md-6">
-                        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <input className="form-check-input" type="checkbox" value="Apple" id="flexCheckDefault" onClick={checkBox}/>
                         <label className="form-check-label" for="flexCheckDefault">
                            Apple 
                         </label>
                     </div>
                     <div className="form-check col-md-6">
-                        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <input className="form-check-input" type="checkbox" value="CITIZEN" id="flexCheckDefault" onClick={checkBox}/>
                         <label className="form-check-label" for="flexCheckDefault">
                            CITIZEN
                         </label>
                     </div>
                     <div className="form-check col-md-6">
-                        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <input className="form-check-input" type="checkbox" value="DIESEL" id="flexCheckDefault" onClick={checkBox}/>
                         <label className="form-check-label" for="flexCheckDefault">
                            DIESEL
                         </label>
                     </div>
                     <div className="form-check col-md-6">
-                        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <input className="form-check-input" type="checkbox" value="Montbrilliant" id="flexCheckDefault" onClick={checkBox}/>
                         <label className="form-check-label" for="flexCheckDefault">
                         Montbrilliant
                         </label>
                     </div>
                     <div className="form-check col-md-6">
-                        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <input className="form-check-input" type="checkbox" value="Omega" id="flexCheckDefault"onClick={checkBox}/>
                         <label className="form-check-label" for="flexCheckDefault">
                         Omega
                         </label>
                     </div>
                     <div className="form-check col-md-6">
-                        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <input className="form-check-input" type="checkbox" value="Tag Heuer" id="flexCheckDefault" onClick={checkBox}/>
                         <label className="form-check-label" for="flexCheckDefault">
                         Tag Heuer
                         </label>
                     </div>
                     <div className="form-check col-md-6">
-                        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                        <input className="form-check-input" type="checkbox" value="TITSOT" id="flexCheckDefault" onClick={checkBox}/>
                         <label className="form-check-label" for="flexCheckDefault">
                         TITSOT
                         </label>
@@ -244,7 +272,7 @@ function seeQuickOnApp(id){
           </div>
         </div>
       
-        {listWoMen.map(item =>
+        {filter.map(item =>
           <div className='col-md-4 men-item'>
             <a href='#'><img src={item.image} /></a>
             <div className="row men-img-mini">

@@ -49,7 +49,7 @@ console.log(listAddress)
     return (<>
         <div className="daily-item row">
                 <p className="col-md-6 agent-item">ĐẠI LÝ /</p>
-                <p className="col-md-6 agent-homepage"><Link class="nav-link active" to="/app/trangchu">Trang chủ</Link></p>
+                <p className="col-md-6 agent-homepage"><Link class="nav-link active" to="/trangchu">Trang chủ</Link></p>
         </div>
         <div className="row daily-information">
             <div className="col-md-6">

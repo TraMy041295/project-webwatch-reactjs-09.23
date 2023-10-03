@@ -10,7 +10,7 @@ function ContactPage() {
      
         <div className="contact-title row">
                 <p className="col-md-6 contact-item">LIÊN HỆ /</p>
-                <p className="col-md-6 contact-homepage"><Link class="nav-link active" to="/app/trangchu">Trang chủ</Link></p>
+                <p className="col-md-6 contact-homepage"><Link class="nav-link active" to="/trangchu">Trang chủ</Link></p>
         </div>
         <div className='contact-map'>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d250743.53678991133!2d108.00914591071172!3d10.897653061920964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3176830f876e16e5%3A0x2a82c373d3a16cc8!2zVHAuIFBoYW4gVGhp4bq_dCwgQsOsbmggVGh14bqtbiwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1692980686165!5m2!1svi!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

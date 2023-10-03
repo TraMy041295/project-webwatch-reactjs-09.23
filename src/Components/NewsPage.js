@@ -11,7 +11,7 @@ function NewsPage() {
     return (<>
         <div className="tintuc-title row">
                 <p className="col-md-6 news-item ">TIN TỨC /</p>
-                <p className="col-md-6 news-homepage"><Link class="nav-link active" to="/app/trangchu">Trang chủ</Link></p>
+                <p className="col-md-6 news-homepage"><Link class="nav-link active" to="/trangchu">Trang chủ</Link></p>
         </div>
         <div className="row tintuc">
             <div className="col-md-4">
@@ -72,22 +72,22 @@ function NewsPage() {
                     <h3>DANH MỤC</h3>
                     <ul class="nav flex-column">
                     <li class="nav-item danhmuc-item">
-                        <Link class="nav-link active" to="/app/trangchu">Trang chủ</Link>
+                        <Link class="nav-link active" to="/trangchu">Trang chủ</Link>
                     </li>
                     <li class="nav-item danhmuc-item">
-                        <Link class="nav-link" to="/app/men">Đồng hồ nam</Link>
+                        <Link class="nav-link" to="/men">Đồng hồ nam</Link>
                     </li>
                     <li class="nav-item danhmuc-item">
-                        <Link class="nav-link" to="/app/women">Đồng hồ nữ</Link>
+                        <Link class="nav-link" to="/women">Đồng hồ nữ</Link>
                     </li>
                     <li class="nav-item danhmuc-item">
-                        <Link class="nav-link" to="/app/tintuc">Tin tức</Link>
+                        <Link class="nav-link" to="/tintuc">Tin tức</Link>
                     </li>
                     <li class="nav-item danhmuc-item">
-                        <Link class="nav-link" to="/app/daily">Đại Lý</Link>
+                        <Link class="nav-link" to="/daily">Đại Lý</Link>
                     </li>
                     <li class="nav-item danhmuc-item">
-                        <Link class="nav-link" to="/app/lienhe">Liên Hệ</Link>
+                        <Link class="nav-link" to="/lienhe">Liên Hệ</Link>
                     </li>
                 </ul>
                 </div>

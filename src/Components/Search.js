@@ -14,7 +14,7 @@ function Search(props) {
     return (<>
         <div className="search_nav row">
             <p className="col-md-9 ">KẾT QUẢ TÌM KIẾM VỚI TỪ KHOÁ "{searchNav}"/</p>
-            <p className="col-md-3 "><Link class="nav-link active" to="/app/trangchu">Trang chủ</Link></p>
+            <p className="col-md-3 "><Link class="nav-link active" to="/trangchu">Trang chủ</Link></p>
         </div>
         {/* ---------------------------------------------- */}
         <div className="men-content row">

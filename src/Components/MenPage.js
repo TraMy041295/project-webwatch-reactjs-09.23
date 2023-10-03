@@ -15,20 +15,20 @@ function MenPage(props) {
 
 
     useEffect(() => {
-        console.log("hello")
         const filterListMen = watchList.filter(item => item.gender == 1)
         setFilter(filterListMen)
         setListMen(filterListMen)
     }, [watchList])
-
     useEffect(()=>{
         if( checked.length !== 0 ) {    
             const filterCheckBox = listMen.filter((item)=>item.name.includes(checked.join("")))
             setFilter(filterCheckBox)
         }else {
-            setFilter(listMen)
+            const filterCheckBox1 = listMen.filter((item)=>item.name.includes(""))
+            setFilter(filterCheckBox1)
+
         }
-    },[checked])
+    },[checked,listMen ])
     // -----------------------------Lọc giá
 
     const [data1, setDataLeft] = useState(10000000)
@@ -50,14 +50,10 @@ function MenPage(props) {
         }
         setChecked(updatedList);
     };
-    // (checked === null ? "" : checked.join(""))
-    // const filterCheckBox =  useMemo(()=>(listMen.filter((item) => (item.name.includes('hồ')))
-    // ),[checked])
-
 
     //   ------------------------Thêm vào giỏ hàng
     function addCart(item) {
-        navigate("/app/giohang")
+        navigate("/giohang")
         getItemCart(item)
     }
     //   ----------------------- SắP XẾP
@@ -85,7 +81,7 @@ function MenPage(props) {
     }
     // ---------------------------
     function seeQuickOnApp(id) {
-        navigate(`/app/seequickonapp/${id}`)
+        navigate(`/seequickonapp/${id}`)
 
     }
     console.log("render")
@@ -93,7 +89,7 @@ function MenPage(props) {
 
         <div className="men-title row">
             <p className="col-md-6 men-all-item ">TẤT CẢ SẢN PHẨM /</p>
-            <p className="col-md-4 men-homepage "><Link class="nav-link active" to="/app/trangchu">Trang chủ</Link></p>
+            <p className="col-md-4 men-homepage "><Link class="nav-link active" to="/trangchu">Trang chủ</Link></p>
         </div>
         <div className="men-content row">
             <div className="tintuc-left col-md-3 grid">
@@ -103,22 +99,22 @@ function MenPage(props) {
                     </div>
                     <ul class="nav flex-column">
                         <li class="nav-item danhmuc-item">
-                            <Link class="nav-link active" to="/app/trangchu">Trang chủ</Link>
+                            <Link class="nav-link active" to="/trangchu">Trang chủ</Link>
                         </li>
                         <li class="nav-item danhmuc-item">
-                            <Link class="nav-link" to="/app/men">Đồng hồ nam</Link>
+                            <Link class="nav-link" to="/men">Đồng hồ nam</Link>
                         </li>
                         <li class="nav-item danhmuc-item">
-                            <Link class="nav-link" to="/app/women">Đồng hồ nữ</Link>
+                            <Link class="nav-link" to="/women">Đồng hồ nữ</Link>
                         </li>
                         <li class="nav-item danhmuc-item">
-                            <Link class="nav-link" to="/app/tintuc">Tin tức</Link>
+                            <Link class="nav-link" to="/tintuc">Tin tức</Link>
                         </li>
                         <li class="nav-item danhmuc-item">
-                            <Link class="nav-link" to="/app/daily">Đại Lý</Link>
+                            <Link class="nav-link" to="/daily">Đại Lý</Link>
                         </li>
                         <li class="nav-item danhmuc-item">
-                            <Link class="nav-link" to="/app/lienhe">Liên Hệ</Link>
+                            <Link class="nav-link" to="/lienhe">Liên Hệ</Link>
                         </li>
                     </ul>
                 </div>

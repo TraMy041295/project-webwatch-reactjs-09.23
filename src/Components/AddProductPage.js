@@ -7,22 +7,29 @@ function AddProductPage(props) {
     const navigate = useNavigate()
     const id = parseInt(useParams().id)
     var [ form , setForm ] = useState({
-        gender:0 ,image:"",name:"",price:"",quantity:1,introduce:""
+        gender: 0 ,name:"",image:"",price:"",quantity:1,introduce:""
     })
     if(id){
         const index = watchList.findIndex(item=>item.id==id)
-        form = watchList[index]
+    
+        form.gender = watchList[index].gender
+        form.name = watchList[index].name
+        form.image = watchList[index].image
+        form.price = watchList[index].price
+        form.quantity = watchList[index].quantity
+        form.introduce = watchList[index].introduce
     }
  
     function submitWatch(e){
         e.preventDefault()
+    
         if (id) {
             addProduct({...form,id:id})
         }else{
             addProduct({...form})
         }
         
-        navigate("/admin/tableproducts")
+        navigate("/tableproducts")
     }
     function handleChange(e){
         setForm({

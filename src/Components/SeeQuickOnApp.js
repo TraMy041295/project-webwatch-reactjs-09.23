@@ -14,15 +14,15 @@ function SeeQuickOnApp(props){
     const index = watchList.findIndex(item => item.id == id )
     // --------------------thêm vào giỏ hàng
     function addCart(item) {
-        navigate("/app/giohang")
+        navigate("/giohang")
         getItemCart(item)
     }
 
     return(<>
     <div className="seequickonapp-title row">
             <p className="col-md-8 ">{watchList[index].name}</p>
-            <p className="col-md-2">{(watchList[index].gender == 1) ? <Link class="nav-link active" to="/app/men">Đồng hồ Nam</Link>  : <Link class="nav-link active" to="/app/women">Đồng hồ nữ</Link> } </p>
-            <p className="col-md-2 "><Link class="nav-link active" to="/app/trangchu"> Trang chủ</Link></p>
+            <p className="col-md-2">{(watchList[index].gender == 1) ? <Link class="nav-link active" to="/men">Đồng hồ Nam</Link>  : <Link class="nav-link active" to="/women">Đồng hồ nữ</Link> } </p>
+            <p className="col-md-2 "><Link class="nav-link active" to="/trangchu"> Trang chủ</Link></p>
         </div>
         <div className="seequickonapp-content row">
             <div className="col-md-6 seequickonapp-content-left "><img  src={watchList[index].image}/> </div>

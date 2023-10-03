@@ -14,7 +14,7 @@ function HomePage(props) {
   var topDiscountItem = watchList.filter(item=> (parseInt(item.price)) == 5000000)
 // ----------------------xem nhanh
 function seeQuickOnApp(id){
-  navigate(`/app/seequickonapp/${id}`)
+  navigate(`/seequickonapp/${id}`)
 
 }
 

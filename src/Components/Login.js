@@ -64,7 +64,7 @@ function Login(props) {
         setopenLogin(haveError)
         setUser(form)
         alert("Đăng nhập thành công")
-        navigate("/admin/tableproducts")
+        navigate("/tableproducts")
         setCookie("user",JSON.stringify(form))
         return
       }

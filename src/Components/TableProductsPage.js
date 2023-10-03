@@ -21,7 +21,7 @@ function TableProductsPage(props) {
         deleteApp(id)
     }
     function editProduct(item){
-        navigate(`/admin/editbook/${item.id}`)
+        navigate(`/editbook/${item.id}`)
     }
     function searchWatch(e){
         e.preventDefault()

@@ -29,7 +29,7 @@ function AddProductPage(props) {
             addProduct({...form})
         }
         
-        navigate("/tableproducts")
+        navigate("/admin/tableproducts")
     }
     function handleChange(e){
         setForm({
@@ -40,10 +40,7 @@ function AddProductPage(props) {
 
     return (<>
         <form onSubmit={submitWatch} >
-            {/* <div className="mb-3 add_product ">
-                <label for="exampleInputEmail1" className="form-label">ID</label>
-                <input type="text" value={form.id} placeholder='ID' className="form-control border-new"  />
-            </div> */}
+           
             <div className="mb-3">
                 <label for="exampleInputPassword1" className="form-label">Giới tính</label>
                 <input type="text"  value={form.gender} name="gender" onChange={handleChange} placeholder='Giới tính' className="form-control border-new"  />

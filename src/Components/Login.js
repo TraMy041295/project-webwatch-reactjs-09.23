@@ -30,10 +30,7 @@ function Login(props) {
     username: "",
     password: "",
   })
-  // const [form, setForm] = useState({
-  //   username: "",
-  //   password: "",
-  // })
+
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -64,7 +61,7 @@ function Login(props) {
         setopenLogin(haveError)
         setUser(form)
         alert("Đăng nhập thành công")
-        navigate("/tableproducts")
+        navigate("/admin/tableproducts")
         setCookie("user",JSON.stringify(form))
         return
       }

@@ -11,7 +11,6 @@ function AddProductPage(props) {
     })
     if(id){
         const index = watchList.findIndex(item=>item.id==id)
-    
         form.gender = watchList[index].gender
         form.name = watchList[index].name
         form.image = watchList[index].image

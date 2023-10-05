@@ -55,8 +55,8 @@ function Cart(props) {
             <table className="table">
                 <thead>
                     <tr>
-                        <th scope="col">STT</th>
-                        <th scope="col">GIỚI TÍNH</th>
+                        <th className="STT" scope="col">STT</th>
+                        <th className="gender" scope="col">GIỚI TÍNH</th>
                         <th scope="col">TÊN</th>
                         <th scope="col">HÌNH ẢNH</th>
                         <th scope="col">GIÁ</th>
@@ -68,8 +68,8 @@ function Cart(props) {
                 <tbody className="table-group-divider">
                     {listCart.map(item =>
                         <tr key={item.id}>
-                            <th scope="row">{listCart.indexOf(item)}</th>
-                            <th scope="row">{item.gender == 1 ? "nam " : " nữ"}</th>
+                            <th className="STT" scope="row">{listCart.indexOf(item)}</th>
+                            <th className="gender" scope="row">{item.gender == 1 ? "nam " : " nữ"}</th>
                             <td>{item.name}</td>
                             <td><img src={item.image} style={{ width: 100 }} /></td>
                             <td>{item.price}</td>

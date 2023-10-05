@@ -100,3 +100,22 @@
     padding: 0px;
     margin: 0px;
 }
+
+
+/* -------------responesive  */
+
+@media screen and (max-width:576px) {
+    .tintuc-title {
+        margin-left: 10px;
+    }
+    .tintuc {
+        margin: 10px;
+    }
+    .tintuc-total {
+        margin: 10px;
+    }
+    
+    .tintuc-noibat {
+        margin-top: 10px;
+    }
+}

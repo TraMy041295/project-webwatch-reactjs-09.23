@@ -1,26 +1,32 @@
 .support-item {
     text-align: center;
-    padding : 30px 10px;
+    padding: 30px 10px;
     border: 1px solid #e1e1e1;
 }
+
 .support-item span {
     font-weight: bold;
 }
+
 .support-item:hover {
     background-color: #e1e1e1;
 }
+
 /* ----------slider */
 .Featured-products {
     padding: 50px 150px 0px 150px;
 
-}  
+}
+
 .carousel-control-prev {
     z-index: 0;
 }
+
 .Featured-products h2 {
     text-align: center;
     text-transform: uppercase;
 }
+
 .slider-item {
     text-align: center;
     /* border: none; */
@@ -34,6 +40,7 @@
     justify-content: center;
     display: none;
 }
+
 .slider-item .slider-add-cart {
     background-color: #1b4b73;
     color: white;
@@ -42,67 +49,85 @@
     display: none;
     border: none;
 }
-.slider-item:hover .slider-add-cart{
+
+.slider-item:hover .slider-add-cart {
     background-color: #205888;
     display: block;
 }
-.slider-item .slider-button-seequick{
+
+.slider-item .slider-button-seequick {
     border: none;
     width: 70px;
     height: 70px;
     background-color: white;
     position: absolute;
-    top : 150px;
+    top: 150px;
     left: 150px;
     display: none;
 }
+
 .slider-item .slider-button-seequick:hover {
     border: 1px solid #1b4b73;
 }
+
 .slider-item:hover .slider-button-seequick {
     display: block;
 }
+
 .slider-item:hover {
     border: 1px solid #e1e1e1;
     height: 600px;
     overflow: visible;
-  
+
 }
+
 .slider-item img {
     width: 100%;
 }
+
 .slider-item:hover .img-mini {
     display: inline-flex;
 }
+
 .slider-item {
     position: relative;
 }
-.img-replace1 , .img-replace2,.img-replace3  {
+
+.img-replace1,
+.img-replace2,
+.img-replace3 {
     position: absolute;
     top: 0px;
     left: 0px;
 }
+
 .img-replace1 {
     display: block;
 }
+
 .img-replace2 {
     display: none;
 }
+
 .img-replace3 {
     display: none;
 }
-.img-mini .img-mini1:hover .img-replace1{
+
+.img-mini .img-mini1:hover .img-replace1 {
     display: inline-block;
 }
-.img-mini2:hover.img-replace1{
+
+.img-mini2:hover.img-replace1 {
     display: none;
 }
+
 .slider-item-information {
     position: absolute;
-    top : 400px;
+    top: 400px;
     justify-content: center;
-   
+
 }
+
 .img-mini p {
     border: 1px solid #e1e1e1;
     margin: 0 5px;
@@ -113,13 +138,16 @@
 .typeofwatch-image .typeofwatch-image-item img {
     width: 100%;
 }
+
 .typeofwatch-image-item {
     padding: 0;
     position: relative;
 }
+
 .typeofwatch-image {
     padding: 20px 50px;
 }
+
 .typeofwatch-image .typeofwatch-image-item::after {
     position: absolute;
     content: "";
@@ -131,9 +159,10 @@
     transition: all 0.5s ease;
     background-color: #e1e1e1;
     opacity: 0.3;
-    box-shadow: inset -1px 4px 14px 7px rgba(224,221,224,1);
+    box-shadow: inset -1px 4px 14px 7px rgba(224, 221, 224, 1);
     visibility: hidden;
 }
+
 .typeofwatch-image .typeofwatch-image-item::before {
     position: absolute;
     content: "";
@@ -145,28 +174,32 @@
     background-color: #e1e1e1;
     opacity: 0.3;
     transition: all 0.5s ease;
-    box-shadow: inset -1px 4px 14px 7px rgba(224,221,224,1);
+    box-shadow: inset -1px 4px 14px 7px rgba(224, 221, 224, 1);
     visibility: hidden;
 }
+
 .typeofwatch-image .typeofwatch-image-item:hover::after {
     height: 0%;
-    top : 230px;
+    top: 230px;
     left: 0px;
     visibility: visible;
     box-shadow: none;
 }
+
 .typeofwatch-image .typeofwatch-image-item:hover::before {
     width: 0%;
     left: 230px;
-    top : 0px;
+    top: 0px;
     visibility: visible;
     box-shadow: none;
 
 }
+
 /* ----------------typeofbrand-image */
 .typeofbrand-image {
     padding: 0px 150px;
 }
+
 .typeofbrand-image .typeofbrand-image-item div {
     height: 100px;
     display: flex;
@@ -175,32 +208,39 @@
     border: 1px solid #e1e1e1;
     margin: 0px 5px;
 }
+
 .typeofbrand-image .typeofbrand-image-item {
     padding: 0px;
 }
+
 .typeofbrand-image .typeofbrand-image-item div:hover {
     border: 1px solid black;
 }
+
 /* --------top discount */
 .top-discount {
     padding: 50px 150px;
     height: 500px;
     margin: 0px;
 }
-.top-discount-item{
+
+.top-discount-item {
     border: 1px solid #e1e1e1;
     border-left: none;
     padding: 30px 20px;
 }
+
 .top-discount-item a {
     text-decoration: none;
     color: black;
-    
+
 }
+
 .top-discount-item a img {
     width: 100%;
 }
-.top-discount-item > .top-discount-button {
+
+.top-discount-item>.top-discount-button {
     border: 1px solid #e1e1e1;
     width: 150px;
     height: 40px;
@@ -208,47 +248,56 @@
     color: black;
     padding: 0px;
 }
-.top-discount-item > .top-discount-button:hover {
+
+.top-discount-item>.top-discount-button:hover {
     background-color: #1b4b73;
     border: none;
     color: white;
 }
+
 .item-watch {
-    margin: 0px ;
+    margin: 0px;
     border-right: none;
 }
+
 .item-watch div {
     border: none;
     padding: 0px;
 }
+
 .item-watch .item-information {
     border: none;
 }
 
-.item-information{
+.item-information {
     position: relative;
 }
-.item-information > button {
+
+.item-information>button {
     width: 60px;
     height: 60px;
     border: 1px solid #bbb;
     position: absolute;
-    top : 75px;
+    top: 75px;
     left: 70px;
     display: none;
     background-color: white;
 }
-.item-information > button > svg {
+
+.item-information>button>svg {
     color: #1b4b73;
 }
-.item-information:hover .item-information-button{
+
+.item-information:hover .item-information-button {
     display: block;
-  
+
 }
+
 .item-information p {
     text-align: center;
 }
-.item-information > .item-information-button:hover {
+
+.item-information>.item-information-button:hover {
     background-color: none;
 }
 
@@ -257,31 +306,40 @@
     color: #2D2D2D;
     margin: 0px 100px;
 }
-.introduce .left , .right {
+
+.introduce .left,
+.right {
     font-family: 'Playfair Display', serif;
     font-size: 70px;
     color: #d7d7d7;
     top: 0px;
 }
+
 .introduce .left {
     text-align: end;
 }
+
 .introduce .right {
     text-align: start;
 }
+
 .introduce {
     font-family: 'Playfair Display', serif;
 }
-.customer div , p {
+
+.customer div,
+p {
     text-align: center;
 }
+
 /* --------------------show-image */
 .show-image {
     padding: 30px 0px;
     text-align: center;
     background-color: #f7f7f7;
 }
-.show-image > .show-image-button {
+
+.show-image>.show-image-button {
     border: none;
     background-color: white;
     width: 200px;
@@ -289,25 +347,30 @@
     background-color: #205888;
     color: white;
 }
+
 .show-image div {
     text-transform: uppercase;
     font-size: x-large;
     margin-bottom: 20px;
 
 }
+
 /* --------------image-item */
 .image-item p {
     height: 240px;
     padding: 0px 5px;
 }
+
 .image-item p img {
     width: 100%;
     height: 100%;
 }
+
 .image-item {
     margin: 0px 20px;
 }
-.image-item-zoom > .image-item-button {
+
+.image-item-zoom>.image-item-button {
     border: none;
     width: 50px;
     height: 50px;
@@ -318,25 +381,31 @@
     display: none;
     background-color: white;
     padding: 0px;
- 
+
 }
-.image-item-zoom > .image-item-button > svg {
+
+.image-item-zoom>.image-item-button>svg {
     color: black;
 }
-.image-item-zoom > .image-item-button:hover svg {
+
+.image-item-zoom>.image-item-button:hover svg {
     color: #1b4b73;
 }
+
 .image-item-zoom {
     position: relative;
 }
+
 .image-item p:hover button {
     display: block;
 }
+
 .image-item p:hover {
     opacity: 0.5;
 }
+
 /* --------image-item-modal */
-.modal-item{
+.modal-item {
     display: none;
     position: fixed;
     z-index: 99;
@@ -350,23 +419,96 @@
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.7);
 }
+
 .modal-content {
     margin: auto;
     display: block;
     width: 80%;
     max-width: 700px;
 }
+
 .close {
     position: absolute;
-    top:15px;
+    top: 15px;
     right: 35px;
     color: #f1f1f1;
     font-size: 40px;
     font-weight: bold;
     transition: 0.3s;
 }
-.close:hover , .close:focus {
+
+.close:hover,
+.close:focus {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* ------------------responsive web */
+
+@media screen and (max-width:576px) {
+    /* -------------slide  */
+    .Featured-products {
+        padding: 30px 50px 0px 50px;
+    }
+
+    .slider-item {
+        height: 300px;
+    }
+
+    .slider-item:hover {
+        height: 380px;
+    }
+
+    .slider-item-information {
+        top: 160px
+    }
+
+    .slider-item .slider-add-cart {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .slider-item .slider-button-seequick {
+        left: 40px;
+        top: 40px;
+    }
+
+    .slider-item .img-mini {
+        height: 30px;
+    }
+    .img-mini p {
+        padding: 0px;
+    }
+    .slider-item .slider-button-seequick {
+        opacity: 0.3;
+    }
+    .slider-item .slider-button-seequick > svg {
+        width: 30px;
+        height: 30px;
+    }
+    /* -----------------hình ảnh loại đồng hồ */
+    .typeofwatch-image .typeofwatch-image-item:hover::after {
+        top: 160px;
+
+    }
+    
+    .typeofwatch-image .typeofwatch-image-item:hover::before {
+        left: 160px;
+    }
+    /* -------------thương hiệu */
+    .typeofbrand-image {
+        padding: 10px 30px;
+    }
+    /* -----------------top giảm giá */
+    .top-discount {
+        padding: 10px 0px;
+    }
+    /* --------------introduce */
+    .introduce {
+        margin: 400px 0px 0px 0px;
+    }
+    .introduce > span , p {
+        padding: 0px;
+    }
 }

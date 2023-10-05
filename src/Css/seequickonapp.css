@@ -39,3 +39,18 @@
 .seequickonapp-content-right .seequickonapp-button {
     margin-top: 100px;
 }
+
+/* -----------------responesive */
+
+@media screen and (max-width:576px) {
+    .seequickonapp-title {
+        margin: 0px;
+        width: 100%;
+    }
+    .seequickonapp-content {
+        margin: 20px 0px;
+    }
+    .seequickonapp-content-right .seequickonapp-button {
+        margin-top: 0px;
+    }
+}

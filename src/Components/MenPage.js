@@ -92,7 +92,7 @@ function MenPage(props) {
             <p className="col-md-4 men-homepage "><Link class="nav-link active" to="/trangchu">Trang chủ</Link></p>
         </div>
         <div className="men-content row">
-            <div className="tintuc-left col-md-3 grid">
+            <div className="tintuc-left col-md-3 col-12 grid">
                 <div className="danhmuc col-md-12">
                     <div className="danhmuc-title">
                         <p className="title-item"><h6>DANH MỤC</h6></p>
@@ -258,11 +258,11 @@ function MenPage(props) {
             </div>
             {/* ---------------------------------------------- */}
 
-            <div className="watch-men row col-md-9">
-                <div className="all-item row" >
-                    <p className="left-all-item col-md-3">Tất cả sản phẩm</p>
+            <div className="watch-men row col-md-9 col-12">
+                <div className="all-item col-12 row" >
+                    <p className="left-all-item col-md-3 col-6">Tất cả sản phẩm</p>
 
-                    <div class="dropdown right-all-item col-md-4">
+                    <div class="dropdown right-all-item col-md-4 col-6">
                         <select name="watchmen" id="watchmen" onChange={changeValue}>
                             <option value="Mặc Định">Sắp xếp Mặc Định</option>
                             <option value="Giá tăng dần">Sắp xếp: Giá tăng dần</option>
@@ -273,12 +273,12 @@ function MenPage(props) {
                 </div>
 
                 {filter.map(item =>
-                    <div className='col-md-4 men-item'>
+                    <div className='col-md-4 col-6 men-item'>
                         <a href='#'><img src={item.image} /></a>
-                        <div className="row men-img-mini">
-                            <p className="col-md-3 men-img-mini1"><img src="https://bizweb.dktcdn.net/thumb/large/100/244/305/products/7.jpg?v=1502423293320" /></p>
-                            <p className="col-md-3 men-img-mini2"><img src="https://bizweb.dktcdn.net/thumb/large/100/244/305/products/6-574444e4-7a2d-4849-9dca-76ce01c24abd-9b0b1bb6-48a0-4b2a-8500-eccee4c446a1.jpg?v=1502422596970" /></p>
-                            <p className="col-md-3 men-img-mini3"><img src="https://bizweb.dktcdn.net/thumb/large/100/244/305/products/5-1da46838-470c-4fe1-9ba5-618c765d8789.jpg?v=1502422386343" /></p>
+                        <div className="row men-img-mini col-12">
+                            <p className="col-md-3 col-4 men-img-mini1"><img src="https://bizweb.dktcdn.net/thumb/large/100/244/305/products/7.jpg?v=1502423293320" /></p>
+                            <p className="col-md-3 col-4 men-img-mini2"><img src="https://bizweb.dktcdn.net/thumb/large/100/244/305/products/6-574444e4-7a2d-4849-9dca-76ce01c24abd-9b0b1bb6-48a0-4b2a-8500-eccee4c446a1.jpg?v=1502422596970" /></p>
+                            <p className="col-md-3 col-4 men-img-mini3"><img src="https://bizweb.dktcdn.net/thumb/large/100/244/305/products/5-1da46838-470c-4fe1-9ba5-618c765d8789.jpg?v=1502422386343" /></p>
                         </div>
                         <p><a href='#'>{item.name}</a></p>
                         <p>{item.price}</p>

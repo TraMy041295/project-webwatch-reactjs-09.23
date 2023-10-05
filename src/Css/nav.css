@@ -99,4 +99,34 @@
   justify-content: center;
   align-items: center;
 }
-/* ----------nav-main */
+
+/* ----------responsive-------*/
+
+@media screen and (max-width:576px) {
+  /* -----------------phần nav */
+.menu div .row{
+  margin: 0px;
+}
+.menu .sidenav-right {
+  display: none;
+}
+#mySidenav {
+  width: 500px;
+}
+.menu  div {
+  padding: 0px;
+}
+.menu span {
+  margin-bottom: 0px;
+}
+.menu .menu-title-content {
+  display: none;
+}
+.menu .cart-item .cart-title-content {
+  display: none;
+}
+.cart span .bi-cart3 {
+  width: 20px;
+  height: 20px;
+}
+}

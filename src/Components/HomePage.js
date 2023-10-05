@@ -47,28 +47,28 @@ function seeQuickOnApp(id){
     </div>
     {/* ------------support */}
     <div className="row support">
-      <div className="col-md-3 support-item">
+      <div className="col-md-3 col-6 support-item">
         <div>
           <img src="https://bizweb.dktcdn.net/100/244/305/themes/895013/assets/policy1.png?1676340930397" />
         </div>
         <span>Vận chuyển toàn cầu</span>
         <p>Chúng tôi miễn phí vận chuyển với tất cả các đơn hàng trị giá trên 2.000.000 đ</p>
       </div>
-      <div className="col-md-3 support-item">
+      <div className="col-md-3 col-6 support-item">
         <div>
           <img src="https://bizweb.dktcdn.net/100/244/305/themes/895013/assets/policy2.png?1676340930397" />
         </div>
         <span>HỖ TRỢ ONLINE 24/24</span>
         <p>Chúng tôi luôn luôn hỗ trợ khách hàng 24/24 tất cả các ngày trong tuần </p>
       </div>
-      <div className="col-md-3 support-item">
+      <div className="col-md-3 col-6 support-item">
         <div>
           <img src="https://bizweb.dktcdn.net/100/244/305/themes/895013/assets/policy3.png?1676340930397" />
         </div>
         <span>MIỄN PHÍ ĐỔI TRẢ</span>
         <p>Miễn phí đổi trả trong vòng 15 ngày đầu tiên  áp dụng cho tất cả các loại mặt hàng</p>
       </div>
-      <div className="col-md-3 support-item">
+      <div className="col-md-3 col-6 support-item">
         <div>
           <img src="https://bizweb.dktcdn.net/100/244/305/themes/895013/assets/policy4.png?1676340930397" />
         </div>
@@ -97,32 +97,32 @@ function seeQuickOnApp(id){
     </div>
     {/* --------------Thương hiệu */}
     <div className='typeofbrand-image row'>
-      <div className='col-md-2 typeofbrand-image-item'>
+      <div className='col-md-2 col-4 typeofbrand-image-item'>
         <div>
           <a href='#'><img src='https://bizweb.dktcdn.net/thumb/medium/100/244/305/themes/895013/assets/brand1.jpg?1676340930397' /></a>
         </div>
       </div>
-      <div className='col-md-2 typeofbrand-image-item'>
+      <div className='col-md-2 col-4  typeofbrand-image-item'>
         <div>
           <a href='#'><img src='//bizweb.dktcdn.net/thumb/medium/100/244/305/themes/895013/assets/brand3.jpg?1676340930397' /></a>
         </div>
       </div>
-      <div className='col-md-2 typeofbrand-image-item'>
+      <div className='col-md-2 col-4  typeofbrand-image-item'>
         <div>
           <a href='#'><img src='//bizweb.dktcdn.net/thumb/medium/100/244/305/themes/895013/assets/brand3.jpg?1676340930397' /></a>
         </div>
       </div>
-      <div className='col-md-2 typeofbrand-image-item'>
+      <div className='col-md-2 col-4  typeofbrand-image-item'>
         <div>
           <a href='#'><img src='//bizweb.dktcdn.net/thumb/medium/100/244/305/themes/895013/assets/brand4.jpg?1676340930397' /></a>
         </div>
       </div>
-      <div className='col-md-2 typeofbrand-image-item'>
+      <div className='col-md-2 col-4  typeofbrand-image-item'>
         <div>
           <a href='#'><img src='//bizweb.dktcdn.net/thumb/medium/100/244/305/themes/895013/assets/brand5.jpg?1676340930397' /></a>
         </div>
       </div>
-      <div className='col-md-2 typeofbrand-image-item'>
+      <div className='col-md-2 col-4  typeofbrand-image-item'>
         <div>
           <a href='#'><img src='//bizweb.dktcdn.net/thumb/medium/100/244/305/themes/895013/assets/brand6.jpg?1676340930397' /></a>
         </div>
@@ -130,15 +130,15 @@ function seeQuickOnApp(id){
     </div>
     {/* ----------- top discount */}
     <div className='row top-discount'>
-      <div className='col-md-3 top-discount-item'>
+      <div className='col-md-3 col-12 top-discount-item'>
         <h1><a href='#'>TOP GIẢM GIÁ</a></h1>
         <p>Là đại lý ủy quyền chính thức hợp pháp được cấp chứng nhận quốc tế Cam kết không bán hàng rởm hàng nhái kém chất lượng</p>
         <button className='top-discount-button'>XEM THÊM</button>
       </div>
-      <div className='col-md-9 top-discount-item item-watch row'>
+      <div className='col-md-9 col-12 top-discount-item item-watch row'>
         <div className='row'>
           {topDiscountItem.map(item =>
-          <div className='col-md-3 item-information'>
+          <div className='col-md-3 col-6 item-information'>
           <a href='#'><img src={item.image} /></a>
           <p><a href='#'>{item.name}</a></p>
           <p>{item.price}</p>
@@ -154,10 +154,10 @@ function seeQuickOnApp(id){
     </div>
     {/* ----------- introduce */}
     <div className='introduce row'>
-      <span className='col-md-1 left'>“</span>
-      <p className='col-md-10'><i>Đồng hồ đeo tay là một trong những phát minh vĩ đại nhất trên thế giới. Trước đây đồng hồ đeo tay chủ yếu giúp
+      <span className='col-md-1 col-1 left'>“</span>
+      <p className='col-md-10 col-10'><i>Đồng hồ đeo tay là một trong những phát minh vĩ đại nhất trên thế giới. Trước đây đồng hồ đeo tay chủ yếu giúp
         mọi người xem thời gian. Tuy nhiên, trong vài thập kỷ trở lại đây đồng hồ đeo tay không còn là một công cụ đơn thuần để mọi người xem giờ nữa mà nó là phụ kiện thiết yếu dành cho cả nam và nữ...</i></p>
-      <span className='col-md-1 right'>”</span>
+      <span className='col-md-1 col-1 right'>”</span>
     </div>
     {/* ------------- customer */}
     <div className='customer'>

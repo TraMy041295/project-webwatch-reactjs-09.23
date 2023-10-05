@@ -31,9 +31,9 @@ function Nav( props) {
     return (<>
        
         <div className="menu row">
-            <div className='col-md-2'>
-                <div id="mySidenav" className="sidenav row">
-                    <div className='sidenav-left col-md-4'>
+            <div className='menu-sticker col-md-2 col-1'>
+                <div id="mySidenav" className="sidenav row ">
+                    <div className='sidenav-left col-md-4 col-12'>
                     <button className="closebtn" onClick={closeNav}>x</button>
                     <NavLink className='nav-link' to="/trangchu">TRANG CHỦ</NavLink>
                     <NavLink className='nav-link' to="/men" >ĐỒNG HỒ NAM</NavLink>
@@ -68,8 +68,8 @@ function Nav( props) {
                             </p>
                         </div>
                         <div className='sidenav-right-men row'>
-                            <p className='col-md-4'><img src='//bizweb.dktcdn.net/100/244/305/themes/895013/assets/menu3.jpg?1676340930397'/></p>
-                            <p className='col-md-8'>
+                            <p className='col-md-4 col-4'><img src='//bizweb.dktcdn.net/100/244/305/themes/895013/assets/menu3.jpg?1676340930397'/></p>
+                            <p className='col-md-8 col-8'>
                                 <p>SẢN PHẨM KHUYẾN MÃI</p>
                                 <p className='row'>
                                 <NavLink className='nav-link col-md-6' to="/men" >ĐỒNG HỒ TSOT</NavLink>
@@ -82,18 +82,18 @@ function Nav( props) {
 
                     </div>
                 </div>
-                <span onClick={openNav}>&#9776; Menu</span>
+                <span className='menu-title' onClick={openNav}>&#9776; <span className='menu-title-content'>Menu</span></span>
             </div>
             {/* --------------Find */}
-            <div className="input-group col-md-2">
+            <div className="input-group col-md-2 col-2">
                 <div className='row input-group-item'>
                 
-                <span className="input-group-text border-left col-md-1" id="addon-wrapping">
+                <span className="input-group-text border-left col-md-1 col-1" id="addon-wrapping">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                     </svg>
                 </span>
-                <form className='input-group-search  col-md-8' onSubmit={searchItemNav}>
+                <form className='input-group-search  col-md-8 col-8' onSubmit={searchItemNav}>
                 <input type="text" value={searchNav} onChange={e=>{setSearchNav(e.target.value)}} className="form-control " placeholder="Tìm kiếm..." />
 
                 </form>
@@ -101,17 +101,20 @@ function Nav( props) {
             </div>
             {/* ---------------logo */}
 
-            <div className="logo col-md-5">
+            <div className="logo col-md-5 col-3">
                 <img src="https://bizweb.dktcdn.net/100/244/305/themes/895013/assets/logo.png?1676340930397" />
             </div>
             {/* --------- cart */}
-            <div className="cart col-md-3">
+            <div className="cart col-md-3 col-3">
                 <div className="row cart-item ">
-                    <span className=" col-md-1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                    <span className=" col-md-2 col-4"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
                     </svg>
                     </span>
-                    <p className="col-md-4"><NavLink className='nav-link' to="/giohang">Giỏ hàng(<span style={{color:"red"}}>{sumQuantity}</span>)</NavLink></p>
+                    <p className="cart-title row col-md-4 col-1">
+                        <span className='col-md-7 cart-title-content'><NavLink className='nav-link' to="/giohang">Giỏ hàng</NavLink></span>
+                        <span className='col-md-2' style={{color:"red"}}><NavLink className='nav-link' to="/giohang">({sumQuantity})</NavLink></span>
+                    </p>
                 </div>
            </div>
         </div>

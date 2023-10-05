@@ -14,7 +14,7 @@ function NewsPage() {
                 <p className="col-md-6 news-homepage"><Link class="nav-link active" to="/trangchu">Trang chủ</Link></p>
         </div>
         <div className="row tintuc">
-            <div className="col-md-4">
+            <div className="col-md-4 col-12">
                 <a href="#"><img src="//bizweb.dktcdn.net/thumb/large/100/244/305/articles/shutterstock-372398767.jpg?v=1502434798197" /></a>
                 <a href="#"><h4 className="tintuc-content">Từ điển kiến thức đồng hồ</h4></a>
                 <span className="tintuc-content time"><i class="fa-regular fa-clock"></i>11/8/2017</span>
@@ -31,7 +31,7 @@ function NewsPage() {
                     </p>
                 </div>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 col-12">
                 <a href="#"><img src="//bizweb.dktcdn.net/thumb/large/100/244/305/articles/shutterstock-404657758-ce0bf89f-2282-409b-8650-8212e967e7a6.jpg?v=1502434711520" /></a>
                 <a href="#"><h4 className="tintuc-content">Đồng hồ mới mua không chạy?</h4></a>
                 <span className="tintuc-content time"><i class="fa-regular fa-clock"></i>11/8/2017</span>
@@ -48,7 +48,7 @@ function NewsPage() {
                     </p>
                 </div>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4 col-12">
                 <a href="#"><img src="//bizweb.dktcdn.net/thumb/large/100/244/305/articles/shutterstock-452064502.jpg?v=1502434322947" /></a>
                 <a href="#"><h4 className="tintuc-content">Từ điển kiến thức đồng hồ</h4></a>
                 <span className="tintuc-content time"><i class="fa-regular fa-clock"></i>11/8/2017</span>
@@ -94,36 +94,36 @@ function NewsPage() {
                 <div className="tintuc-noibat">
                     <h5>Tin Tức Nổi Bật</h5>
                     <div className="row">
-                        <p className="col-md-4"><img src="//bizweb.dktcdn.net/100/244/305/themes/895013/assets/ajaxloader.gif?1676340930397" /></p>
-                        <p className="col-md-8">
+                        <p className="col-md-4 col-4"><img src="//bizweb.dktcdn.net/100/244/305/themes/895013/assets/ajaxloader.gif?1676340930397" /></p>
+                        <p className="col-md-8 col-8">
                             <a href="#">Từ điển kiến thức đồng hồ</a>
                             <p><i class="fa-regular fa-clock"></i> 11/08/2017</p>
                         </p>
                     </div>
                     <div className="row">
-                        <p className="col-md-4"><img src="//bizweb.dktcdn.net/100/244/305/themes/895013/assets/ajaxloader.gif?1676340930397" /></p>
-                        <p className="col-md-8">
+                        <p className="col-md-4 col-4"><img src="//bizweb.dktcdn.net/100/244/305/themes/895013/assets/ajaxloader.gif?1676340930397" /></p>
+                        <p className="col-md-8 col-8">
                             <a href="#">Đồng hồ mới mua không chạy?</a>
                             <p><i class="fa-regular fa-clock"></i> 11/08/2017</p>
                         </p>
                     </div>
                     <div className="row">
-                        <p className="col-md-4"><img src="//bizweb.dktcdn.net/100/244/305/themes/895013/assets/ajaxloader.gif?1676340930397" /></p>
-                        <p className="col-md-8">
+                        <p className="col-md-4 col-4"><img src="//bizweb.dktcdn.net/100/244/305/themes/895013/assets/ajaxloader.gif?1676340930397" /></p>
+                        <p className="col-md-8 col-8">
                             <a href="#">3 Dấu hiệu đồng hồ hết pin</a>
                             <p><i class="fa-regular fa-clock"></i> 11/08/2017</p>
                         </p>
                     </div>
                     <div className="row">
-                        <p className="col-md-4"><img src="//bizweb.dktcdn.net/100/244/305/themes/895013/assets/ajaxloader.gif?1676340930397" /></p>
-                        <p className="col-md-8">
+                        <p className="col-md-4 col-4"><img src="//bizweb.dktcdn.net/100/244/305/themes/895013/assets/ajaxloader.gif?1676340930397" /></p>
+                        <p className="col-md-8 col-8">
                             <a href="#">Đồng hồ SEIKO cổ</a>
                             <p><i class="fa-regular fa-clock"></i> 11/08/2017</p>
                         </p>
                     </div>
                     <div className="row">
-                        <p className="col-md-4"><img src="//bizweb.dktcdn.net/100/244/305/themes/895013/assets/ajaxloader.gif?1676340930397" /></p>
-                        <p className="col-md-8">
+                        <p className="col-md-4 col-4"><img src="//bizweb.dktcdn.net/100/244/305/themes/895013/assets/ajaxloader.gif?1676340930397" /></p>
+                        <p className="col-md-8 col-8">
                             <a href="#">Lịch sử đồng hồ TUDOR</a>
                             <p><i class="fa-regular fa-clock"></i> 11/08/2017</p>
                         </p>

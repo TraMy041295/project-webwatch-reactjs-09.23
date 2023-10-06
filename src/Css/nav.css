@@ -48,6 +48,11 @@
     margin-bottom: 20px;
     border-bottom: 1px solid #818181;
   }
+  /* --------------------------- */
+    .checkbox-menu-sticker:checked ~ .sidenav {
+      width: 1000px;
+    }
+ 
 
   /* --------------------------- */
 .menu {
@@ -110,9 +115,7 @@
 .menu .sidenav-right {
   display: none;
 }
-#mySidenav {
-  width: 500px;
-}
+
 .menu  div {
   padding: 0px;
 }
@@ -128,5 +131,15 @@
 .cart span .bi-cart3 {
   width: 20px;
   height: 20px;
+}
+
+.checkbox-menu-sticker:checked ~ .sidenav {
+  width: 100%;
+}
+.sidenav {
+  height: 50%;
+}
+.sidenav-left > .closebtn {
+  right: 20px;
 }
 }

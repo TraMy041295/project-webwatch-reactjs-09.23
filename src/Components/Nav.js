@@ -1,102 +1,103 @@
 import '../Css/nav.css'
-import {Link , NavLink, Outlet} from "react-router-dom"
+import { Link, NavLink, Outlet } from "react-router-dom"
 import Footer from './Footer'
 import Login from './Login'
-import { useNavigate , useParams , useSearchParams } from 'react-router-dom';
-import { useState ,useEffect, useMemo } from 'react'
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
+import { useState, useEffect, useMemo } from 'react'
 import Search from './Search';
 
-function Nav( props) {
-    const { watchList ,sumQuantity} = props
-    const [searchNav , setSearchNav] = useState("")
-    const [ searchParams , setsearchParams ] = useSearchParams()
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "1000px"
-    }
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0"
-    }
+function Nav(props) {
+    const { watchList, sumQuantity } = props
+    const [searchNav, setSearchNav] = useState("")
+    const [searchParams, setsearchParams] = useSearchParams()
+    // function openNav() {
+    //     document.getElementById("mySidenav").style.width = "1000px"
+    // }
+    // function closeNav() {
+    //     document.getElementById("mySidenav").style.width = "0"
+    // }
 
     // ----------------search
-    function searchItemNav(e){
+    function searchItemNav(e) {
         e.preventDefault()
-        setsearchParams({value:searchNav})
+        setsearchParams({ value: searchNav })
     }
-    const filterSearchNav = useMemo(()=>
-    (searchNav !== "") ? watchList.filter(item=>item.name.toLowerCase().includes(searchParams.get("value"))) : []
-       ,[searchParams])
+    const filterSearchNav = useMemo(() =>
+        (searchNav !== "") ? watchList.filter(item => item.name.toLowerCase().includes(searchParams.get("value"))) : []
+        , [searchParams])
 
 
-  
+
     return (<>
-       
+
         <div className="menu row">
             <div className='menu-sticker col-md-2 col-1'>
+                <label htmlFor='input-menu-sticker' className='menu-title' /*onClick={openNav}*/>&#9776; <span className='menu-title-content'>Menu</span></label>
+                <input type="checkbox" hidden name="" className='checkbox-menu-sticker' id="input-menu-sticker" />
                 <div id="mySidenav" className="sidenav row ">
                     <div className='sidenav-left col-md-4 col-12'>
-                    <button className="closebtn" onClick={closeNav}>x</button>
-                    <NavLink className='nav-link' to="/trangchu">TRANG CHỦ</NavLink>
-                    <NavLink className='nav-link' to="/men" >ĐỒNG HỒ NAM</NavLink>
-                    <NavLink className='nav-link' to="/women">ĐỒNG HỒ NỮ</NavLink>
-                    <NavLink className='nav-link' to="/tintuc">TIN TỨC</NavLink>
-                    <NavLink className='nav-link' to="/daily">ĐẠI LÝ</NavLink>
-                    <NavLink className='nav-link' to="/lienhe">LIÊN HỆ</NavLink>
+                    <label htmlFor='input-menu-sticker' className="closebtn" /*onClick={closeNav}*/>x</label>
+                        <NavLink className='nav-link' to="/trangchu">TRANG CHỦ</NavLink>
+                        <NavLink className='nav-link' to="/men" >ĐỒNG HỒ NAM</NavLink>
+                        <NavLink className='nav-link' to="/women">ĐỒNG HỒ NỮ</NavLink>
+                        <NavLink className='nav-link' to="/tintuc">TIN TỨC</NavLink>
+                        <NavLink className='nav-link' to="/daily">ĐẠI LÝ</NavLink>
+                        <NavLink className='nav-link' to="/lienhe">LIÊN HỆ</NavLink>
                     </div>
                     <div className='sidenav-right col-md-8'>
                         <div className='sidenav-right-men row'>
-                            <p className='col-md-4'><img src='//bizweb.dktcdn.net/100/244/305/themes/895013/assets/menu1.jpg?1676340930397'/></p>
+                            <p className='col-md-4'><img src='//bizweb.dktcdn.net/100/244/305/themes/895013/assets/menu1.jpg?1676340930397' /></p>
                             <p className='col-md-8'>
                                 <p>ĐỒNG HỒ NAM</p>
                                 <p className='row'>
-                                <NavLink className='nav-link col-md-6' to="/men" >ĐỒNG HỒ TSOT</NavLink>
-                                <NavLink className='nav-link col-md-6' to="/men" >ĐỒNG HỒ CITIZEN</NavLink>
-                                <NavLink className='nav-link col-md-6' to="/men" >ĐỒNG HỒ OMEGA</NavLink>
-                                <NavLink className='nav-link col-md-6' to="/men" >Đang Khuyến Mãi</NavLink>
+                                    <NavLink className='nav-link col-md-6' to="/men" >ĐỒNG HỒ TSOT</NavLink>
+                                    <NavLink className='nav-link col-md-6' to="/men" >ĐỒNG HỒ CITIZEN</NavLink>
+                                    <NavLink className='nav-link col-md-6' to="/men" >ĐỒNG HỒ OMEGA</NavLink>
+                                    <NavLink className='nav-link col-md-6' to="/men" >Đang Khuyến Mãi</NavLink>
                                 </p>
                             </p>
                         </div>
                         <div className='sidenav-right-men row'>
-                            <p className='col-md-4'><img src='//bizweb.dktcdn.net/100/244/305/themes/895013/assets/menu2.jpg?1676340930397'/></p>
+                            <p className='col-md-4'><img src='//bizweb.dktcdn.net/100/244/305/themes/895013/assets/menu2.jpg?1676340930397' /></p>
                             <p className='col-md-8'>
                                 <p>ĐỒNG HỒ NỮ</p>
                                 <p className='row'>
-                                <NavLink className='nav-link col-md-6' to="/women" >ĐỒNG HỒ TSOT</NavLink>
-                                <NavLink className='nav-link col-md-6' to="/women" >ĐỒNG HỒ CITIZEN</NavLink>
-                                <NavLink className='nav-link col-md-6' to="/women" >ĐỒNG HỒ OMEGA</NavLink>
-                                <NavLink className='nav-link col-md-6' to="/women" >Đang Khuyến Mãi</NavLink>
+                                    <NavLink className='nav-link col-md-6' to="/women" >ĐỒNG HỒ TSOT</NavLink>
+                                    <NavLink className='nav-link col-md-6' to="/women" >ĐỒNG HỒ CITIZEN</NavLink>
+                                    <NavLink className='nav-link col-md-6' to="/women" >ĐỒNG HỒ OMEGA</NavLink>
+                                    <NavLink className='nav-link col-md-6' to="/women" >Đang Khuyến Mãi</NavLink>
                                 </p>
                             </p>
                         </div>
                         <div className='sidenav-right-men row'>
-                            <p className='col-md-4 col-4'><img src='//bizweb.dktcdn.net/100/244/305/themes/895013/assets/menu3.jpg?1676340930397'/></p>
+                            <p className='col-md-4 col-4'><img src='//bizweb.dktcdn.net/100/244/305/themes/895013/assets/menu3.jpg?1676340930397' /></p>
                             <p className='col-md-8 col-8'>
                                 <p>SẢN PHẨM KHUYẾN MÃI</p>
                                 <p className='row'>
-                                <NavLink className='nav-link col-md-6' to="/men" >ĐỒNG HỒ TSOT</NavLink>
-                                <NavLink className='nav-link col-md-6' to="/men" >ĐỒNG HỒ CITIZEN</NavLink>
-                                <NavLink className='nav-link col-md-6' to="/men" >ĐỒNG HỒ OMEGA</NavLink>
-                                <NavLink className='nav-link col-md-6' to="/men" >Đang Khuyến Mãi</NavLink>
+                                    <NavLink className='nav-link col-md-6' to="/men" >ĐỒNG HỒ TSOT</NavLink>
+                                    <NavLink className='nav-link col-md-6' to="/men" >ĐỒNG HỒ CITIZEN</NavLink>
+                                    <NavLink className='nav-link col-md-6' to="/men" >ĐỒNG HỒ OMEGA</NavLink>
+                                    <NavLink className='nav-link col-md-6' to="/men" >Đang Khuyến Mãi</NavLink>
                                 </p>
                             </p>
                         </div>
 
                     </div>
                 </div>
-                <span className='menu-title' onClick={openNav}>&#9776; <span className='menu-title-content'>Menu</span></span>
             </div>
             {/* --------------Find */}
             <div className="input-group col-md-2 col-2">
                 <div className='row input-group-item'>
-                
-                <span className="input-group-text border-left col-md-1 col-1" id="addon-wrapping">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                    </svg>
-                </span>
-                <form className='input-group-search  col-md-8 col-8' onSubmit={searchItemNav}>
-                <input type="text" value={searchNav} onChange={e=>{setSearchNav(e.target.value)}} className="form-control " placeholder="Tìm kiếm..." />
 
-                </form>
+                    <span className="input-group-text border-left col-md-1 col-1" id="addon-wrapping">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg>
+                    </span>
+                    <form className='input-group-search  col-md-8 col-8' onSubmit={searchItemNav}>
+                        <input type="text" value={searchNav} onChange={e => { setSearchNav(e.target.value) }} className="form-control " placeholder="Tìm kiếm..." />
+
+                    </form>
                 </div>
             </div>
             {/* ---------------logo */}
@@ -113,15 +114,15 @@ function Nav( props) {
                     </span>
                     <p className="cart-title row col-md-4 col-1">
                         <span className='col-md-7 cart-title-content'><NavLink className='nav-link' to="/giohang">Giỏ hàng</NavLink></span>
-                        <span className='col-md-2' style={{color:"red"}}><NavLink className='nav-link' to="/giohang">({sumQuantity})</NavLink></span>
+                        <span className='col-md-2' style={{ color: "red" }}><NavLink className='nav-link' to="/giohang">({sumQuantity})</NavLink></span>
                     </p>
                 </div>
-           </div>
+            </div>
         </div>
         <div className='nav-main'>
-        {(searchParams == "") ? <Outlet/> : <Search filterSearchNav={filterSearchNav} searchNav={searchNav}/>}
+            {(searchParams == "") ? <Outlet /> : <Search filterSearchNav={filterSearchNav} searchNav={searchNav} />}
         </div>
-        <Footer/>
+        <Footer />
     </>)
 }
 

@@ -1,3 +1,7 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
 .support-item {
     text-align: center;
     padding: 30px 10px;
@@ -447,9 +451,17 @@ p {
 /* ------------------responsive web */
 
 @media screen and (max-width:576px) {
-    /* -------------slide  */
+   
+    /* ----------hỗ trợ/ support */
+    .support {
+        margin: 0px 0px;
+    }
+    .support-item{
+        padding: 0px;
+    }
+     /* -------------slide  */
     .Featured-products {
-        padding: 30px 50px 0px 50px;
+        padding: 30px 30px 0px 30px;
     }
 
     .slider-item {
@@ -503,6 +515,10 @@ p {
     /* -----------------top giảm giá */
     .top-discount {
         padding: 10px 0px;
+        margin: 0px;
+    }
+    .top-discount-item {
+        padding: 0px;
     }
     /* --------------introduce */
     .introduce {
@@ -510,5 +526,8 @@ p {
     }
     .introduce > span , p {
         padding: 0px;
+    }
+    .modal-content {
+        width: 70%;
     }
 }

@@ -21,7 +21,7 @@ import ContactPage from './components/ContactPage';
 import MenPage from './components/MenPage';
 import WoMenPage from './components/WoMenPage';
 import AdMinPage from './components/AdMinPage'
-import TableProductsPage from './components/TableProductsPage';
+import TableProducts from './components/TableProducts';
 import AddProduct from './components/AddProduct';
 import Cart from './components/Cart';
 import PaymentPay from './components/PagementPay';
@@ -120,8 +120,8 @@ function App(props) {
 
             </Route>
             <Route path="admin" element={<AdMinPage  />}>
-              <Route index element={<TableProductsPage  watchList={watchList} />}/>
-              <Route path="table-products" element={ <TableProductsPage  watchList={watchList} deleteApp={deleteApp}/>}/>
+              <Route index element={<TableProducts  watchList={watchList} />}/>
+              <Route path="table-products" element={ <TableProducts  watchList={watchList} deleteApp={deleteApp}/>}/>
               <Route path='add-product' element={<AddProduct addProduct={addProduct}/>}/>
               <Route path='order-manage' element={<OderManagePage payCusTom={payCusTom} setPayCusTom={setPayCusTom}/>}/>
               <Route path='edit-book/:id' element={<AddProduct addProduct={addProduct} watchList={watchList}/>}/>

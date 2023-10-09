@@ -58,3 +58,14 @@ iframe {
         margin: 0px;
     }
 }
+@media screen and (max-width:768px) and (min-width:578px) {
+    .daily-item {
+        margin: 0px 0px 0px 20px;
+    }
+    .daily-information {
+        margin: 0px;
+    }
+    iframe {
+        height: 400px;
+    }
+}

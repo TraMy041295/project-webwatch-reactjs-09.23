@@ -52,6 +52,7 @@
     height: 50px;
     display: none;
     border: none;
+    margin-left: 100px;
 }
 
 .slider-item:hover .slider-add-cart {
@@ -530,4 +531,96 @@ p {
     .modal-content {
         width: 70%;
     }
+}
+/* ---------------------responsive web */
+@media screen and (max-width:768px) and (min-width:578px) {
+   
+    /* ----------hỗ trợ/ support */
+    .support {
+        margin: 0px 0px;
+    }
+
+     /* -------------slide  */
+     .Featured-products {
+        padding: 30px 20px 0px 30px;
+    }
+
+    .slider-item {
+        height: 300px;
+    }
+
+    .slider-item:hover {
+        height: 380px;
+    }
+
+    .slider-item-information {
+        top: 200px
+    }
+
+    .slider-item .slider-add-cart {
+        width: 100%;
+        font-size: 12px;
+        margin-left: 0px;
+    }
+
+    .slider-item .slider-button-seequick {
+        left: 80px;
+        top: 75px;
+        width: 50px;
+        height: 50px;
+    }
+
+    /*.slider-item .img-mini {
+        height: 30px;
+    }
+    .img-mini p {
+        padding: 0px;
+    } */
+    /* .slider-item .slider-button-seequick {
+        opacity: 0.3;
+    }*/
+    /* .slider-item .slider-button-seequick > svg {
+        width: 30px;
+        height: 30px;
+    }  */
+    /* -----------------hình ảnh loại đồng hồ */
+    .typeofwatch-image .typeofwatch-image-item:hover::after {
+        top: 300px;
+
+    }
+    
+    .typeofwatch-image .typeofwatch-image-item:hover::before {
+        left: 330px;
+    }
+    /* -------------thương hiệu */
+    .typeofbrand-image {
+        padding: 10px 30px;
+    }
+    /* -----------------top giảm giá */
+    .top-discount {
+        padding: 10px 0px;
+        margin: 0px;
+        
+    }
+    .top-discount-item {
+        border: none;
+    }
+    .item-information>button {
+        top : 130px;
+        left: 140px;
+    }
+  
+    /* --------------introduce */
+    .introduce {
+        margin: 600px 0px 0px 0px;
+    }
+    /* ----------------showw hình ảnh */
+    .image-item-zoom>.image-item-button {
+        top : 90px;
+        left: 140px;
+    }
+}
+@media screen and (max-width:1400px) and (min-width:769px){
+    /* ----------hỗ trợ/ support */
+    
 }

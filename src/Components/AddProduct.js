@@ -1,34 +1,38 @@
-import '../Css/addproduct.css'
+import '../css/addproduct.css'
 import { useState , useEffect } from 'react';
 import { useNavigate , useParams } from 'react-router-dom';
 
-function AddProductPage(props) {
+function AddProduct(props) {
     const {addProduct , watchList} = props
     const navigate = useNavigate()
     const id = parseInt(useParams().id)
-    var [ form , setForm ] = useState({
+    const [ form , setForm ] = useState({
         gender: 0 ,name:"",image:"",price:"",quantity:1,introduce:""
     })
-    if(id){
-        const index = watchList.findIndex(item=>item.id==id)
-        form.gender = watchList[index].gender
-        form.name = watchList[index].name
-        form.image = watchList[index].image
-        form.price = watchList[index].price
-        form.quantity = watchList[index].quantity
-        form.introduce = watchList[index].introduce
-    }
- 
+
+    useEffect(()=>{
+        if(id){
+            const index = watchList.findIndex(item=>item.id==id)
+            form.gender = watchList[index].gender
+            form.name = watchList[index].name
+            form.image = watchList[index].image
+            form.price = watchList[index].price
+            form.quantity = watchList[index].quantity
+            form.introduce = watchList[index].introduce
+        }
+    },[id])
+   
+    
     function submitWatch(e){
         e.preventDefault()
-    
+
         if (id) {
             addProduct({...form,id:id})
         }else{
             addProduct({...form})
         }
         
-        navigate("/admin/tableproducts")
+        navigate("/admin/table-products")
     }
     function handleChange(e){
         setForm({
@@ -70,4 +74,4 @@ function AddProductPage(props) {
     </>)
 }
 
-export default AddProductPage
+export default AddProduct

@@ -167,3 +167,15 @@
 	position:relative;
 	top:1px;
 }
+
+/* -------------responsive */
+@media screen and (max-width:576px) {
+    .info-pay {
+        margin: 0px;
+    }
+}
+@media screen and (max-width:768px) and (min-width:578px) {
+    .info-pay {
+        margin: 0px;
+    }
+}

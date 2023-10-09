@@ -141,3 +141,42 @@ button .show {
         margin-bottom: 0px;
     }
 }
+
+
+/* ----------------- */
+@media screen and (max-width:768px) and (min-width:578px)  {
+    .men-title {
+        margin: 0px 0px 0px 15px;
+        padding-top: 15px;
+        padding-bottom: 10px;
+    }
+    /* ----------men-right */
+    .men-content {
+        margin: 0px;
+    }
+    .watch-men {
+        padding: 0px;
+    }
+    .all-item {
+        margin-top: 10px;
+    }
+    .men-content .tintuc-left {
+        display: none;
+    }
+    /* -----------men-right-product */
+    .btn-men {
+        margin-left: 0px;
+        width: 100%;
+    }
+    .men-button {
+        left: 100px;
+        top :90px;
+    }
+    .men-img-mini {
+        margin: 0px 10px 10px 10px;
+    }
+    .men-img-mini .men-img-mini1, .men-img-mini2, .men-img-mini3 {
+        padding: 0px;
+        margin-bottom: 0px;
+    }
+}

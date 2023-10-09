@@ -1,4 +1,4 @@
-import "../Css/cart.css"
+import "../css/cart.css"
 import { useState , useEffect } from 'react';
 import { useNavigate  } from 'react-router-dom';
 import {Link , NavLink, Outlet} from "react-router-dom"
@@ -75,9 +75,9 @@ function Cart(props) {
                             <td>{item.price}</td>
                             <td key={item.id}>
                                 <div className="row quantity-item" >
-                                    <button className="col-md-3 quantity-button" onClick={()=>changeQuantity(item,-1)} >-</button>
-                                    <input className="col-md-6 quantity-item-input" type="text" value={item.quantity} />
-                                    <button className="col-md-3 quantity-button"onClick={()=>changeQuantity(item,1)}>+</button>
+                                    <button className="col-md-3 col-sm-3 quantity-button" onClick={()=>changeQuantity(item,-1)} >-</button>
+                                    <input className="col-md-6 col-sm-6 quantity-item-input" type="text" value={item.quantity} />
+                                    <button className="col-md-3 col-sm-3 quantity-button"onClick={()=>changeQuantity(item,1)}>+</button>
                                 </div>
                             </td>
                             <td>{item.price * item.quantity}</td>

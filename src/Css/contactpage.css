@@ -66,3 +66,19 @@
         padding-bottom: 20px;
     }
 }
+@media screen and (max-width:768px) and (min-width:578px) {
+    .contact-title {
+        margin : 0px 0px 0px 20px;
+    }
+    .contact-map {
+        margin: 20px 0px 0px 0px;
+        height: 300px;
+    }
+    .contact-info {
+        margin: 20px 0px;
+    }
+    .address .address-content  {
+        margin-top: 20px;
+        padding-bottom: 20px;
+    }
+}

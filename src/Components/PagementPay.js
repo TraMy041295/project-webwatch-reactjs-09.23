@@ -1,4 +1,4 @@
-import "../Css/paymentpage.css"
+import "../css/paymentpage.css"
 import {Link , NavLink, Outlet} from "react-router-dom"
 import { useState , useEffect } from 'react';
 import axios from 'axios';
@@ -76,11 +76,11 @@ function PaymentPay(props) {
 
     return (<>
         <div className="row info-pay">
-            <div className="col-md-4 info-pay-form">
+            <div className="col-md-4 col-12 col-sm-6 info-pay-form">
                 <p className="form-title">Movado</p>
                 <div className="row form-info">
-                    <p className="col-md-6 info">Thông tin nhận hàng</p>
-                    <p className="col-md-4 login">Đăng Nhập</p>
+                    <p className="col-md-6 col-6 info">Thông tin nhận hàng</p>
+                    <p className="col-md-4 col-4 login">Đăng Nhập</p>
                 </div>
                 <div >
                     <form >
@@ -98,7 +98,7 @@ function PaymentPay(props) {
                     </form>
                 </div>
             </div>
-            <div className="col-md-4 transport">
+            <div className="col-md-4 col-12 col-sm-6 transport">
                 <div style={{height : "64px"}}></div>
                 <p className="transport-title">Vận chuyển</p>
                 <p className="info-transport">{(cod !== 0) ? `Phí vận chuyển : ${cod}` : "Vui lòng nhập thông tin giao hàng" }</p>
@@ -112,7 +112,7 @@ function PaymentPay(props) {
                     </div>
                 </div>
             </div>
-            <div className="col-md-4 pay-money">
+            <div className="col-md-4 col-12 col-sm-12 pay-money">
                 <p className="pay-money-title">Đơn hàng {sumQuantity} sản phẩm</p>
                 <table className="table">
                     <tbody className="table-group-divider">
@@ -128,21 +128,21 @@ function PaymentPay(props) {
                 </table>
                 <div className="discount-code">
                     <form className="row discount-code-form">
-                        <input  type="email" className="form-control col-md-6" placeholder="Nhập Mã Giảm Giá" />
-                        <button type="submit" className="btn btn-primary col-md-3">Submit</button>
+                        <input  type="email" className="form-control col-md-6 col-sm-6" placeholder="Nhập Mã Giảm Giá" />
+                        <button type="submit" className="btn btn-primary col-md-3 col-sm-3">Submit</button>
                     </form>
                 </div>
                 <div className="add-transport row">
-                    <p className="col-md-6">Tạm Tính</p>
-                    <p className="col-md-6">{sumMoney}</p>
-                    <p className="col-md-6">Phí vận chuyển</p>
-                    <p className="col-md-6">{cod}</p>
+                    <p className="col-md-6 col-6 col-sm-6">Tạm Tính</p>
+                    <p className="col-md-6 col-6 col-sm-6">{sumMoney}</p>
+                    <p className="col-md-6 col-6 col-sm-6">Phí vận chuyển</p>
+                    <p className="col-md-6 col-6 col-sm-6">{cod}</p>
                 </div>
                 <div className="sum-pay row">
-                    <p className="col-md-6">Tổng cộng</p>
-                    <p className="col-md-6">{sumMoney + cod}</p>
-                    <p className="col-md-6"><button className="btn-comback-cart"  ><NavLink className='nav-link' to="/giohang">Giỏ Hàng</NavLink></button></p>
-                    <p className="col-md-6"><button className="btn-pay-ok" onClick={finalPay}>Thanh Toán</button></p>
+                    <p className="col-md-6 col-6 col-sm-6">Tổng cộng</p>
+                    <p className="col-md-6 col-6 col-sm-6">{sumMoney + cod}</p>
+                    <p className="col-md-6 col-6 col-sm-6"><button className="btn-comback-cart"  ><NavLink className='nav-link' to="/giohang">Giỏ Hàng</NavLink></button></p>
+                    <p className="col-md-6 col-6 col-sm-6"><button className="btn-pay-ok" onClick={finalPay}>Thanh Toán</button></p>
                 </div>
 
             </div>

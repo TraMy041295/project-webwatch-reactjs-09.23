@@ -1,4 +1,4 @@
-import "../Css/news.css"
+import "../css/news.css"
 import {Link} from "react-router-dom"
 
 
@@ -11,18 +11,18 @@ function NewsPage() {
     return (<>
         <div className="tintuc-title row">
                 <p className="col-md-6 news-item ">TIN TỨC /</p>
-                <p className="col-md-6 news-homepage"><Link class="nav-link active" to="/trangchu">Trang chủ</Link></p>
+                <p className="col-md-6 news-homepage"><Link class="nav-link active" to="/trang-chu">Trang chủ</Link></p>
         </div>
-        <div className="row tintuc">
-            <div className="col-md-4 col-12">
+        <div className="row tin-tuc">
+            <div className="col-md-4 col-12 col-sm-4">
                 <a href="#"><img src="//bizweb.dktcdn.net/thumb/large/100/244/305/articles/shutterstock-372398767.jpg?v=1502434798197" /></a>
                 <a href="#"><h4 className="tintuc-content">Từ điển kiến thức đồng hồ</h4></a>
                 <span className="tintuc-content time"><i class="fa-regular fa-clock"></i>11/8/2017</span>
                 <span className="tintuc-content comment"><i class="fa-solid fa-comment"></i>1 bình luận</span>
                 <p className="tintuc-content mt-3">Bạn muốn trang bị kiến thức đồng hồ để sử dụng đúng hoặc hiểu biết thêm về thế giới máy đo thời gian? Bạn muốn đọc những bài viết về đồng hồ tiếng Anh nhưng...</p>
                 <div className="row tintuc-content-icon" >
-                    <p className=" col-md-4 tintuc-content"><a href="#">Đọc thêm</a></p>
-                    <p className="col-md-8 tintuc-content">chia sẻ :
+                    <p className=" col-md-4 col-sm-4 tintuc-content"><a href="#">Đọc thêm</a></p>
+                    <p className="col-md-8 col-sm-8 tintuc-content">chia sẻ :
                         <span className="share-icon"><i class="fa-brands fa-facebook-f"></i></span>
                         <span className="share-icon"><i class="fa-brands fa-twitter"></i></span>
                         <span className="share-icon"><i class="fa-brands fa-pinterest"></i></span>
@@ -31,15 +31,15 @@ function NewsPage() {
                     </p>
                 </div>
             </div>
-            <div className="col-md-4 col-12">
+            <div className="col-md-4 col-12 col-sm-4">
                 <a href="#"><img src="//bizweb.dktcdn.net/thumb/large/100/244/305/articles/shutterstock-404657758-ce0bf89f-2282-409b-8650-8212e967e7a6.jpg?v=1502434711520" /></a>
                 <a href="#"><h4 className="tintuc-content">Đồng hồ mới mua không chạy?</h4></a>
                 <span className="tintuc-content time"><i class="fa-regular fa-clock"></i>11/8/2017</span>
                 <span className="tintuc-content comment"><i class="fa-solid fa-comment"></i>0 bình luận</span>
                 <p className="tintuc-content mt-3">Bạn đang tức điên người vì đồng hồ mới mua không chạy? Liệu đó có phải là mình đã mua phải đồ giả kém chất lượng? Ngay sau đây chính là các nguyên nhân chiếc...</p>
                 <div className="row tintuc-content-icon" >
-                    <p className=" col-md-4 tintuc-content"><a href="#">Đọc thêm</a></p>
-                    <p className="col-md-8 tintuc-content">chia sẻ :
+                    <p className=" col-md-4 col-sm-4 tintuc-content"><a href="#">Đọc thêm</a></p>
+                    <p className="col-md-8 col-sm-8 tintuc-content">chia sẻ :
                         <span className="share-icon"><i class="fa-brands fa-facebook-f"></i></span>
                         <span className="share-icon"><i class="fa-brands fa-twitter"></i></span>
                         <span className="share-icon"><i class="fa-brands fa-pinterest"></i></span>
@@ -48,15 +48,15 @@ function NewsPage() {
                     </p>
                 </div>
             </div>
-            <div className="col-md-4 col-12">
+            <div className="col-md-4 col-12 col-sm-4">
                 <a href="#"><img src="//bizweb.dktcdn.net/thumb/large/100/244/305/articles/shutterstock-452064502.jpg?v=1502434322947" /></a>
                 <a href="#"><h4 className="tintuc-content">Từ điển kiến thức đồng hồ</h4></a>
                 <span className="tintuc-content time"><i class="fa-regular fa-clock"></i>11/8/2017</span>
                 <span className="tintuc-content comment"><i class="fa-solid fa-comment"></i>1 bình luận</span>
                 <p className="tintuc-content mt-3">Khi sắp hết pin, rất nhiều đồng hồ có chức năng thông báo cho người dùng biết cần phải thay pin trong thời gian trước dừng hẳn mọi hoạt động sẽ bằng một dấu hiệu...</p>
                 <div className="row tintuc-content-icon" >
-                    <p className=" col-md-4 tintuc-content"><a href="#">Đọc thêm</a></p>
-                    <p className="col-md-8 tintuc-content">chia sẻ :
+                    <p className=" col-md-4 col-sm-4 tintuc-content"><a href="#">Đọc thêm</a></p>
+                    <p className="col-md-8 col-sm-8 tintuc-content">chia sẻ :
                         <span className="share-icon"><i class="fa-brands fa-facebook-f"></i></span>
                         <span className="share-icon"><i class="fa-brands fa-twitter"></i></span>
                         <span className="share-icon"><i class="fa-brands fa-pinterest"></i></span>
@@ -72,7 +72,7 @@ function NewsPage() {
                     <h3>DANH MỤC</h3>
                     <ul class="nav flex-column">
                     <li class="nav-item danhmuc-item">
-                        <Link class="nav-link active" to="/trangchu">Trang chủ</Link>
+                        <Link class="nav-link active" to="/trang-chu">Trang chủ</Link>
                     </li>
                     <li class="nav-item danhmuc-item">
                         <Link class="nav-link" to="/men">Đồng hồ nam</Link>
@@ -81,13 +81,13 @@ function NewsPage() {
                         <Link class="nav-link" to="/women">Đồng hồ nữ</Link>
                     </li>
                     <li class="nav-item danhmuc-item">
-                        <Link class="nav-link" to="/tintuc">Tin tức</Link>
+                        <Link class="nav-link" to="/tin-tuc">Tin tức</Link>
                     </li>
                     <li class="nav-item danhmuc-item">
-                        <Link class="nav-link" to="/daily">Đại Lý</Link>
+                        <Link class="nav-link" to="/dai-ly">Đại Lý</Link>
                     </li>
                     <li class="nav-item danhmuc-item">
-                        <Link class="nav-link" to="/lienhe">Liên Hệ</Link>
+                        <Link class="nav-link" to="/lien-he">Liên Hệ</Link>
                     </li>
                 </ul>
                 </div>
@@ -131,8 +131,8 @@ function NewsPage() {
 
                 </div>
             </div>
-            <div className="tintuc-right col-md-9">
-                <div className="row tintuc-right-item ">
+            <div className="tintuc-right col-md-9 col-sm-12 row">
+                <div className="row tintuc-right-item col-sm-4">
                     <p className="col-md-6 tintuc-right-image"><a><img src="//bizweb.dktcdn.net/thumb/large/100/244/305/articles/shutterstock-497575942.jpg?v=1502434097500" /></a></p>
                     <div className="col-md-6 tintuc-right-content">
                         <h5><a href="#">Đồng hồ SEIKO cổ</a></h5>
@@ -151,7 +151,7 @@ function NewsPage() {
                         </div>
                     </div>
                 </div>
-                <div className="row tintuc-right-item">
+                <div className="row tintuc-right-item col-sm-4">
                     <p className="col-md-6 tintuc-right-image"><a><img src="//bizweb.dktcdn.net/thumb/large/100/244/305/articles/shutterstock-469113338.jpg?v=1502434134407" /></a></p>
                     <div className="col-md-6 tintuc-right-content">
                         <h5><a href="#">Đồng hồ SEIKO cổ</a></h5>
@@ -170,7 +170,7 @@ function NewsPage() {
                         </div>
                     </div>
                 </div>
-                <div className="row tintuc-right-item">
+                <div className="row tintuc-right-item col-sm-4">
                     <p className="col-md-6 tintuc-right-image"><a><img src="//bizweb.dktcdn.net/thumb/large/100/244/305/articles/shutterstock-449546110.jpg?v=1502427158767" /></a></p>
                     <div className="col-md-6 tintuc-right-content">
                         <h5><a href="#">Đồng hồ SEIKO cổ</a></h5>
@@ -189,7 +189,7 @@ function NewsPage() {
                         </div>
                     </div>
                 </div>
-                <div className="row tintuc-right-item">
+                <div className="row tintuc-right-item col-sm-4">
                     <p className="col-md-6 tintuc-right-image"><a><img src="//bizweb.dktcdn.net/thumb/large/100/244/305/articles/shutterstock-404657758.jpg?v=1502427057823" /></a></p>
                     <div className="col-md-6 tintuc-right-content">
                         <h5><a href="#">Đồng hồ SEIKO cổ</a></h5>

@@ -130,7 +130,7 @@
   }
 /* ------------------responsive web */
 
-@media screen and (max-width:576px) {
+@media screen and (max-width:578px) {
     .email {
         text-align: start;
     }
@@ -148,5 +148,25 @@
         margin: 30px 0px;
     }
 }
+/* ------------------ */
+@media screen and (max-width:768px) and (min-width:578px) {
+    .email {
+        text-align: start;
+    }
+    .email-form {
+        margin-left: 10px;
+    }
+    .email > .input-group {
+        width: 300px;
+    }
+    .email .form-control {
+        border-radius: 0px;
+    }
+    /* ------------------footer */
+    .footer {
+        margin: 30px 0px;
+    }
+}
+
 
   

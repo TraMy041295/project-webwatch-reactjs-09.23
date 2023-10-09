@@ -1,4 +1,4 @@
-import "../Css/login.css"
+import "../css/login.css"
 import { useEffect, useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import {
@@ -61,7 +61,7 @@ function Login(props) {
         setopenLogin(haveError)
         setUser(form)
         alert("Đăng nhập thành công")
-        navigate("/admin/tableproducts")
+        navigate("/admin/table-products")
         setCookie("user",JSON.stringify(form))
         return
       }

@@ -1,6 +1,6 @@
-import "../Css/men.css"
+import "../css/men.css"
 import Tooltip from '@mui/material/Tooltip';
-import "../Css/sidebar.css"
+import "../css/sidebar.css"
 import { useState, useEffect , useMemo } from 'react'
 import { Link } from "react-router-dom"
 import { useNavigate } from 'react-router-dom';
@@ -53,7 +53,7 @@ function MenPage(props) {
 
     //   ------------------------Thêm vào giỏ hàng
     function addCart(item) {
-        navigate("/giohang")
+        navigate("/gio-hang")
         getItemCart(item)
     }
     //   ----------------------- SắP XẾP
@@ -81,25 +81,25 @@ function MenPage(props) {
     }
     // ---------------------------
     function seeQuickOnApp(id) {
-        navigate(`/seequickonapp/${id}`)
+        navigate(`/see-quick-on-app/${id}`)
 
     }
-    console.log("render")
+    
     return (<>
 
         <div className="men-title row">
             <p className="col-md-6 men-all-item ">TẤT CẢ SẢN PHẨM /</p>
-            <p className="col-md-4 men-homepage "><Link class="nav-link active" to="/trangchu">Trang chủ</Link></p>
+            <p className="col-md-4 men-homepage "><Link class="nav-link active" to="/trang-chu">Trang chủ</Link></p>
         </div>
         <div className="men-content row">
-            <div className="tintuc-left col-md-3 col-12 grid">
-                <div className="danhmuc col-md-12">
+            <div className="tintuc-left col-md-3 col-12 col-sm-12 grid">
+                <div className="danhmuc col-md-12 col-sm-12">
                     <div className="danhmuc-title">
                         <p className="title-item"><h6>DANH MỤC</h6></p>
                     </div>
                     <ul class="nav flex-column">
                         <li class="nav-item danhmuc-item">
-                            <Link class="nav-link active" to="/trangchu">Trang chủ</Link>
+                            <Link class="nav-link active" to="/trang-chu">Trang chủ</Link>
                         </li>
                         <li class="nav-item danhmuc-item">
                             <Link class="nav-link" to="/men">Đồng hồ nam</Link>
@@ -108,13 +108,13 @@ function MenPage(props) {
                             <Link class="nav-link" to="/women">Đồng hồ nữ</Link>
                         </li>
                         <li class="nav-item danhmuc-item">
-                            <Link class="nav-link" to="/tintuc">Tin tức</Link>
+                            <Link class="nav-link" to="/tin-tuc">Tin tức</Link>
                         </li>
                         <li class="nav-item danhmuc-item">
-                            <Link class="nav-link" to="/daily">Đại Lý</Link>
+                            <Link class="nav-link" to="/dai-ly">Đại Lý</Link>
                         </li>
                         <li class="nav-item danhmuc-item">
-                            <Link class="nav-link" to="/lienhe">Liên Hệ</Link>
+                            <Link class="nav-link" to="/lien-he">Liên Hệ</Link>
                         </li>
                     </ul>
                 </div>
@@ -273,12 +273,12 @@ function MenPage(props) {
                 </div>
 
                 {filter.map(item =>
-                    <div className='col-md-4 col-6 men-item'>
+                    <div className='col-md-4 col-6 col-sm-4 men-item'>
                         <a href='#'><img src={item.image} /></a>
-                        <div className="row men-img-mini col-12">
-                            <p className="col-md-3 col-4 men-img-mini1"><img src="https://bizweb.dktcdn.net/thumb/large/100/244/305/products/7.jpg?v=1502423293320" /></p>
-                            <p className="col-md-3 col-4 men-img-mini2"><img src="https://bizweb.dktcdn.net/thumb/large/100/244/305/products/6-574444e4-7a2d-4849-9dca-76ce01c24abd-9b0b1bb6-48a0-4b2a-8500-eccee4c446a1.jpg?v=1502422596970" /></p>
-                            <p className="col-md-3 col-4 men-img-mini3"><img src="https://bizweb.dktcdn.net/thumb/large/100/244/305/products/5-1da46838-470c-4fe1-9ba5-618c765d8789.jpg?v=1502422386343" /></p>
+                        <div className="row men-img-mini col-12 col-sm-12">
+                            <p className="col-md-3 col-4 col-sm-3 men-img-mini1"><img src="https://bizweb.dktcdn.net/thumb/large/100/244/305/products/7.jpg?v=1502423293320" /></p>
+                            <p className="col-md-3 col-4 col-sm-3 men-img-mini2"><img src="https://bizweb.dktcdn.net/thumb/large/100/244/305/products/6-574444e4-7a2d-4849-9dca-76ce01c24abd-9b0b1bb6-48a0-4b2a-8500-eccee4c446a1.jpg?v=1502422596970" /></p>
+                            <p className="col-md-3 col-4 col-sm-3 men-img-mini3"><img src="https://bizweb.dktcdn.net/thumb/large/100/244/305/products/5-1da46838-470c-4fe1-9ba5-618c765d8789.jpg?v=1502422386343" /></p>
                         </div>
                         <p><a href='#'>{item.name}</a></p>
                         <p>{item.price}</p>

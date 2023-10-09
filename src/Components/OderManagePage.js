@@ -2,7 +2,7 @@ import {Link , NavLink, Outlet} from "react-router-dom"
 import { useState , useEffect } from 'react';
 import axios from 'axios';
 import SeeQuickOrDer from "./SeeQuickOrDer";
-import "../Css/ordermanage.css"
+import "../css/ordermanage.css"
 
 const api = "https://6496d60c83d4c69925a326f0.mockapi.io/"
 

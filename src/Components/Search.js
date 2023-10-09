@@ -1,7 +1,7 @@
-import "../Css/men.css"
-import "../Css/searchnav.css"
+import "../css/men.css"
+import "../css/searchnav.css"
 import Tooltip from '@mui/material/Tooltip';
-import "../Css/sidebar.css"
+import "../css/sidebar.css"
 import { useState, useEffect } from 'react'
 import { Link } from "react-router-dom"
 
@@ -14,7 +14,7 @@ function Search(props) {
     return (<>
         <div className="search_nav row">
             <p className="col-md-9 ">KẾT QUẢ TÌM KIẾM VỚI TỪ KHOÁ "{searchNav}"/</p>
-            <p className="col-md-3 "><Link class="nav-link active" to="/trangchu">Trang chủ</Link></p>
+            <p className="col-md-3 "><Link class="nav-link active" to="/trang-chu">Trang chủ</Link></p>
         </div>
         {/* ---------------------------------------------- */}
         <div className="men-content row">

@@ -91,9 +91,9 @@ function addCart(item) {
           </div>
           <div className="slider-item-information ">
             <div className="row img-mini">
-              <p className="col-md-2 col-2 col-sm-3 img-mini1"><img src="https://bizweb.dktcdn.net/thumb/large/100/244/305/products/7.jpg?v=1502423293320" /></p>
-              <p className="col-md-2 col-2 col-sm-3 img-mini2"><img src="https://bizweb.dktcdn.net/thumb/large/100/244/305/products/6-574444e4-7a2d-4849-9dca-76ce01c24abd-9b0b1bb6-48a0-4b2a-8500-eccee4c446a1.jpg?v=1502422596970" /></p>
-              <p className="col-md-2 col-2 col-sm-3 img-mini3"><img src="https://bizweb.dktcdn.net/thumb/large/100/244/305/products/5-1da46838-470c-4fe1-9ba5-618c765d8789.jpg?v=1502422386343" /></p>
+              <p className="col-md-2 col-2 col-sm-3 col-lg-2 col-xl-2 img-mini1"><img src="https://bizweb.dktcdn.net/thumb/large/100/244/305/products/7.jpg?v=1502423293320" /></p>
+              <p className="col-md-2 col-2 col-sm-3 col-lg-2 col-xl-2 img-mini2"><img src="https://bizweb.dktcdn.net/thumb/large/100/244/305/products/6-574444e4-7a2d-4849-9dca-76ce01c24abd-9b0b1bb6-48a0-4b2a-8500-eccee4c446a1.jpg?v=1502422596970" /></p>
+              <p className="col-md-2 col-2 col-sm-3 col-lg-2 col-xl-2 img-mini3"><img src="https://bizweb.dktcdn.net/thumb/large/100/244/305/products/5-1da46838-470c-4fe1-9ba5-618c765d8789.jpg?v=1502422386343" /></p>
             </div>
             <p>{item.name}</p>
             <p>{item.price}</p>

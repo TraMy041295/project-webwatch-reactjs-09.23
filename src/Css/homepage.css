@@ -2,6 +2,7 @@
     margin: 0px;
     padding: 0px;
 }
+
 .support-item {
     text-align: center;
     padding: 30px 10px;
@@ -452,15 +453,17 @@ p {
 /* ------------------responsive web */
 
 @media screen and (max-width:576px) {
-   
+
     /* ----------hỗ trợ/ support */
     .support {
         margin: 0px 0px;
     }
-    .support-item{
+
+    .support-item {
         padding: 0px;
     }
-     /* -------------slide  */
+
+    /* -------------slide  */
     .Featured-products {
         padding: 30px 30px 0px 30px;
     }
@@ -490,58 +493,70 @@ p {
     .slider-item .img-mini {
         height: 30px;
     }
+
     .img-mini p {
         padding: 0px;
     }
+
     .slider-item .slider-button-seequick {
         opacity: 0.3;
     }
-    .slider-item .slider-button-seequick > svg {
+
+    .slider-item .slider-button-seequick>svg {
         width: 30px;
         height: 30px;
     }
+
     /* -----------------hình ảnh loại đồng hồ */
     .typeofwatch-image .typeofwatch-image-item:hover::after {
         top: 160px;
 
     }
-    
+
     .typeofwatch-image .typeofwatch-image-item:hover::before {
         left: 160px;
     }
+
     /* -------------thương hiệu */
     .typeofbrand-image {
         padding: 10px 30px;
     }
+
     /* -----------------top giảm giá */
     .top-discount {
         padding: 10px 0px;
         margin: 0px;
     }
+
     .top-discount-item {
         padding: 0px;
     }
+
     /* --------------introduce */
     .introduce {
         margin: 400px 0px 0px 0px;
     }
-    .introduce > span , p {
+
+    .introduce>span,
+    p {
         padding: 0px;
     }
+
     .modal-content {
         width: 70%;
     }
 }
+
 /* ---------------------responsive web */
-@media screen and (max-width:768px) and (min-width:578px) {
-   
+@media screen and (max-width:769px) and (min-width:576px) {
+
     /* ----------hỗ trợ/ support */
     .support {
         margin: 0px 0px;
     }
 
-     /* -------------slide  */
-     .Featured-products {
+    /* -------------slide  */
+    .Featured-products {
         padding: 30px 20px 0px 30px;
     }
 
@@ -570,57 +585,265 @@ p {
         height: 50px;
     }
 
-    /*.slider-item .img-mini {
-        height: 30px;
-    }
-    .img-mini p {
-        padding: 0px;
-    } */
-    /* .slider-item .slider-button-seequick {
-        opacity: 0.3;
-    }*/
-    /* .slider-item .slider-button-seequick > svg {
-        width: 30px;
-        height: 30px;
-    }  */
     /* -----------------hình ảnh loại đồng hồ */
     .typeofwatch-image .typeofwatch-image-item:hover::after {
         top: 300px;
 
     }
-    
+
     .typeofwatch-image .typeofwatch-image-item:hover::before {
         left: 330px;
     }
+
     /* -------------thương hiệu */
     .typeofbrand-image {
         padding: 10px 30px;
     }
+
     /* -----------------top giảm giá */
     .top-discount {
         padding: 10px 0px;
         margin: 0px;
-        
+
     }
+
     .top-discount-item {
         border: none;
     }
+
     .item-information>button {
-        top : 130px;
+        top: 130px;
         left: 140px;
     }
-  
+
     /* --------------introduce */
     .introduce {
         margin: 600px 0px 0px 0px;
     }
+
     /* ----------------showw hình ảnh */
     .image-item-zoom>.image-item-button {
-        top : 90px;
+        top: 90px;
         left: 140px;
     }
 }
-@media screen and (max-width:1400px) and (min-width:769px){
+
+@media screen and (max-width:992px) and (min-width:769px) {
+
     /* ----------hỗ trợ/ support */
-    
+    .support {
+        margin: 0px 0px;
+    }
+
+    .support-item {
+        padding: 0px;
+    }
+
+    /* -------------slide  */
+    .Featured-products {
+        padding: 10px 30px 0px 40px;
+    }
+
+    .slider-item {
+        height: 350px;
+    }
+
+    .slider-item:hover {
+        height: 420px;
+    }
+
+    .slider-item-information {
+        top: 250px
+    }
+    .slider-item .slider-add-cart {
+        width: 100%;
+        font-size: 12px;
+        margin-left: 0px;
+    }
+
+    .slider-item .slider-button-seequick {
+        left: 100px;
+        top: 100px;
+        width: 50px;
+        height: 50px;
+    }
+
+    /* -----------------hình ảnh loại đồng hồ */
+    .typeofwatch-image .typeofwatch-image-item:hover::after {
+        top: 110px;
+
+    }
+
+    .typeofwatch-image .typeofwatch-image-item:hover::before {
+        left: 130px;
+    }
+
+    /* -------------thương hiệu */
+    .typeofbrand-image {
+        padding: 10px 30px;
+    }
+
+    /* -----------------top giảm giá */
+    .top-discount {
+        padding: 10px 0px;
+        margin: 0px;
+        height: 350px;
+    }
+
+    .top-discount-item {
+        border: none;
+    }
+
+    .item-information>button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .item-information>button {
+        top: 50px;
+        left: 55px;
+    }
+
+    /* --------------introduce */
+    .introduce {
+        margin: 50px 0px 0px 0px;
+    }
+    /* ----------------showw hình ảnh */
+    .image-item-zoom>.image-item-button {
+        top: 90px;
+        left: 120px;
+    }
+
+}
+
+@media screen and (max-width:1200px) and (min-width:992px) {
+
+    /* ----------hỗ trợ/ support */
+    .support {
+        margin: 0px 0px;
+    }
+
+    .support-item {
+        padding: 0px;
+    }
+
+    /* -------------slide  */
+    .Featured-products {
+        padding: 30px 30px 30px 40px;
+    }
+
+    .slider-item {
+        height: 430px;
+    }
+
+    .slider-item:hover {
+        height: 500px;
+    }
+
+    .slider-item-information {
+        top: 320px
+    }
+
+    .slider-item .slider-add-cart {
+        width: 100%;
+        font-size: 12px;
+        margin-left: 0px;
+    }
+
+    .slider-item .slider-button-seequick {
+        left: 150px;
+        top: 150px;
+        width: 50px;
+        height: 50px;
+    }
+
+    /* -----------------hình ảnh loại đồng hồ */
+    .typeofwatch-image .typeofwatch-image-item:hover::after {
+        top: 150px;
+
+    }
+
+    .typeofwatch-image .typeofwatch-image-item:hover::before {
+        left: 180px;
+    }
+
+    /* -------------thương hiệu */
+    .typeofbrand-image {
+        padding: 10px 30px;
+    }
+
+    /* -----------------top giảm giá */
+    .top-discount {
+        padding: 30px 30px;
+        margin: 0px;
+        height: 400px;
+    }
+
+    .top-discount-item {
+        border: none;
+    }
+
+    .item-information>button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .item-information>button {
+        top: 70px;
+        left: 80px;
+    }
+
+    /* ----------------showw hình ảnh */
+    .image-item-zoom>.image-item-button {
+        top: 90px;
+        left: 70px;
+    }
+}
+
+@media screen and (max-width:1400px) and (min-width:1200px) {
+
+    /* ----------hỗ trợ/ support */
+    .support {
+        margin: 0px 0px;
+    }
+
+
+    /* -------------slide  */
+
+    .slider-item:hover {
+        height: 520px;
+    }
+
+    .slider-item-information {
+        top: 320px
+    }
+
+    .slider-item .slider-add-cart {
+        width: 100%;
+        font-size: 12px;
+        margin-left: 0px;
+    }
+
+    .slider-item .slider-button-seequick {
+        left: 350px;
+        top: 200px;
+        width: 50px;
+        height: 50px;
+    }
+
+    /* -----------------hình ảnh loại đồng hồ */
+    .typeofwatch-image .typeofwatch-image-item:hover::after {
+        top: 150px;
+
+    }
+
+    .typeofwatch-image .typeofwatch-image-item:hover::before {
+        left: 180px;
+    }
+
+    /* ----------------showw hình ảnh */
+    .image-item-zoom>.image-item-button {
+        top: 90px;
+        left: 70px;
+    }
 }

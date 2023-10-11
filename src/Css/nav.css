@@ -61,6 +61,8 @@
   text-align: center;
   align-items: center;
   border: 1.5px solid #f1f1f1;
+  justify-content: space-around;
+  align-items: center;
  
 }
 /* -------------------- */
@@ -101,7 +103,7 @@
   height: 30px;
 }
 .cart-item {
-  justify-content: center;
+  justify-content: end;
   align-items: center;
 }
 
@@ -142,7 +144,7 @@
 }
 }
 /* ------------------responsive  */
-@media screen and (max-width:768px) and (min-width:578px) {
+@media screen and (max-width:769px) and (min-width:578px) {
   /* -----------------phần nav */
 
 .menu .sidenav-right {
@@ -161,9 +163,7 @@
 .cart-title {
   margin-bottom: 0px;
 }
-/* .menu .cart-item .cart-title-content {
-  display: none;
-} */
+
 .cart span .bi-cart3 {
   width: 20px;
   height: 20px;
@@ -179,4 +179,112 @@
   right: 20px;
 }
 }
+@media screen and (max-width:1400px) and (min-width:769px) {
+  
+  .menu  div {
+    padding: 0px;
+  }
+  .menu span {
+    margin-bottom: 0px;
+  }
+  .checkbox-menu-sticker:checked ~ .sidenav {
+    width: 100%;
+}
 
+  .cart-title {
+    margin-bottom: 0px;
+  }
+
+  .cart span .bi-cart3 {
+    width: 20px;
+    height: 20px;
+  }
+  .cart-item {
+    justify-content: end;
+    align-items: center;
+  }
+
+  .sidenav-left > .closebtn {
+    right: 20px;
+  } 
+  .sidenav-right-men > img {
+    width: 100%;
+  }
+}
+/* @media screen and (max-width:1200px) and (min-width:992px) {
+  
+  .menu  div {
+    padding: 0px;
+  }
+  .menu span {
+    margin-bottom: 0px;
+  }
+
+  .cart-title {
+    margin-bottom: 0px;
+  }
+
+  .cart span .bi-cart3 {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .checkbox-menu-sticker:checked ~ .sidenav {
+    width: 50%;
+  }
+  .sidenav {
+    height: 70%;
+  }
+  .sidenav-left > .closebtn {
+    right: 20px;
+  } 
+}
+@media screen and (max-width:1400px) and (min-width:1200px) {
+  .menu  div {
+    padding: 0px;
+  }
+  .menu span {
+    margin-bottom: 0px;
+  }
+
+  .cart-title {
+    margin-bottom: 0px;
+  }
+
+  .cart span .bi-cart3 {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .checkbox-menu-sticker:checked ~ .sidenav {
+    width: 50%;
+  }
+  .sidenav {
+    height: 70%;
+  }
+  .sidenav-left > .closebtn {
+    right: 20px;
+  } 
+} */
+@media screen  and (min-width:1400px) {
+  
+  .menu  div {
+    padding: 0px;
+  }
+  .menu span {
+    margin-bottom: 0px;
+  }
+
+  .cart-title {
+    margin-bottom: 0px;
+  }
+
+  .cart span .bi-cart3 {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .sidenav-left > .closebtn {
+    right: 20px;
+  } 
+}

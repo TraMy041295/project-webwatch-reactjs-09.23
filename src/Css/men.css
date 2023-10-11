@@ -63,8 +63,8 @@ button .show {
     height: 50px;
     border: none;
     background-color: white;
-    top : 100px;
-    left: 110px;
+    top : 80px;
+    left: 90px;
     display: none;
 }
 .men-button:hover {
@@ -144,15 +144,11 @@ button .show {
 
 
 /* ----------------- */
-@media screen and (max-width:768px) and (min-width:578px)  {
-    .men-title {
-        margin: 0px 0px 0px 15px;
-        padding-top: 15px;
-        padding-bottom: 10px;
-    }
+@media screen and (max-width:769px) and (min-width:578px)  {
+
     /* ----------men-right */
     .men-content {
-        margin: 0px;
+        margin: 20px 10px;
     }
     .watch-men {
         padding: 0px;
@@ -160,9 +156,9 @@ button .show {
     .all-item {
         margin-top: 10px;
     }
-    .men-content .tintuc-left {
+    /* .men-content .tintuc-left {
         display: none;
-    }
+    } */
     /* -----------men-right-product */
     .btn-men {
         margin-left: 0px;
@@ -179,4 +175,93 @@ button .show {
         padding: 0px;
         margin-bottom: 0px;
     }
+}
+@media screen and (max-width:992px) and (min-width:769px) {
+
+    /* ----------men-right */
+    .men-content {
+        margin: 20px 20px;
+    }
+    .watch-men {
+        padding: 0px;
+    }
+    .all-item {
+        margin-top: 10px;
+    }
+ 
+    /* -----------men-right-product */
+    .btn-men {
+        margin-left: 0px;
+        width: 100%;
+    }
+    .men-button {
+        left: 70px;
+        top :60px;
+    }
+    .men-img-mini {
+        margin: 0px 10px 10px 10px;
+    }
+    .men-img-mini .men-img-mini1, .men-img-mini2, .men-img-mini3 {
+        padding: 0px;
+        margin-bottom: 0px;
+    }
+}
+@media screen and (max-width:1200px) and (min-width:992px) {
+        /* ----------men-right */
+        .men-content {
+            margin: 20px 20px;
+        }
+        .watch-men {
+            padding: 0px;
+        }
+        .all-item {
+            margin-top: 10px;
+        }
+     
+        /* -----------men-right-product */
+        .btn-men {
+            margin-left: 0px;
+            width: 100%;
+        }
+        .men-button {
+            left: 85px;
+            top :70px;
+        }
+        .men-img-mini {
+            margin: 0px 10px 10px 10px;
+        }
+        .men-img-mini .men-img-mini1, .men-img-mini2, .men-img-mini3 {
+            padding: 0px;
+            margin-bottom: 0px;
+        }
+}
+@media screen and (max-width:1400px) and (min-width:1200px) {
+            /* ----------men-right */
+            .men-content {
+                margin: 20px 20px;
+            }
+            .watch-men {
+                padding: 0px;
+            }
+            .all-item {
+                margin-top: 10px;
+            }
+         
+            /* -----------men-right-product */
+            .btn-men {
+                margin-left: 0px;
+                width: 100%;
+            }
+            .men-button {
+                left: 85px;
+                top :70px;
+            }
+            .men-img-mini {
+                margin: 0px 10px 10px 10px;
+            }
+            .men-img-mini .men-img-mini1, .men-img-mini2, .men-img-mini3 {
+                padding: 0px;
+                margin-bottom: 0px;
+            }
+
 }

@@ -47,28 +47,28 @@ function seeQuickOnApp(id){
     </div>
     {/* ------------support */}
     <div className="row support">
-      <div className="col-md-3 col-6 col-sm-6 support-item">
+      <div className="col-md-3 col-6 col-sm-6 col-lg-3 col-xl-3 support-item">
         <div>
           <img src="https://bizweb.dktcdn.net/100/244/305/themes/895013/assets/policy1.png?1676340930397" />
         </div>
         <span>Vận chuyển toàn cầu</span>
         <p>Chúng tôi miễn phí vận chuyển với tất cả các đơn hàng trị giá trên 2.000.000 đ</p>
       </div>
-      <div className="col-md-3 col-6 xol-sm-6 support-item">
+      <div className="col-md-3 col-6 xol-sm-6 col-lg-3 col-xl-3 support-item">
         <div>
           <img src="https://bizweb.dktcdn.net/100/244/305/themes/895013/assets/policy2.png?1676340930397" />
         </div>
         <span>HỖ TRỢ ONLINE 24/24</span>
         <p>Chúng tôi luôn luôn hỗ trợ khách hàng 24/24 tất cả các ngày trong tuần </p>
       </div>
-      <div className="col-md-3 col-6 col-sm-6 support-item">
+      <div className="col-md-3 col-6 col-sm-6 col-lg-3 col-xl-3 support-item">
         <div>
           <img src="https://bizweb.dktcdn.net/100/244/305/themes/895013/assets/policy3.png?1676340930397" />
         </div>
         <span>MIỄN PHÍ ĐỔI TRẢ</span>
         <p>Miễn phí đổi trả trong vòng 15 ngày đầu tiên  áp dụng cho tất cả các loại mặt hàng</p>
       </div>
-      <div className="col-md-3 col-6 col-sm-6 support-item">
+      <div className="col-md-3 col-6 col-sm-6 col-lg-3 col-xl-3 support-item">
         <div>
           <img src="https://bizweb.dktcdn.net/100/244/305/themes/895013/assets/policy4.png?1676340930397" />
         </div>
@@ -85,44 +85,44 @@ function seeQuickOnApp(id){
     </div>
     {/* -------------hình ảnh loai đồng hồ */}
     <div className='typeofwatch-image row'>
-      <div className='col-md-4 typeofwatch-image-item'>
+      <div className='col-md-4 col-lg-4 col-xl-4 typeofwatch-image-item'>
         <img src="https://bizweb.dktcdn.net/100/244/305/themes/895013/assets/banner_1.jpg?1676340930397" />
       </div>
-      <div className='col-md-4 typeofwatch-image-item'>
+      <div className='col-md-4 col-lg-4 col-xl-4 typeofwatch-image-item'>
         <img src="https://bizweb.dktcdn.net/100/244/305/themes/895013/assets/banner_2.jpg?1676340930397" />
       </div>
-      <div className='col-md-4 typeofwatch-image-item'>
+      <div className='col-md-4 col-lg-4 col-xl-4 typeofwatch-image-item'>
         <img src="https://bizweb.dktcdn.net/100/244/305/themes/895013/assets/banner_3.jpg?1676340930397" />
       </div>
     </div>
     {/* --------------Thương hiệu */}
     <div className='typeofbrand-image row'>
-      <div className='col-md-2 col-4 col-sm4 typeofbrand-image-item'>
+      <div className='col-md-2 col-4 col-sm-4 col-lg-2 col-xl-2 typeofbrand-image-item'>
         <div>
           <a href='#'><img src='https://bizweb.dktcdn.net/thumb/medium/100/244/305/themes/895013/assets/brand1.jpg?1676340930397' /></a>
         </div>
       </div>
-      <div className='col-md-2 col-4 col-sm-4  typeofbrand-image-item'>
+      <div className='col-md-2 col-4 col-sm-4 col-lg-2 col-xl-2 typeofbrand-image-item'>
         <div>
           <a href='#'><img src='//bizweb.dktcdn.net/thumb/medium/100/244/305/themes/895013/assets/brand3.jpg?1676340930397' /></a>
         </div>
       </div>
-      <div className='col-md-2 col-4 col-sm-4  typeofbrand-image-item'>
+      <div className='col-md-2 col-4 col-sm-4 col-lg-2 col-xl-2 typeofbrand-image-item'>
         <div>
           <a href='#'><img src='//bizweb.dktcdn.net/thumb/medium/100/244/305/themes/895013/assets/brand3.jpg?1676340930397' /></a>
         </div>
       </div>
-      <div className='col-md-2 col-4 col-sm-4  typeofbrand-image-item'>
+      <div className='col-md-2 col-4 col-sm-4 col-lg-2 col-xl-2 typeofbrand-image-item'>
         <div>
           <a href='#'><img src='//bizweb.dktcdn.net/thumb/medium/100/244/305/themes/895013/assets/brand4.jpg?1676340930397' /></a>
         </div>
       </div>
-      <div className='col-md-2 col-4 col-sm-4  typeofbrand-image-item'>
+      <div className='col-md-2 col-4 col-sm-4 col-lg-2 col-xl-2 typeofbrand-image-item'>
         <div>
           <a href='#'><img src='//bizweb.dktcdn.net/thumb/medium/100/244/305/themes/895013/assets/brand5.jpg?1676340930397' /></a>
         </div>
       </div>
-      <div className='col-md-2 col-4 col-sm-4  typeofbrand-image-item'>
+      <div className='col-md-2 col-4 col-sm-4 col-lg-2 col-xl-2 typeofbrand-image-item'>
         <div>
           <a href='#'><img src='//bizweb.dktcdn.net/thumb/medium/100/244/305/themes/895013/assets/brand6.jpg?1676340930397' /></a>
         </div>

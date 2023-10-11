@@ -14,8 +14,8 @@ function NewsPage() {
                 <p className="col-md-6 news-homepage"><Link class="nav-link active" to="/trang-chu">Trang chủ</Link></p>
         </div>
         <div className="row tin-tuc">
-            <div className="col-md-4 col-12 col-sm-4">
-                <a href="#"><img src="//bizweb.dktcdn.net/thumb/large/100/244/305/articles/shutterstock-372398767.jpg?v=1502434798197" /></a>
+            <div className="col-md-4 col-12 col-sm-4 col-lg-4 col-xl-4 col-xxl-4">
+                <p className="tin-tuc-img"><a href="#"><img src="//bizweb.dktcdn.net/thumb/large/100/244/305/articles/shutterstock-372398767.jpg?v=1502434798197" /></a></p>
                 <a href="#"><h4 className="tintuc-content">Từ điển kiến thức đồng hồ</h4></a>
                 <span className="tintuc-content time"><i class="fa-regular fa-clock"></i>11/8/2017</span>
                 <span className="tintuc-content comment"><i class="fa-solid fa-comment"></i>1 bình luận</span>
@@ -31,8 +31,8 @@ function NewsPage() {
                     </p>
                 </div>
             </div>
-            <div className="col-md-4 col-12 col-sm-4">
-                <a href="#"><img src="//bizweb.dktcdn.net/thumb/large/100/244/305/articles/shutterstock-404657758-ce0bf89f-2282-409b-8650-8212e967e7a6.jpg?v=1502434711520" /></a>
+            <div className="col-md-4 col-12 col-sm-4 col-lg-4 col-xl-4 col-xxl-4">
+            <p className="tin-tuc-img"><a href="#"><img src="//bizweb.dktcdn.net/thumb/large/100/244/305/articles/shutterstock-404657758-ce0bf89f-2282-409b-8650-8212e967e7a6.jpg?v=1502434711520" /></a></p>
                 <a href="#"><h4 className="tintuc-content">Đồng hồ mới mua không chạy?</h4></a>
                 <span className="tintuc-content time"><i class="fa-regular fa-clock"></i>11/8/2017</span>
                 <span className="tintuc-content comment"><i class="fa-solid fa-comment"></i>0 bình luận</span>
@@ -48,8 +48,8 @@ function NewsPage() {
                     </p>
                 </div>
             </div>
-            <div className="col-md-4 col-12 col-sm-4">
-                <a href="#"><img src="//bizweb.dktcdn.net/thumb/large/100/244/305/articles/shutterstock-452064502.jpg?v=1502434322947" /></a>
+            <div className="col-md-4 col-12 col-sm-4 col-lg-4 col-xl-4 col-xxl-4">
+            <p className="tin-tuc-img"><a href="#"><img src="//bizweb.dktcdn.net/thumb/large/100/244/305/articles/shutterstock-452064502.jpg?v=1502434322947" /></a></p>
                 <a href="#"><h4 className="tintuc-content">Từ điển kiến thức đồng hồ</h4></a>
                 <span className="tintuc-content time"><i class="fa-regular fa-clock"></i>11/8/2017</span>
                 <span className="tintuc-content comment"><i class="fa-solid fa-comment"></i>1 bình luận</span>
@@ -67,7 +67,7 @@ function NewsPage() {
 
         </div>
         <div className="row tintuc-total">
-            <div className="tintuc-left col-md-3">
+            <div className="tintuc-left col-md-3 col-lg-3 col-xl-3 col-xxl-3">
                 <div className="danhmuc">
                     <h3>DANH MỤC</h3>
                     <ul class="nav flex-column">
@@ -131,8 +131,8 @@ function NewsPage() {
 
                 </div>
             </div>
-            <div className="tintuc-right col-md-9 col-sm-12 row">
-                <div className="row tintuc-right-item col-sm-4">
+            <div className="tintuc-right col-md-9 col-sm-12 col-lg-9 col-xl-9 col-xxl-9 row">
+                <div className="row tintuc-right-item col-sm-4 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                     <p className="col-md-6 tintuc-right-image"><a><img src="//bizweb.dktcdn.net/thumb/large/100/244/305/articles/shutterstock-497575942.jpg?v=1502434097500" /></a></p>
                     <div className="col-md-6 tintuc-right-content">
                         <h5><a href="#">Đồng hồ SEIKO cổ</a></h5>
@@ -151,7 +151,7 @@ function NewsPage() {
                         </div>
                     </div>
                 </div>
-                <div className="row tintuc-right-item col-sm-4">
+                <div className="row tintuc-right-item col-sm-4 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                     <p className="col-md-6 tintuc-right-image"><a><img src="//bizweb.dktcdn.net/thumb/large/100/244/305/articles/shutterstock-469113338.jpg?v=1502434134407" /></a></p>
                     <div className="col-md-6 tintuc-right-content">
                         <h5><a href="#">Đồng hồ SEIKO cổ</a></h5>
@@ -170,7 +170,7 @@ function NewsPage() {
                         </div>
                     </div>
                 </div>
-                <div className="row tintuc-right-item col-sm-4">
+                <div className="row tintuc-right-item col-sm-4 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                     <p className="col-md-6 tintuc-right-image"><a><img src="//bizweb.dktcdn.net/thumb/large/100/244/305/articles/shutterstock-449546110.jpg?v=1502427158767" /></a></p>
                     <div className="col-md-6 tintuc-right-content">
                         <h5><a href="#">Đồng hồ SEIKO cổ</a></h5>
@@ -189,7 +189,7 @@ function NewsPage() {
                         </div>
                     </div>
                 </div>
-                <div className="row tintuc-right-item col-sm-4">
+                <div className="row tintuc-right-item col-sm-4 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                     <p className="col-md-6 tintuc-right-image"><a><img src="//bizweb.dktcdn.net/thumb/large/100/244/305/articles/shutterstock-404657758.jpg?v=1502427057823" /></a></p>
                     <div className="col-md-6 tintuc-right-content">
                         <h5><a href="#">Đồng hồ SEIKO cổ</a></h5>

@@ -92,8 +92,8 @@ function WoMenPage(props) {
             <p className="col-md-6 men-homepage "><Link class="nav-link active" to="/trang-chu">Trang chủ</Link></p>
         </div>
         <div className="men-content row">
-            <div className="tintuc-left col-md-3 grid">
-                <div className="danhmuc col-md-12">
+            <div className="tintuc-left col-md-4 col-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4 grid">
+                <div className="danhmuc col-md-12 col-sm-12 col-lg-12 col-xl-12 col-xxl-12">
                     <div className="danhmuc-title">
                         <p className="title-item"><h6>DANH MỤC</h6></p>
                     </div>
@@ -258,11 +258,11 @@ function WoMenPage(props) {
             </div>
             {/* ---------------------------------------------- */}
 
-            <div className="watch-men row col-md-9 col-12 col-sm-12">
-                <div className="all-item row" >
-                    <p className="left-all-item col-md-3 col-6 col-sm-6">Tất cả sản phẩm</p>
+            <div className="watch-men row col-md-8 col-12 col-lg-8 col-xl-8 col-xxl-8">
+                <div className="all-item col-12 row" >
+                    <p className="left-all-item col-md-4 col-6 col-sm-6">Tất cả sản phẩm</p>
 
-                    <div class="dropdown right-all-item col-md-4 col-6 col-sm-6">
+                    <div class="dropdown right-all-item col-md-6 col-6">
                         <select name="watchmen" id="watchmen" onChange={changeValue}>
                             <option value="Mặc Định">Sắp xếp Mặc Định</option>
                             <option value="Giá tăng dần">Sắp xếp: Giá tăng dần</option>
@@ -273,7 +273,7 @@ function WoMenPage(props) {
                 </div>
 
                 {filter.map(item =>
-                    <div className='col-md-4 col-6 col-sm-4 men-item'>
+                    <div className='col-md-4 col-6 col-sm-4 col-lg-4 col-xl-4 col-xxl-4 men-item'>
                         <a href='#'><img src={item.image} /></a>
                         <div className="row men-img-mini col-12">
                             <p className="col-md-3 col-4 col-sm-3 men-img-mini1"><img src="https://bizweb.dktcdn.net/thumb/large/100/244/305/products/7.jpg?v=1502423293320" /></p>

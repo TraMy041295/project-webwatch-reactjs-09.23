@@ -17,15 +17,19 @@
     padding: 0px;
     margin: 0px;
 }
-.tintuc {
-    margin: 10px 200px;
+.tin-tuc {
+    margin: 30px 200px;
     text-align: start;
+}
+.tin-tuc a {
+    text-decoration: none;
+    color: #898989;
 }
 .tintuc-content {
     text-align: start;
     color: #898989;
 }
-.tintuc img {
+.tin-tuc img {
     width: 100%;
     margin-bottom: 15px;
 }
@@ -42,10 +46,7 @@
     color: blue;
     cursor: pointer;
 }
-.tintuc a {
-    color: #898989;
-    text-decoration: none;
-}
+
 .tintuc-content-icon {
     border-top: 1px solid #818181;
     border-bottom: 1px solid #818181;
@@ -108,8 +109,11 @@
     .tintuc-title {
         margin-left: 10px;
     }
-    .tintuc {
+    .tin-tuc {
         margin: 10px;
+    }
+    .tin-tuc-img  {
+       overflow: hidden;
     }
     .tintuc-total {
         margin: 10px;
@@ -119,13 +123,52 @@
         margin-top: 10px;
     }
 }
-@media screen and (max-width:768px) and (min-width:578px) {
+@media screen and (max-width:769px) and (min-width:578px) {
     .tintuc-title {
         margin-left: 10px;
     }
-    .tintuc {
+    .tin-tuc {
         margin: 10px;
     }
+
+    .tintuc-total {
+        margin: 10px;
+    }
+    
+    .tintuc-noibat {
+        margin-top: 10px;
+    }
+    .comment {
+        margin-left: 0px;
+    }
+}
+@media screen and (max-width:992px) and (min-width:769px) {
+    .tintuc-title {
+        margin-left: 10px;
+    }
+    .tin-tuc {
+        margin: 10px;
+    }
+
+    .tintuc-total {
+        margin: 10px;
+    }
+    
+    .tintuc-noibat {
+        margin-top: 10px;
+    }
+    .comment {
+        margin-left: 0px;
+    }
+}
+@media screen and (max-width:1400px) and (min-width:992px) {
+    .tintuc-title {
+        margin-left: 10px;
+    }
+    .tin-tuc {
+        margin: 10px;
+    }
+
     .tintuc-total {
         margin: 10px;
     }

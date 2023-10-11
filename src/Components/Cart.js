@@ -91,7 +91,7 @@ function Cart(props) {
             <p style={{color:"red",fontWeight:"bolder",textAlign:"end"}} > Tổng tiền cần thanh toán : {sumMoney} </p>
             <div className="choice-buy-pay">
                 <button className="btn-continue-buy" onClick={continueBuy} >Tiếp tục mua hàng</button>
-                <button className="btn-pay"><NavLink className='nav-link' to="/thanhtoan">Thanh Toán</NavLink></button>
+                <button className="btn-pay"><NavLink className='nav-link' to="/thanh-toan">Thanh Toán</NavLink></button>
             </div>
             </div>
         </div>

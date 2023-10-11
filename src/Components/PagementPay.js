@@ -141,7 +141,7 @@ function PaymentPay(props) {
                 <div className="sum-pay row">
                     <p className="col-md-6 col-6 col-sm-6">Tổng cộng</p>
                     <p className="col-md-6 col-6 col-sm-6">{sumMoney + cod}</p>
-                    <p className="col-md-6 col-6 col-sm-6"><button className="btn-comback-cart"  ><NavLink className='nav-link' to="/giohang">Giỏ Hàng</NavLink></button></p>
+                    <p className="col-md-6 col-6 col-sm-6"><button className="btn-comback-cart"  ><NavLink className='nav-link' to="/gio-hang">Giỏ Hàng</NavLink></button></p>
                     <p className="col-md-6 col-6 col-sm-6"><button className="btn-pay-ok" onClick={finalPay}>Thanh Toán</button></p>
                 </div>
 

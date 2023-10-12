@@ -9,7 +9,6 @@ function AddProduct(props) {
     const [ form , setForm ] = useState({
         gender: 0 ,name:"",image:"",price:"",quantity:1,introduce:""
     })
-
     useEffect(()=>{
         if(id){
             const index = watchList.findIndex(item=>item.id==id)

@@ -1,8 +1,8 @@
 import "../css/men.css"
 import Tooltip from '@mui/material/Tooltip';
 import "../css/sidebar.css"
-import { useState, useEffect , useMemo } from 'react'
-import { Link } from "react-router-dom"
+import { useState, useEffect, useMemo } from 'react'
+import { Link, NavLink } from "react-router-dom"
 import { useNavigate } from 'react-router-dom';
 
 
@@ -11,7 +11,7 @@ function MenPage(props) {
     const navigate = useNavigate()
     const [listMen, setListMen] = useState([])
     const [checked, setChecked] = useState([])
-    const [filter , setFilter] = useState([])
+    const [filter, setFilter] = useState([])
 
 
     useEffect(() => {
@@ -19,16 +19,16 @@ function MenPage(props) {
         setFilter(filterListMen)
         setListMen(filterListMen)
     }, [watchList])
-    useEffect(()=>{
-        if( checked.length !== 0 ) {    
-            const filterCheckBox = listMen.filter((item)=>item.name.includes(checked.join("")))
+    useEffect(() => {
+        if (checked.length !== 0) {
+            const filterCheckBox = listMen.filter((item) => item.name.includes(checked.join("")))
             setFilter(filterCheckBox)
-        }else {
-            const filterCheckBox1 = listMen.filter((item)=>item.name.includes(""))
+        } else {
+            const filterCheckBox1 = listMen.filter((item) => item.name.includes(""))
             setFilter(filterCheckBox1)
 
         }
-    },[checked,listMen ])
+    }, [checked, listMen])
     // -----------------------------Lọc giá
 
     const [data1, setDataLeft] = useState(10000000)
@@ -84,9 +84,63 @@ function MenPage(props) {
         navigate(`/see-quick-on-app/${id}`)
 
     }
-    
-    return (<>
 
+    return (<>
+        {/* <button><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M3.9 54.9C10.5 40.9 24.5 32 40 32H472c15.5 0 29.5 8.9 36.1 22.9s4.6 30.5-5.2 42.5L320 320.9V448c0 12.1-6.8 23.2-17.7 28.6s-23.8 4.3-33.5-3l-64-48c-8.1-6-12.8-15.5-12.8-25.6V320.9L9 97.3C-.7 85.4-2.8 68.8 3.9 54.9z"/></svg></button> */}
+        <div className='menu-sticker col-md-1 col-1 col-sm-1 col-lg-2 col-xl-2 col-xxl-2'>
+            <label htmlFor='input-menu-sticker' className='menu-title'>&#9776; <span className='menu-title-content'>Menu</span></label>
+            <input type="checkbox" hidden name="" className='checkbox-menu-sticker' id="input-menu-sticker" />
+            <div id="mySidenav" className="sidenav row ">
+                <div className='sidenav-left col-md-4 col-12 col-sm-12 col-lg-4 col-xl-4 col-xxl-4'>
+                    {/* <label htmlFor='input-menu-sticker' className="closebtn">x</label> */}
+                    <NavLink className='nav-link' to="/trang-chu">TRANG CHỦ</NavLink>
+                    <NavLink className='nav-link' to="/men" >ĐỒNG HỒ NAM</NavLink>
+                    <NavLink className='nav-link' to="/women">ĐỒNG HỒ NỮ</NavLink>
+                    <NavLink className='nav-link' to="/tin-tuc">TIN TỨC</NavLink>
+                    <NavLink className='nav-link' to="/dai-ly">ĐẠI LÝ</NavLink>
+                    <NavLink className='nav-link' to="/lien-he">LIÊN HỆ</NavLink>
+                </div>
+                <div className='sidenav-right col-md-8 col-sm-8 col-lg-8 col-xl-8 col-xxl-8'>
+                    <div className='sidenav-right-men row'>
+                        <p className='col-md-4 col-sm-4 col-lg-4 col-xl-4 col-xxl-4'><img src='//bizweb.dktcdn.net/100/244/305/themes/895013/assets/menu1.jpg?1676340930397' /></p>
+                        <p className='col-md-8 col-sm-8 col-lg-8 col-xl-8 col-xxl-8'>
+                            <p>ĐỒNG HỒ NAM</p>
+                            <p className='row'>
+                                <NavLink className='nav-link col-md-6 col-sm-6 col-lg-6 col-xl-6 col-xxl-6' to="/men" >ĐỒNG HỒ TSOT</NavLink>
+                                <NavLink className='nav-link col-md-6 col-sm-6 col-lg-6 col-xl-6 col-xxl-6' to="/men" >ĐỒNG HỒ CITIZEN</NavLink>
+                                <NavLink className='nav-link col-md-6 col-sm-6 col-lg-6 col-xl-6 col-xxl-6' to="/men" >ĐỒNG HỒ OMEGA</NavLink>
+                                <NavLink className='nav-link col-md-6 col-sm-6 col-lg-6 col-xl-6 col-xxl-6' to="/men" >Đang Khuyến Mãi</NavLink>
+                            </p>
+                        </p>
+                    </div>
+                    <div className='sidenav-right-men row'>
+                        <p className='col-md-4 col-sm-4 col-lg-4 col-xl-4 col-xxl-4'><img src='//bizweb.dktcdn.net/100/244/305/themes/895013/assets/menu2.jpg?1676340930397' /></p>
+                        <p className='col-md-8 col-sm-8 col-lg-8 col-xl-8 col-xxl-8'>
+                            <p>ĐỒNG HỒ NỮ</p>
+                            <p className='row'>
+                                <NavLink className='nav-link col-md-6 col-sm-6 col-lg-6 col-xl-6 col-xxl-6' to="/women" >ĐỒNG HỒ TSOT</NavLink>
+                                <NavLink className='nav-link col-md-6 col-sm-6 col-lg-6 col-xl-6 col-xxl-6' to="/women" >ĐỒNG HỒ CITIZEN</NavLink>
+                                <NavLink className='nav-link col-md-6 col-sm-6 col-lg-6 col-xl-6 col-xxl-6' to="/women" >ĐỒNG HỒ OMEGA</NavLink>
+                                <NavLink className='nav-link col-md-6 col-sm-6 col-lg-6 col-xl-6 col-xxl-6' to="/women" >Đang Khuyến Mãi</NavLink>
+                            </p>
+                        </p>
+                    </div>
+                    <div className='sidenav-right-men row'>
+                        <p className='col-md-4 col-4 col-sm-4 col-lg-4 col-xl-4 col-xxl-4'><img src='//bizweb.dktcdn.net/100/244/305/themes/895013/assets/menu3.jpg?1676340930397' /></p>
+                        <p className='col-md-8 col-8 col-sm-8 col-lg-8 col-xl-8 col-xxl-8'>
+                            <p>SẢN PHẨM KHUYẾN MÃI</p>
+                            <p className='row'>
+                                <NavLink className='nav-link col-md-6 col-sm-6 col-lg-6 col-xl-6 col-xxl-6' to="/men" >ĐỒNG HỒ TSOT</NavLink>
+                                <NavLink className='nav-link col-md-6 col-sm-6 col-lg-6 col-xl-6 col-xxl-6' to="/men" >ĐỒNG HỒ CITIZEN</NavLink>
+                                <NavLink className='nav-link col-md-6 col-sm-6 col-lg-6 col-xl-6 col-xxl-6' to="/men" >ĐỒNG HỒ OMEGA</NavLink>
+                                <NavLink className='nav-link col-md-6 col-sm-6 col-lg-6 col-xl-6 col-xxl-6' to="/men" >Đang Khuyến Mãi</NavLink>
+                            </p>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
         <div className="men-title row">
             <p className="col-md-6 men-all-item ">TẤT CẢ SẢN PHẨM /</p>
             <p className="col-md-4 men-homepage "><Link class="nav-link active" to="/trang-chu">Trang chủ</Link></p>
@@ -174,7 +228,7 @@ function MenPage(props) {
                     </div>
                     <div className="checkbox-brand row">
                         <div className="form-check col-md-6">
-                            <input className="form-check-input" type="checkbox" value="Apple"  onClick={checkBox}/>
+                            <input className="form-check-input" type="checkbox" value="Apple" onClick={checkBox} />
                             <label className="form-check-label" for="flexCheckDefault">
                                 Apple
                             </label>
@@ -186,7 +240,7 @@ function MenPage(props) {
                             </label>
                         </div>
                         <div className="form-check col-md-6">
-                            <input className="form-check-input" type="checkbox" value="DIESEL"  onClick={checkBox}/>
+                            <input className="form-check-input" type="checkbox" value="DIESEL" onClick={checkBox} />
                             <label className="form-check-label" for="flexCheckDefault">
                                 DIESEL
                             </label>
@@ -198,19 +252,19 @@ function MenPage(props) {
                             </label>
                         </div>
                         <div className="form-check col-md-6">
-                            <input className="form-check-input" type="checkbox" value="Omega" onClick={checkBox}/>
+                            <input className="form-check-input" type="checkbox" value="Omega" onClick={checkBox} />
                             <label className="form-check-label" for="flexCheckDefault">
                                 Omega
                             </label>
                         </div>
                         <div className="form-check col-md-6">
-                            <input className="form-check-input" type="checkbox" value="Tag Heuer"  onClick={checkBox}/>
+                            <input className="form-check-input" type="checkbox" value="Tag Heuer" onClick={checkBox} />
                             <label className="form-check-label" for="flexCheckDefault">
                                 Tag Heuer
                             </label>
                         </div>
                         <div className="form-check col-md-6">
-                            <input className="form-check-input" type="checkbox" value="TISSOT" onClick={checkBox}/>
+                            <input className="form-check-input" type="checkbox" value="TISSOT" onClick={checkBox} />
                             <label className="form-check-label" for="flexCheckDefault">
                                 TISSOT
                             </label>

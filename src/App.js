@@ -103,7 +103,6 @@ function App(props) {
   }
 
   return (
-    
     <Router>
         <Routes>
             <Route path='/' element={<Nav watchList={watchList}  sumQuantity={sumQuantity}/>}>

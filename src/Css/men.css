@@ -1,3 +1,66 @@
+.button-filter {
+    display: none;
+}
+
+.total-filter {
+    border: 1px solid black;
+    width: 30px;
+    height: 30px;
+
+}
+.sidenav-men {
+    height: 90%;
+    width: 0;
+    position: absolute;
+    z-index: 1;
+    top: 70px;
+    left: 0;
+    background-color:white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 30px;
+    border: 1px solid #f1f1f1;
+  }
+  
+  .sidenav-men a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    /* display: block; */
+    transition: 0.3s;
+  }
+  
+  .sidenav-men a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav-men-left > .closebtn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 36px;
+    margin-left: 50px;
+    cursor: pointer;
+    height: 50px;
+    border: none;
+    background-color: white;
+  }
+  .sidenav-men-left .closebtn:hover {
+    color: #818181;
+  }
+  @media screen and (max-height: 450px) {
+    .sidenav-men {padding-top: 15px;}
+    .sidenav-men a {font-size: 18px;}
+  }
+  .sidenav-right-men {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #818181;
+  }
+  .checkbox-menu-sticker:checked ~ .sidenav-men {
+    width: 500px;
+  }
+
 
 /* ------------------------- */
 .men-title {
@@ -106,6 +169,16 @@ button .show {
 /* --------------------responsive web */
 
 @media screen and (max-width : 578px) {
+    .button-filter {
+        display: block;
+        position: sticky;
+        top:50%;
+        right: 0px;
+        z-index: 1000;
+    }
+    .checkbox-menu-sticker:checked ~ .sidenav-men {
+        width: 100%;
+      }
     .men-title {
         margin: 0px 0px 0px 15px;
         padding-top: 15px;

@@ -125,7 +125,10 @@
 .menu .menu-title-content {
   display: none;
 }
-.menu .cart-item .cart-title-content {
+.cart {
+  justify-content: end;
+}
+.menu  .cart-title-content {
   display: none;
 }
 .cart span .bi-cart3 {

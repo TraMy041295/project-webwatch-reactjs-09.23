@@ -4,9 +4,16 @@
 
 .total-filter {
     border: 1px solid black;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.total-filter > svg {
     width: 30px;
     height: 30px;
-
 }
 .sidenav-men {
     height: 90%;
@@ -174,8 +181,25 @@ button .show {
         position: sticky;
         top:50%;
         right: 0px;
+        width: 100%;
+        height: 100%;
         z-index: 1000;
     }
+    .sidenav-men {
+        height: 1000px;
+        /* height: 90%; */
+        width: 0;
+        position: absolute;
+        z-index: 1;
+        top: -400px;
+        left: 0px;
+        background-color:white;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 30px;
+        border: 1px solid #f1f1f1;
+    }
+
     .checkbox-menu-sticker:checked ~ .sidenav-men {
         width: 100%;
       }

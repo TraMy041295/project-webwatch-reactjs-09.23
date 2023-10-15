@@ -3,6 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import axios from 'axios';
+import { AppProvider } from './context/AppContext';
 
 
 import {
@@ -12,7 +13,7 @@ import {
   Routes, 
   Outlet,
 } from "react-router-dom";
-import { useState , useEffect } from 'react';
+import { useState , useEffect , useRef } from 'react';
 import Nav from './components/Nav';
 import HomePage from './components/HomePage';
 import AgentSystemPage from './components/AgentSystemPage';
@@ -28,36 +29,18 @@ import PaymentPay from './components/PagementPay';
 import OderManagePage from './components/OderManagePage';
 import SeeQuickOnApp from './components/SeeQuickOnApp';
 import {getProducts , getPayCusTom , deleteProduct , addProducts , editProduct} from './api/Product';
+import {AppContext} from './context/AppContext'
+import { useContext } from 'react';
 
 const api = "https://6496d60c83d4c69925a326f0.mockapi.io/"
 
 function App(props) {
-  var [ watchList , setwatchList ] = useState([])
+  const {watchList ,setwatchList} = useContext(AppContext)
   var [ listCart , setListCart] = useState([])
-  const [ payCusTom , setPayCusTom] = useState([])
   const [ sumMoney, setSumMoney] = useState(0)
   const [ sumQuantity, setSumQuantity] = useState(0)
 
-  useEffect(() => {
-    // --------------- call product
-    getProducts().then(res => {
-        setwatchList(res.data)
-      })
-      .catch(res => {
-        console.log(res)
-      })
-  }, [watchList])
 
-  useEffect (()=>{
-          // ------------- call đơn hàng
-          getPayCusTom().then(res => {
-            setPayCusTom(res.data)
-          })
-          .catch(res => {
-            console.log(res)
-          })
-  },[])
-  
   // ------------------------------------
 
   function deleteApp(id){
@@ -103,30 +86,32 @@ function App(props) {
   }
 
   return (
+    <AppProvider>
     <Router>
         <Routes>
-            <Route path='/' element={<Nav watchList={watchList}  sumQuantity={sumQuantity}/>}>
-                <Route index element={<HomePage watchList={watchList}/>} />
-                <Route path='trang-chu' element={<HomePage watchList={watchList} getItemCart={getItemCart}/>} />
-                <Route path='men' element={<MenPage watchList={watchList} getItemCart={getItemCart}/>} />
-                <Route path='women' element={<WoMenPage watchList={watchList} getItemCart={getItemCart}/>} />
+            <Route path='/' element={<Nav  sumQuantity={sumQuantity}/>}>
+                <Route index element={<HomePage />} />
+                <Route path='trang-chu' element={<HomePage getItemCart={getItemCart}/>} />
+                <Route path='men' element={<MenPage getItemCart={getItemCart}/>} />
+                <Route path='women' element={<WoMenPage getItemCart={getItemCart}/>} />
                 <Route path='dai-ly' element={<AgentSystemPage />} />
-                <Route path='see-quick-on-app/:id' element={<SeeQuickOnApp watchList={watchList} getItemCart={getItemCart}/>} />
+                <Route path='see-quick-on-app/:id' element={<SeeQuickOnApp  getItemCart={getItemCart}/>} />
                 <Route path='tin-tuc' element={<NewsPage />} />
                 <Route path='lien-he' element={<ContactPage />} />
                 <Route path='gio-hang' element={<Cart listCart={listCart} getIdCart={getIdCart} setListCart={setListCart} setSumMoney={setSumMoney} setSumQuantity={setSumQuantity} sumMoney={sumMoney} />} />
-                <Route path='thanh-toan' element={<PaymentPay payCusTom={payCusTom} setPayCusTom={setPayCusTom} listCart={listCart} setListCart={setListCart} sumQuantity={sumQuantity} sumMoney={sumMoney}/>} />
+                <Route path='thanh-toan' element={<PaymentPay  listCart={listCart} setListCart={setListCart} sumQuantity={sumQuantity} sumMoney={sumMoney}/>} />
 
             </Route>
             <Route path="admin" element={<AdMinPage  />}>
-              <Route index element={<TableProducts  watchList={watchList} />}/>
-              <Route path="table-products" element={ <TableProducts  watchList={watchList} deleteApp={deleteApp}/>}/>
+              <Route index element={<TableProducts />}/>
+              <Route path="table-products" element={ <TableProducts  deleteApp={deleteApp}/>}/>
               <Route path='add-product' element={<AddProduct addProduct={addProduct}/>}/>
-              <Route path='order-manage' element={<OderManagePage payCusTom={payCusTom} setPayCusTom={setPayCusTom}/>}/>
-              <Route path='edit-book/:id' element={<AddProduct addProduct={addProduct} watchList={watchList}/>}/>
+              <Route path='order-manage' element={<OderManagePage />}/>
+              <Route path='edit-book/:id' element={<AddProduct addProduct={addProduct} />}/>
             </Route>
         </Routes>
     </Router>
+    </AppProvider>
   );
 }
 

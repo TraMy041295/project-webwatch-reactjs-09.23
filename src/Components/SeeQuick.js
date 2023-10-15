@@ -4,10 +4,13 @@ import { Navigate, useNavigate } from 'react-router-dom';
 import {
     Link,
 } from "react-router-dom"
+import {AppContext} from '../context/AppContext'
+import { useContext } from 'react';
 
 function SeeQuick(props) {
-    
-    const { id, watchList } = props
+    const {watchList} = useContext(AppContext)
+
+    const { id} = props
     const [isExpand, setExpand] = useState("false")
     const [index , setIndex ] = useState(0)
     function expand() {

@@ -52,7 +52,9 @@
     .checkbox-menu-sticker:checked ~ .sidenav {
       width: 1000px;
     }
- 
+    .label-trangchu {
+      z-index: 10000;
+    }
 
   /* --------------------------- */
 .menu {

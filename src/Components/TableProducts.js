@@ -1,13 +1,16 @@
 import "../css/tableproducts.css";
 import SeeQuick from './SeeQuick'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, forwardRef , useImperativeHandle } from 'react'
 import ReactPaginate from 'react-paginate'
 import { getPerPage } from "../api/Product"
+import {AppContext} from '../context/AppContext'
+import { useContext } from 'react';
 
 
-function TableProducts(props) {
-  const { watchList, deleteApp } = props
+function TableProducts(props , ref) {
+  const {watchList} = useContext(AppContext)
+  const { deleteApp } = props
   const navigate = useNavigate()
   const [searchParams, setsearchParams] = useSearchParams()
   const [name, setName] = useState("")
@@ -15,6 +18,7 @@ function TableProducts(props) {
   const [pageNumber, setPageNumber] = useState(1)
   const [tableWatch, settableWatch] = useState([])
 
+  
 
   const filterWatch = useMemo(() =>
     (name == "" && price == "") ? watchList :
@@ -86,7 +90,7 @@ function TableProducts(props) {
               <td>{item.price}</td>
               <button type="button" className="btn btn-warning" onClick={() => editProduct(item)}>Sửa</button>
               <button type="button" className="btn btn-danger" onClick={() => deleteProduct(item.id)} >Xoá</button>
-              <button type="button" className="btn btn-success"><SeeQuick id={item.id} watchList={watchList} /></button>
+              <button type="button" className="btn btn-success"><SeeQuick id={item.id} /></button>
             </tr>
           )}
         </tbody>
@@ -111,4 +115,4 @@ function TableProducts(props) {
   </>)
 }
 
-export default TableProducts
+export default forwardRef(TableProducts)

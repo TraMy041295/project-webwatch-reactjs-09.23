@@ -4,6 +4,8 @@ import Tooltip from '@mui/material/Tooltip';
 import { useNavigate } from 'react-router-dom';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import {AppContext} from '../context/AppContext'
+import { useContext } from 'react';
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -29,7 +31,9 @@ function SamplePrevArrow(props) {
 
 
 function SliderComponent(props) {
-  const { watchList ,getItemCart } = props
+  const {watchList} = useContext(AppContext)
+
+  const { getItemCart } = props
   const navigate = useNavigate()
   var settings = {
     // dots: true,

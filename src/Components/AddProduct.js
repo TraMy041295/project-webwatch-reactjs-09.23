@@ -1,9 +1,13 @@
 import '../css/addproduct.css'
 import { useState , useEffect } from 'react';
 import { useNavigate , useParams } from 'react-router-dom';
+import {AppContext} from "../context/AppContext"
+import { useContext } from 'react';
 
 function AddProduct(props) {
-    const {addProduct , watchList} = props
+    const {watchList  } = useContext(AppContext)
+
+    const {addProduct } = props
     const navigate = useNavigate()
     const id = parseInt(useParams().id)
     const [ form , setForm ] = useState({

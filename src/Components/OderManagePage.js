@@ -3,12 +3,16 @@ import { useState , useEffect } from 'react';
 import axios from 'axios';
 import SeeQuickOrDer from "./SeeQuickOrDer";
 import "../css/ordermanage.css"
+import {AppContext} from '../context/AppContext'
+import { useContext } from 'react';
 
 const api = "https://6496d60c83d4c69925a326f0.mockapi.io/"
 
 
-function OderManagePage(props){
-    const { payCusTom ,setPayCusTom} = props
+function OderManagePage(){
+    const {payCusTom , setPayCusTom} = useContext(AppContext)
+
+    // const { payCusTom ,setPayCusTom} = props
 
 
 // ------------------Xoá đơn hàng
@@ -54,7 +58,7 @@ function OderManagePage(props){
                     <td>{item.addresscustom}</td>
                     <td>{item.notecustom}</td>
                     <td><button type="button" className="btn btn-danger" onClick={()=>deleteOrder(item.id)}  >Xoá</button></td>
-              <td><button type="button" className="btn btn-success" ><SeeQuickOrDer id={item.id} payCusTom={payCusTom} /></button></td>
+              <td><button type="button" className="btn btn-success" ><SeeQuickOrDer id={item.id} /></button></td>
               <td><button type="button" class="btn btn-info" onClick={(e)=>isAgree(e)}>Chưa Duyệt đơn</button></td>
                   </tr>
                     )}

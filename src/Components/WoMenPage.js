@@ -4,10 +4,13 @@ import "../css/sidebar.css"
 import { useState, useEffect } from 'react'
 import { Link } from "react-router-dom"
 import { useNavigate } from 'react-router-dom';
+import {AppContext} from '../context/AppContext'
+import { useContext } from 'react';
 
 
 function WoMenPage(props) {
-    const { watchList, getItemCart } = props
+    const {watchList} = useContext(AppContext)
+    const { getItemCart } = props
     const navigate = useNavigate()
     const [listWoMen, setListWoMen] = useState([])
     const [checked, setChecked] = useState([])

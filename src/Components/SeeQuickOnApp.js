@@ -4,11 +4,14 @@ import { Navigate, useNavigate ,useParams } from 'react-router-dom';
 import {
     Link,
 } from "react-router-dom"
+import {AppContext} from '../context/AppContext'
+import { useContext } from 'react';
 
 
 
 function SeeQuickOnApp(props){
-    const { watchList ,getItemCart} = props
+    const {watchList} = useContext(AppContext)
+    const {getItemCart} = props
     const navigate = useNavigate()
     const id = parseInt(useParams().id)
     const index = watchList.findIndex(item => item.id == id )

@@ -3,11 +3,14 @@ import SliderComponent from './SliderComponent'
 import ShowImage from './ShowImage'
 import Tooltip from '@mui/material/Tooltip';
 import { useNavigate } from 'react-router-dom';
+import {AppContext} from '../context/AppContext'
+import { useContext } from 'react';
 
 
 
 function HomePage(props) {
-  const { watchList ,getItemCart } = props
+  const {watchList} = useContext(AppContext)
+  const {getItemCart } = props
   const navigate = useNavigate()
 
 // ----------item gỉam giá

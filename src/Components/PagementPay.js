@@ -2,12 +2,17 @@ import "../css/paymentpage.css"
 import {Link , NavLink, Outlet} from "react-router-dom"
 import { useState , useEffect } from 'react';
 import axios from 'axios';
+import {AppContext} from '../context/AppContext'
+import { useContext } from 'react';
+
 
 
 const api = "https://6496d60c83d4c69925a326f0.mockapi.io/"
 
 function PaymentPay(props) {
-    const {listCart , sumQuantity ,sumMoney, setListCart, setPayCusTom , payCusTom} = props
+    const {payCusTom , setPayCusTom} = useContext(AppContext)
+
+    const {listCart , sumQuantity ,sumMoney, setListCart} = props
     var [cod , setCod] = useState(0)
     const [orderInfo , setOrDerInFo] = useState({
         emailcustom: "",namecustom: "",phonecustom: "",notecustom: "",shipcodecustom: "",transportcustom: "",
